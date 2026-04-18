@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Restaurant App</title>
+    <link rel="stylesheet" href="../styles/header.css" />
+  </head>
+
+  <body>
+    <!-- Header will load here -->
+    <div id="header"></div>
+
+    <h1>Welcome to BabaKitchen</h1>
+
+    <script src="../components/header.js"></script>
+    <script>
+      document.getElementById("header").innerHTML = new Header().render();
+    </script>
+  </body>
+</html>
