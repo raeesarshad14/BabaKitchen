@@ -10,7 +10,6 @@ class Header {
                     <nav class="nav-links">
                         <a href="menu.html">MENU</a>
                         <a href="catering.html">CATERING</a>
-                        <a href="babakitchen.html">BABAKITCHEN</a>
                         <a href="help.html">HELP</a>
                     </nav>
                 </div>
