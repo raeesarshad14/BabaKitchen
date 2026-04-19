@@ -3,19 +3,15 @@
   <head>
     <title>Restaurant App</title>
 
-    <!-- Load ALL CSS files -->
     <link rel="stylesheet" href="../styles/header.css" />
     <link rel="stylesheet" href="../styles/main.css" />
   </head>
 
   <body>
-    <!-- Header will load here -->
     <div id="header"></div>
 
-    <!-- Animated text -->
     <h1 class="typewriter">Welcome to BabasKitchen</h1>
 
-    <!-- SLIDER -->
     <div class="slider-wrapper">
       <button class="slide-btn left-btn">&#10094;</button>
 
@@ -28,40 +24,26 @@
       <button class="slide-btn right-btn">&#10095;</button>
     </div>
 
-    <!-- Load Header Component -->
     <script src="../components/header.js"></script>
     <script>
       document.getElementById("header").innerHTML = new Header().render();
     </script>
 
-    <!-- SLIDER JAVASCRIPT (you forgot this part) -->
     <script>
       const slider = document.querySelector(".slider");
       const slides = document.querySelectorAll(".slide-img");
       const leftBtn = document.querySelector(".left-btn");
       const rightBtn = document.querySelector(".right-btn");
 
-      let index = 0; /* start at first slide */
+      let index = 0;
 
       function updateSlider() {
         slider.style.transform = `translateX(-${index * 100}%)`;
 
-        /* hide left arrow on first slide */
-        if (index === 0) {
-          leftBtn.style.display = "none";
-        } else {
-          leftBtn.style.display = "block";
-        }
-
-        /* hide right arrow on last slide */
-        if (index === slides.length - 1) {
-          rightBtn.style.display = "none";
-        } else {
-          rightBtn.style.display = "block";
-        }
+        leftBtn.style.display = index === 0 ? "none" : "block";
+        rightBtn.style.display = index === slides.length - 1 ? "none" : "block";
       }
 
-      /* move right */
       rightBtn.onclick = () => {
         if (index < slides.length - 1) {
           index++;
@@ -69,7 +51,6 @@
         }
       };
 
-      /* move left */
       leftBtn.onclick = () => {
         if (index > 0) {
           index--;
@@ -77,7 +58,6 @@
         }
       };
 
-      /* initialize on load */
       updateSlider();
     </script>
   </body>

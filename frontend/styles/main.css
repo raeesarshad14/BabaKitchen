@@ -1,79 +1,90 @@
+/* --- TYPEWRITER TEXT --- */
 .typewriter {
-  font-size: 40px; /* size of the text */
-  font-weight: bold; /* make text bold */
-  margin-top: 25px; /* move text closer to header */
-  text-align: center; /* center the text */
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 25px;
+  text-align: center;
 
-  overflow: hidden; /* hide text until typed */
-  white-space: nowrap; /* keep text on one line */
-  width: 0; /* start with no visible width */
-  display: inline-block; /* required for width animation */
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  display: inline-block;
 
-  animation: typing 3s steps(30) forwards; /* typewriter effect */
+  animation: typing 3s steps(30) forwards;
 }
 
-/* controls how the text expands while typing */
 @keyframes typing {
   from {
     width: 0;
-  } /* start hidden */
+  }
   to {
     width: 25ch;
-  } /* reveal full text */
+  }
 }
-/* --- SLIDER WRAPPER --- */
-.slider-wrapper {
-  position: relative; /* allows arrows to sit on top */
-  width: 80%; /* slider width */
-  margin: 20px auto; /* center the slider */
-  overflow: hidden; /* hide images outside frame */
-  border-radius: 10px; /* smooth corners */
 
-  display: flex; /* NEW — keeps arrows in place */
-  align-items: center; /* center arrows vertically */
+/* --- SLIDER WRAPPER (FULL WIDTH + RESPONSIVE HEIGHT) --- */
+.slider-wrapper {
+  width: 100%;
+  height: 55vh;
+  min-height: 350px;
+  max-height: 650px;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+  .slider-wrapper {
+    height: 40vh;
+    min-height: 250px;
+  }
 }
 
 /* --- SLIDER TRACK --- */
 .slider {
-  display: flex; /* images side-by-side */
-  transition: transform 0.5s ease; /* smooth slide */
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
 }
 
-/* --- SLIDE IMAGES --- */
+/* --- SLIDE IMAGES (FIXED HEIGHT TO PREVENT DISAPPEARING) --- */
 .slide-img {
-  width: 100%; /* force each image to fill slider width */
-  height: 350px; /* fixed height for consistency */
-  object-fit: cover; /* crop nicely without stretching */
-  flex-shrink: 0; /* prevent images from shrinking */
+  width: 100%;
+  height: 100%; /* SAFE because wrapper has fixed height */
+  object-fit: contain; /* show full image */
+  background: #f5f5f5;
+  flex-shrink: 0;
+  display: block;
+  margin: 0 auto;
 }
 
-/* --- LEFT & RIGHT BUTTONS --- */
+/* --- ARROWS --- */
 .slide-btn {
-  position: absolute; /* place on top of slider */
-  top: 50%; /* center vertically */
-  transform: translateY(-50%); /* perfect vertical center */
-  background: rgba(0, 0, 0, 0.5); /* semi-transparent */
-  color: white; /* arrow color */
-  border: none; /* remove border */
-  padding: 12px 18px; /* button size */
-  cursor: pointer; /* pointer cursor */
-  font-size: 24px; /* arrow size */
-  border-radius: 5px; /* smooth edges */
-
-  z-index: 10; /* NEW — keeps arrows above images */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 5px;
+  z-index: 10;
 }
 
-/* left arrow position */
 .left-btn {
   left: 10px;
 }
-
-/* right arrow position */
 .right-btn {
   right: 10px;
 }
 
-/* hover effect */
 .slide-btn:hover {
-  background: rgba(0, 0, 0, 0.7); /* darker on hover */
+  background: rgba(0, 0, 0, 0.7);
 }
