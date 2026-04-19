@@ -15,9 +15,70 @@
     <!-- Animated text -->
     <h1 class="typewriter">Welcome to BabasKitchen</h1>
 
+    <!-- SLIDER -->
+    <div class="slider-wrapper">
+      <button class="slide-btn left-btn">&#10094;</button>
+
+      <div class="slider">
+        <img src="../assets/Biryani.png" class="slide-img" alt="Slide 1" />
+        <img src="../assets/ChickenCurry.png" class="slide-img" alt="Slide 2" />
+        <img src="../assets/HalwaPuri.png" class="slide-img" alt="Slide 3" />
+      </div>
+
+      <button class="slide-btn right-btn">&#10095;</button>
+    </div>
+
+    <!-- Load Header Component -->
     <script src="../components/header.js"></script>
     <script>
       document.getElementById("header").innerHTML = new Header().render();
+    </script>
+
+    <!-- SLIDER JAVASCRIPT (you forgot this part) -->
+    <script>
+      const slider = document.querySelector(".slider");
+      const slides = document.querySelectorAll(".slide-img");
+      const leftBtn = document.querySelector(".left-btn");
+      const rightBtn = document.querySelector(".right-btn");
+
+      let index = 0; /* start at first slide */
+
+      function updateSlider() {
+        slider.style.transform = `translateX(-${index * 100}%)`;
+
+        /* hide left arrow on first slide */
+        if (index === 0) {
+          leftBtn.style.display = "none";
+        } else {
+          leftBtn.style.display = "block";
+        }
+
+        /* hide right arrow on last slide */
+        if (index === slides.length - 1) {
+          rightBtn.style.display = "none";
+        } else {
+          rightBtn.style.display = "block";
+        }
+      }
+
+      /* move right */
+      rightBtn.onclick = () => {
+        if (index < slides.length - 1) {
+          index++;
+          updateSlider();
+        }
+      };
+
+      /* move left */
+      leftBtn.onclick = () => {
+        if (index > 0) {
+          index--;
+          updateSlider();
+        }
+      };
+
+      /* initialize on load */
+      updateSlider();
     </script>
   </body>
 </html>

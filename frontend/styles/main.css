@@ -1,22 +1,79 @@
 .typewriter {
-  font-size: 40px;
-  font-weight: bold;
-  margin-top: 25px; /* reduced from 60px */
-  text-align: center;
+  font-size: 40px; /* size of the text */
+  font-weight: bold; /* make text bold */
+  margin-top: 25px; /* move text closer to header */
+  text-align: center; /* center the text */
 
-  overflow: hidden;
-  white-space: nowrap;
-  width: 0;
-  display: inline-block;
+  overflow: hidden; /* hide text until typed */
+  white-space: nowrap; /* keep text on one line */
+  width: 0; /* start with no visible width */
+  display: inline-block; /* required for width animation */
 
-  animation: typing 3s steps(30) forwards;
+  animation: typing 3s steps(30) forwards; /* typewriter effect */
 }
 
+/* controls how the text expands while typing */
 @keyframes typing {
   from {
     width: 0;
-  }
+  } /* start hidden */
   to {
     width: 25ch;
-  }
+  } /* reveal full text */
+}
+/* --- SLIDER WRAPPER --- */
+.slider-wrapper {
+  position: relative; /* allows arrows to sit on top */
+  width: 80%; /* slider width */
+  margin: 20px auto; /* center the slider */
+  overflow: hidden; /* hide images outside frame */
+  border-radius: 10px; /* smooth corners */
+
+  display: flex; /* NEW — keeps arrows in place */
+  align-items: center; /* center arrows vertically */
+}
+
+/* --- SLIDER TRACK --- */
+.slider {
+  display: flex; /* images side-by-side */
+  transition: transform 0.5s ease; /* smooth slide */
+}
+
+/* --- SLIDE IMAGES --- */
+.slide-img {
+  width: 100%; /* force each image to fill slider width */
+  height: 350px; /* fixed height for consistency */
+  object-fit: cover; /* crop nicely without stretching */
+  flex-shrink: 0; /* prevent images from shrinking */
+}
+
+/* --- LEFT & RIGHT BUTTONS --- */
+.slide-btn {
+  position: absolute; /* place on top of slider */
+  top: 50%; /* center vertically */
+  transform: translateY(-50%); /* perfect vertical center */
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent */
+  color: white; /* arrow color */
+  border: none; /* remove border */
+  padding: 12px 18px; /* button size */
+  cursor: pointer; /* pointer cursor */
+  font-size: 24px; /* arrow size */
+  border-radius: 5px; /* smooth edges */
+
+  z-index: 10; /* NEW — keeps arrows above images */
+}
+
+/* left arrow position */
+.left-btn {
+  left: 10px;
+}
+
+/* right arrow position */
+.right-btn {
+  right: 10px;
+}
+
+/* hover effect */
+.slide-btn:hover {
+  background: rgba(0, 0, 0, 0.7); /* darker on hover */
 }
