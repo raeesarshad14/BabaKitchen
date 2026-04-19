@@ -88,3 +88,55 @@
 .slide-btn:hover {
   background: rgba(0, 0, 0, 0.7);
 }
+
+/* --- CATEGORY BAR --- */
+.category-bar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start; /* LEFT ALIGN LIKE SHAKE SHACK */
+  gap: 50px;
+  margin: 30px 0;
+  padding: 10px 0;
+  padding-left: 40px; /* adds left spacing */
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.category-item img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.category-item span {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.category-item:hover {
+  transform: scale(1.12);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .category-bar {
+    gap: 25px;
+  }
+
+  .category-item img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .category-item span {
+    font-size: 14px;
+  }
+}
