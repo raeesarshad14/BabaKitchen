@@ -85,10 +85,18 @@ class CartPage {
             <span>$${total.toFixed(2)}</span>
           </div>
 
-          <button class="checkout-btn">Checkout</button>
+          <!-- FIXED CHECKOUT BUTTON -->
+          <button class="checkout-btn" onclick="goToCheckout()">
+            Checkout
+          </button>
         </div>
 
       </div>
     `;
   }
+}
+
+/* FIX: ADD THIS FUNCTION */
+function goToCheckout() {
+  window.location.href = "../pages/checkout.html";
 }
