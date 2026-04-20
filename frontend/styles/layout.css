@@ -1,0 +1,14 @@
+/* --- CENTERED PAGE CONTAINER (LIKE SHAKE SHACK) --- */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* --- MENU SECTION BELOW SLIDER --- */
+.menu-section {
+  display: flex;
+  width: 100%;
+  margin-top: 40px;
+  padding: 20px 0;
+}

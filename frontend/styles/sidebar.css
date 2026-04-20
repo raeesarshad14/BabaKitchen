@@ -1,0 +1,20 @@
+/* --- LEFT SIDE VERTICAL SIDEBAR --- */
+.menu-sidebar {
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-right: 40px;
+}
+
+.category-text {
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.category-text:hover {
+  color: #2e7d32;
+  transform: translateX(5px);
+}

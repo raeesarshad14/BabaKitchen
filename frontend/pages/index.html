@@ -4,102 +4,67 @@
     <title>Restaurant App</title>
 
     <link rel="stylesheet" href="../styles/header.css" />
-    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/animations.css" />
+    <link rel="stylesheet" href="../styles/slider.css" />
+    <link rel="stylesheet" href="../styles/layout.css" />
+    <link rel="stylesheet" href="../styles/sidebar.css" />
+    <link rel="stylesheet" href="../styles/menu.css" />
   </head>
 
   <body>
     <!-- HEADER -->
     <div id="header"></div>
 
+    <!-- WELCOME TEXT -->
     <h1 class="typewriter">Welcome to BabasKitchen</h1>
 
     <!-- SLIDER -->
-    <div class="slider-wrapper">
-      <button class="slide-btn left-btn">&#10094;</button>
+    <div id="slider"></div>
 
-      <div class="slider">
-        <img src="../assets/Biryani.png" class="slide-img" alt="Slide 1" />
-        <img src="../assets/ChickenCurry.png" class="slide-img" alt="Slide 2" />
-        <img src="../assets/HalwaPuri.png" class="slide-img" alt="Slide 3" />
-      </div>
-
-      <button class="slide-btn right-btn">&#10095;</button>
-    </div>
-
-    <!-- PAGE CONTAINER (centers everything like Shake Shack) -->
+    <!-- PAGE CONTAINER -->
     <div class="page-container">
-      <!-- BELOW SLIDER: SIDEBAR + MENU -->
       <div class="menu-section">
-        <!-- LEFT SIDE VERTICAL SIDEBAR (NO ICONS) -->
-        <div class="menu-sidebar">
-          <div class="category-text">Sliders</div>
-          <div class="category-text">Pasta</div>
-          <div class="category-text">Dessert</div>
-        </div>
+        <!-- SIDEBAR -->
+        <div id="sidebar"></div>
 
-        <!-- RIGHT SIDE MENU ITEMS -->
-        <div class="menu-items">
-          <!-- MENU CARD 1 -->
-          <div class="menu-card">
-            <img src="../assets/HalwaPuri.png" alt="Halwa Puri" />
-            <h3>Halwa Puri</h3>
-            <p>$13.75</p>
-            <button>Add</button>
-          </div>
-
-          <!-- MENU CARD 2 -->
-          <div class="menu-card">
-            <img src="../assets/Biryani.png" alt="Chicken Biryani" />
-            <h3>Chicken Biryani</h3>
-            <p>$12.99</p>
-            <button>Add</button>
-          </div>
-
-          <!-- MENU CARD 3 -->
-          <div class="menu-card">
-            <img src="../assets/ChickenCurry.png" alt="Chicken Curry" />
-            <h3>Chicken Curry</h3>
-            <p>$11.50</p>
-            <button>Add</button>
-          </div>
-        </div>
+        <!-- MENU ITEMS (FIXED) -->
+        <div id="menu" class="menu-items"></div>
       </div>
     </div>
 
+    <!-- COMPONENTS -->
     <script src="../components/header.js"></script>
+    <script src="../components/slider.js"></script>
+    <script src="../components/sidebar.js"></script>
+    <script src="../components/menuCard.js"></script>
+    <script src="../components/menuList.js"></script>
+
     <script>
+      // HEADER
       document.getElementById("header").innerHTML = new Header().render();
-    </script>
 
-    <script>
-      const slider = document.querySelector(".slider");
-      const slides = document.querySelectorAll(".slide-img");
-      const leftBtn = document.querySelector(".left-btn");
-      const rightBtn = document.querySelector(".right-btn");
+      // SLIDER
+      const slider = new Slider([
+        "../assets/Biryani.png",
+        "../assets/ChickenCurry.png",
+        "../assets/HalwaPuri.png",
+      ]);
+      document.getElementById("slider").innerHTML = slider.render();
+      slider.init();
 
-      let index = 0;
+      // SIDEBAR
+      const sidebar = new Sidebar(["Sliders", "Pasta", "Dessert"]);
+      document.getElementById("sidebar").innerHTML = sidebar.render();
 
-      function updateSlider() {
-        slider.style.transform = `translateX(-${index * 100}%)`;
-        leftBtn.style.display = index === 0 ? "none" : "block";
-        rightBtn.style.display = index === slides.length - 1 ? "none" : "block";
-      }
+      // MENU ITEMS
+      const menuItems = [
+        new MenuCard("../assets/HalwaPuri.png", "Halwa Puri", 13.75),
+        new MenuCard("../assets/Biryani.png", "Chicken Biryani", 12.99),
+        new MenuCard("../assets/ChickenCurry.png", "Chicken Curry", 11.5),
+      ];
 
-      rightBtn.onclick = () => {
-        if (index < slides.length - 1) {
-          index++;
-          updateSlider();
-        }
-      };
-
-      leftBtn.onclick = () => {
-        if (index > 0) {
-          index--;
-          updateSlider();
-        }
-      };
-
-      updateSlider();
+      const menuList = new MenuList(menuItems);
+      document.getElementById("menu").innerHTML = menuList.render();
     </script>
   </body>
 </html>
