@@ -1,0 +1,36 @@
+<html lang="en">
+  <html>
+    <head>
+      <meta http-equiv="Content-Language" content="en" />
+
+      <title>Your Cart</title>
+
+      <link rel="stylesheet" href="../styles/header.css" />
+      <link rel="stylesheet" href="../styles/cart.css" />
+    </head>
+
+    <body>
+      <div id="header"></div>
+
+      <h1 class="cart-title">Your Cart</h1>
+
+      <div id="cart-container"></div>
+
+      <!-- COMPONENTS -->
+      <script src="../components/header.js"></script>
+      <script src="../components/cart.js"></script>
+      <script src="../components/cartPage.js"></script>
+
+      <script>
+        document.getElementById("header").innerHTML = new Header().render();
+
+        const cartPage = new CartPage();
+        document.getElementById("cart-container").innerHTML = cartPage.render();
+
+        // Update cart count in header
+        const cart = new Cart();
+        document.getElementById("cart-count").textContent = cart.getCount();
+      </script>
+    </body>
+  </html>
+</html>

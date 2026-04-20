@@ -11,7 +11,7 @@ class MenuCard {
         <img src="${this.image}" alt="${this.name}" />
         <h3>${this.name}</h3>
         <p>$${this.price}</p>
-        <button>Add</button>
+        <button onclick="addToCart('${this.name}', ${this.price}, '${this.image}')">Add</button>
       </div>
     `;
   }

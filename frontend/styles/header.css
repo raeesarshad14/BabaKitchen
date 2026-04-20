@@ -78,3 +78,22 @@
 .order-btn:hover {
   background: #29b765;
 }
+
+.cart-icon {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.cart-img {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.cart-icon:hover {
+  opacity: 0.7;
+}

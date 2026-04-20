@@ -1,6 +1,8 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
+    <meta http-equiv="Content-Language" content="en" />
+
     <title>Restaurant App</title>
 
     <link rel="stylesheet" href="../styles/header.css" />
@@ -27,7 +29,7 @@
         <!-- SIDEBAR -->
         <div id="sidebar"></div>
 
-        <!-- MENU ITEMS (FIXED) -->
+        <!-- MENU ITEMS -->
         <div id="menu" class="menu-items"></div>
       </div>
     </div>
@@ -38,6 +40,7 @@
     <script src="../components/sidebar.js"></script>
     <script src="../components/menuCard.js"></script>
     <script src="../components/menuList.js"></script>
+    <script src="../components/cart.js"></script>
 
     <script>
       // HEADER
@@ -65,6 +68,30 @@
 
       const menuList = new MenuList(menuItems);
       document.getElementById("menu").innerHTML = menuList.render();
+
+      // GLOBAL CART INSTANCE
+      const cart = new Cart();
+
+      // ADD TO CART FUNCTION
+      function addToCart(name, price, image) {
+        cart.addItem({ name, price, image });
+        updateCartCount();
+      }
+
+      // UPDATE CART COUNT
+      function updateCartCount() {
+        const count = cart.getCount();
+        const cartCountEl = document.getElementById("cart-count");
+
+        if (count === 0) {
+          cartCountEl.textContent = "";
+        } else {
+          cartCountEl.textContent = count;
+        }
+      }
+
+      // INITIAL CART COUNT
+      updateCartCount();
     </script>
   </body>
 </html>
