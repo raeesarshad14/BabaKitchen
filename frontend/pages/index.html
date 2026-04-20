@@ -8,10 +8,12 @@
   </head>
 
   <body>
+    <!-- HEADER -->
     <div id="header"></div>
 
     <h1 class="typewriter">Welcome to BabasKitchen</h1>
 
+    <!-- SLIDER -->
     <div class="slider-wrapper">
       <button class="slide-btn left-btn">&#10094;</button>
 
@@ -24,21 +26,18 @@
       <button class="slide-btn right-btn">&#10095;</button>
     </div>
 
-    <!-- CATEGORY BAR -->
-    <div class="category-bar">
-      <div class="category-item">
-        <img src="../assets/icon-sliders.png" alt="Sliders" />
-        <span>Sliders</span>
+    <!-- BELOW SLIDER: SIDEBAR + MENU -->
+    <div class="menu-section">
+      <!-- LEFT SIDE VERTICAL SIDEBAR (NO ICONS) -->
+      <div class="menu-sidebar">
+        <div class="category-text">Sliders</div>
+        <div class="category-text">Pasta</div>
+        <div class="category-text">Dessert</div>
       </div>
 
-      <div class="category-item">
-        <img src="../assets/icon-pasta.png" alt="Pasta" />
-        <span>Pasta</span>
-      </div>
-
-      <div class="category-item">
-        <img src="../assets/icon-dessert.png" alt="Dessert" />
-        <span>Dessert</span>
+      <!-- RIGHT SIDE MENU ITEMS (EMPTY FOR NOW) -->
+      <div class="menu-items">
+        <!-- Add menu cards later -->
       </div>
     </div>
 
@@ -57,7 +56,6 @@
 
       function updateSlider() {
         slider.style.transform = `translateX(-${index * 100}%)`;
-
         leftBtn.style.display = index === 0 ? "none" : "block";
         rightBtn.style.display = index === slides.length - 1 ? "none" : "block";
       }
