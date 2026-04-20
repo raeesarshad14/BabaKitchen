@@ -1,36 +1,66 @@
+<!doctype html>
 <html lang="en">
-  <html>
-    <head>
-      <meta http-equiv="Content-Language" content="en" />
+  <head>
+    <meta http-equiv="Content-Language" content="en" />
 
-      <title>Your Cart</title>
+    <title>Your Cart</title>
 
-      <link rel="stylesheet" href="../styles/header.css" />
-      <link rel="stylesheet" href="../styles/cart.css" />
-    </head>
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/cart.css" />
+  </head>
 
-    <body>
-      <div id="header"></div>
+  <body>
+    <!-- HEADER -->
+    <div id="header"></div>
 
-      <h1 class="cart-title">Your Cart</h1>
+    <h1 class="cart-title">Your Cart</h1>
 
-      <div id="cart-container"></div>
+    <!-- CART PAGE CONTENT -->
+    <div id="cart-container"></div>
 
-      <!-- COMPONENTS -->
-      <script src="../components/header.js"></script>
-      <script src="../components/cart.js"></script>
-      <script src="../components/cartPage.js"></script>
+    <!-- COMPONENTS -->
+    <script src="../components/header.js"></script>
+    <script src="../components/cart.js"></script>
+    <script src="../components/cartPage.js"></script>
 
-      <script>
-        document.getElementById("header").innerHTML = new Header().render();
+    <script>
+      // Render header
+      document.getElementById("header").innerHTML = new Header().render();
 
-        const cartPage = new CartPage();
-        document.getElementById("cart-container").innerHTML = cartPage.render();
+      // Render cart page
+      const cartPage = new CartPage();
+      document.getElementById("cart-container").innerHTML = cartPage.render();
 
-        // Update cart count in header
+      // Update header cart count
+      updateCartCount();
+
+      // Update quantity (+ / -)
+      function updateQty(name, qty) {
         const cart = new Cart();
-        document.getElementById("cart-count").textContent = cart.getCount();
-      </script>
-    </body>
-  </html>
+        cart.updateQty(name, qty);
+
+        // Re-render cart page
+        const updatedPage = new CartPage();
+        document.getElementById("cart-container").innerHTML =
+          updatedPage.render();
+
+        // Update header count
+        updateCartCount();
+      }
+
+      // Remove item from cart
+      function removeFromCart(name) {
+        const cart = new Cart();
+        cart.removeItem(name);
+
+        // Re-render cart page
+        const updatedPage = new CartPage();
+        document.getElementById("cart-container").innerHTML =
+          updatedPage.render();
+
+        // Update header count
+        updateCartCount();
+      }
+    </script>
+  </body>
 </html>
