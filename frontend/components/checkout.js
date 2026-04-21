@@ -78,7 +78,7 @@ function toggleZelleInfo() {
   box.style.display = method === "zelle" ? "block" : "none";
 }
 
-function placeOrder() {
+async function placeOrder() {
   const name = document.getElementById("name").value.trim();
   const phone = document.getElementById("phone").value.trim();
   const address = document.getElementById("address").value.trim();
@@ -89,21 +89,58 @@ function placeOrder() {
     return;
   }
 
-  if (payment === "zelle") {
-    console.log("Zelle payment selected.");
-  }
-
-  // Clear cart
   const cart = new Cart();
+  const items = cart.items;
+
+  const itemsText = items
+    .map((i) => `${i.name} (x${i.qty}) - $${(i.price * i.qty).toFixed(2)}`)
+    .join("\n");
+
+  const subtotal = cart.getTotal();
+  const tax = subtotal * 0.06;
+  const delivery = subtotal > 0 ? 3.99 : 0;
+  const total = subtotal + tax + delivery;
+
+  // ⭐ SEND EMAIL ⭐
+  const formData = new FormData();
+  formData.append("access_key", "a617f05a-44d7-4412-a3b4-27c0733773f9");
+  formData.append("subject", "New Order Received");
+  formData.append("from_name", name);
+
+  formData.append(
+    "message",
+    `
+New Order Received:
+
+Name: ${name}
+Phone: ${phone}
+Address: ${address}
+Payment Method: ${payment}
+
+Items:
+${itemsText}
+
+Subtotal: $${subtotal.toFixed(2)}
+Tax: $${tax.toFixed(2)}
+Delivery: $${delivery.toFixed(2)}
+Total: $${total.toFixed(2)}
+`,
+  );
+
+  await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    body: formData,
+  });
+
+  // CLEAR CART
   cart.items = [];
   cart.save();
 
-  // Only call if exists
   if (typeof updateCartCount === "function") {
     updateCartCount();
   }
 
-  // Redirect to confirmation page
+  // REDIRECT
   window.location.href = "../pages/confirmation.html";
 }
 
