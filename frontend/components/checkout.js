@@ -57,7 +57,7 @@ class CheckoutPage {
           <div id="zelle-info" class="zelle-box" style="display:none;">
             <p><strong>Zelle Payment Instructions:</strong></p>
             <p>Send payment to:</p>
-            <p><strong> zubiyasolutions@gmail.com</strong></p>
+            <p><strong>zubiyasolutions@gmail.com</strong></p>
             <p>After sending, tap "Place Order".</p>
           </div>
 
@@ -90,9 +90,7 @@ function placeOrder() {
   }
 
   if (payment === "zelle") {
-    alert(
-      "Please make sure you sent the Zelle payment before placing the order.",
-    );
+    console.log("Zelle payment selected.");
   }
 
   // Clear cart
@@ -100,9 +98,15 @@ function placeOrder() {
   cart.items = [];
   cart.save();
 
-  updateCartCount();
+  // Only call if exists
+  if (typeof updateCartCount === "function") {
+    updateCartCount();
+  }
 
-  alert("Order placed successfully!");
-
-  window.location.href = "../pages/index.html";
+  // Redirect to confirmation page
+  window.location.href = "../pages/confirmation.html";
 }
+
+// Make functions global
+window.placeOrder = placeOrder;
+window.toggleZelleInfo = toggleZelleInfo;
