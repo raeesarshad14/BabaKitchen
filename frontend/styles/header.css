@@ -29,7 +29,7 @@
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 40px;
 }
 
 .nav-links a {
@@ -44,7 +44,7 @@
 .header-right {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 40px;
   white-space: nowrap; /* prevents wrapping/cutoff */
 }
 
@@ -96,4 +96,39 @@
 
 .cart-icon:hover {
   opacity: 0.7;
+}
+.header-search {
+  position: relative;
+  margin-left: 75px;
+}
+
+.header-search input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 400px;
+}
+
+.search-results {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;
+  z-index: 9999;
+}
+
+.search-results div {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.search-results div:hover {
+  background: #f0f0f0;
 }

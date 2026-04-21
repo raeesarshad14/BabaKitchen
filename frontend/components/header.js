@@ -11,6 +11,17 @@ class Header {
             <a href="index.html">MENU</a>
             <a href="catering.html">CATERING</a>
             <a href="help.html">HELP</a>
+
+            <!-- ⭐ SEARCH BAR INSIDE HEADER -->
+            <div class="header-search">
+              <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="Search dishes..."
+                autocomplete="off"
+              />
+              <div id="searchResults" class="search-results"></div>
+            </div>
           </nav>
         </div>
 
