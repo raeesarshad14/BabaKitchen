@@ -61,9 +61,34 @@ class CheckoutPage {
             <p>After sending, tap "Place Order".</p>
           </div>
 
-          <button class="place-order-btn" onclick="placeOrder()">
+          <!-- CREDIT / DEBIT CARD UI -->
+          <div id="card-section" class="card-box" style="display:none;">
+
+            <h3>Card Details</h3>
+
+            <input type="text" id="card-name" placeholder="Cardholder Name" />
+
+            <div class="card-input-group">
+              <input type="text" id="card-number" placeholder="Card Number" maxlength="19" />
+              <img id="card-brand" src="" class="card-brand-icon" />
+            </div>
+
+            <div class="card-row">
+              <input type="text" id="card-exp" placeholder="MM/YY" maxlength="5" />
+              <input type="text" id="card-cvv" placeholder="CVV" maxlength="4" />
+            </div>
+
+          </div>
+
+          <button class="place-order-btn" id="placeOrderBtn" onclick="placeOrder()">
             Place Order
           </button>
+
+          <!-- SUCCESS CHECKMARK -->
+          <div id="payment-success" class="success-check" style="display:none;">
+            Payment Successful
+          </div>
+
         </div>
 
       </div>
@@ -73,12 +98,95 @@ class CheckoutPage {
 
 function toggleZelleInfo() {
   const method = document.getElementById("payment").value;
-  const box = document.getElementById("zelle-info");
 
-  box.style.display = method === "zelle" ? "block" : "none";
+  document.getElementById("zelle-info").style.display =
+    method === "zelle" ? "block" : "none";
+
+  document.getElementById("card-section").style.display =
+    method === "card" ? "block" : "none";
+}
+
+// Auto-format card number + detect brand + perfect expiry auto-slash
+document.addEventListener("input", (e) => {
+  // CARD NUMBER FORMATTING
+  if (e.target.id === "card-number") {
+    let value = e.target.value.replace(/\D/g, "");
+    value = value.replace(/(.{4})/g, "$1 ").trim();
+    e.target.value = value;
+
+    detectCardBrand(value.replace(/\s/g, ""));
+  }
+
+  // PERFECT EXPIRY AUTO-SLASH (MM/YY)
+  if (e.target.id === "card-exp") {
+    let v = e.target.value;
+
+    // Allow digits + slash only
+    v = v.replace(/[^\d/]/g, "");
+
+    // If user typed MMYY → auto convert to MM/YY
+    if (/^\d{3,4}$/.test(v.replace("/", ""))) {
+      let digits = v.replace(/\D/g, "");
+      v = digits.slice(0, 2) + "/" + digits.slice(2, 4);
+    }
+
+    // Prevent more than 5 chars
+    if (v.length > 5) {
+      v = v.slice(0, 5);
+    }
+
+    e.target.value = v;
+  }
+});
+
+function detectCardBrand(num) {
+  const brandImg = document.getElementById("card-brand");
+  if (!brandImg) return;
+
+  if (num.startsWith("4")) {
+    brandImg.src = "https://img.icons8.com/color/48/visa.png";
+  } else if (/^5[1-5]/.test(num)) {
+    brandImg.src = "https://img.icons8.com/color/48/mastercard.png";
+  } else if (/^3[47]/.test(num)) {
+    brandImg.src = "https://img.icons8.com/color/48/amex.png";
+  } else {
+    brandImg.src = "";
+  }
+}
+
+// Dummy payment engine (future Stripe/Square hook)
+async function processPayment(cardData) {
+  if (!cardData.name || !cardData.number || !cardData.exp || !cardData.cvv) {
+    alert("Please fill in all card details.");
+    return { success: false };
+  }
+
+  if (cardData.number.length < 13) {
+    alert("Invalid card number.");
+    return { success: false };
+  }
+
+  if (!/^\d{2}\/\d{2}$/.test(cardData.exp)) {
+    alert("Invalid expiry format. Use MM/YY.");
+    return { success: false };
+  }
+
+  if (cardData.cvv.length < 3) {
+    alert("Invalid CVV.");
+    return { success: false };
+  }
+
+  // Simulate gateway delay
+  await new Promise((res) => setTimeout(res, 1200));
+
+  return { success: true };
 }
 
 async function placeOrder() {
+  const btn = document.getElementById("placeOrderBtn");
+  btn.disabled = true;
+  btn.innerText = "Processing...";
+
   const name = document.getElementById("name").value.trim();
   const phone = document.getElementById("phone").value.trim();
   const address = document.getElementById("address").value.trim();
@@ -86,9 +194,38 @@ async function placeOrder() {
 
   if (!name || !phone || !address) {
     alert("Please fill out all fields.");
+    btn.disabled = false;
+    btn.innerText = "Place Order";
     return;
   }
 
+  // CARD PAYMENT FLOW
+  if (payment === "card") {
+    const cardData = {
+      name: document.getElementById("card-name").value.trim(),
+      number: document.getElementById("card-number").value.replace(/\s/g, ""),
+      exp: document.getElementById("card-exp").value.trim(),
+      cvv: document.getElementById("card-cvv").value.trim(),
+    };
+
+    const paymentResult = await processPayment(cardData);
+
+    if (!paymentResult.success) {
+      btn.disabled = false;
+      btn.innerText = "Place Order";
+      return;
+    }
+
+    // Smooth Apple-style success animation
+    await new Promise((res) => setTimeout(res, 300));
+    const successBox = document.getElementById("payment-success");
+    successBox.innerText = "Payment Successful";
+    successBox.style.display = "block";
+
+    await new Promise((res) => setTimeout(res, 1000));
+  }
+
+  // EMAIL + ORDER FLOW
   const cart = new Cart();
   const items = cart.items;
 
@@ -101,7 +238,6 @@ async function placeOrder() {
   const delivery = subtotal > 0 ? 3.99 : 0;
   const total = subtotal + tax + delivery;
 
-  // ⭐ SEND EMAIL ⭐
   const formData = new FormData();
   formData.append("access_key", "a617f05a-44d7-4412-a3b4-27c0733773f9");
   formData.append("subject", "New Order Received");
@@ -132,7 +268,6 @@ Total: $${total.toFixed(2)}
     body: formData,
   });
 
-  // CLEAR CART
   cart.items = [];
   cart.save();
 
@@ -140,10 +275,12 @@ Total: $${total.toFixed(2)}
     updateCartCount();
   }
 
-  // REDIRECT
+  // Smooth redirect
+  btn.innerText = "Order Placed!";
+  await new Promise((res) => setTimeout(res, 800));
+
   window.location.href = "../pages/confirmation.html";
 }
 
-// Make functions global
 window.placeOrder = placeOrder;
 window.toggleZelleInfo = toggleZelleInfo;
