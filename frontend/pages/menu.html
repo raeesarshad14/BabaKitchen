@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Menu</title>
+
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/menu.css" />
+
+    <script src="../components/header.js" defer></script>
+    <script src="../components/menuCard.js" defer></script>
+    <script src="../components/menuListNew.js" defer></script>
+  </head>
+
+  <body>
+    <!-- ⭐ HEADER MUST EXIST -->
+    <div id="header"></div>
+
+    <!-- ⭐ PAGE LAYOUT -->
+    <div class="menu-page">
+      <!-- SIDEBAR -->
+      <div class="menu-sidebar">
+        <div class="category-text">Sliders</div>
+        <div class="category-text">Pasta</div>
+        <div class="category-text">Dessert</div>
+      </div>
+
+      <!-- MENU GRID -->
+      <div id="menu"></div>
+    </div>
+
+    <!-- ⭐ SCRIPT MUST BE OUTSIDE THE LAYOUT -->
+    <script>
+      document.getElementById("header").innerHTML = new Header().render();
+      new MenuList().render(); // ⭐ DO NOT assign this to innerHTML
+    </script>
+  </body>
+</html>

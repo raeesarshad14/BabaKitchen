@@ -1,0 +1,17 @@
+[
+  {
+    "image": "../assets/HalwaPuri.png",
+    "name": "Halwa Puri",
+    "price": 8.99
+  },
+  {
+    "image": "../assets/Biryani.png",
+    "name": "Chicken Biryani",
+    "price": 12.99
+  },
+  {
+    "image": "../assets/ChickenCurry.png",
+    "name": "Chicken Curry",
+    "price": 10.99
+  }
+]

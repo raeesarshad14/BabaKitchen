@@ -1,6 +1,29 @@
+/* --- PAGE LAYOUT: SIDEBAR + MENU --- */
+.menu-page {
+  display: flex;
+  width: 100%;
+  gap: 40px;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+/* --- SIDEBAR --- */
+.menu-sidebar {
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* --- MENU AREA MUST EXPAND --- */
+#menu {
+  flex: 1;
+  min-width: 0; /* ⭐ REQUIRED FOR HORIZONTAL GRID */
+}
+
 /* --- RIGHT SIDE MENU ITEMS GRID --- */
 .menu-items {
-  flex: 1;
+  min-width: 0; /* ⭐ REQUIRED FOR HORIZONTAL GRID */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 25px;

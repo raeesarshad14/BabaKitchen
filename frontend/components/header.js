@@ -8,7 +8,7 @@ class Header {
           </div>
 
           <nav class="nav-links">
-            <a href="menu.html">MENU</a>
+            <a href="index.html">MENU</a>
             <a href="catering.html">CATERING</a>
             <a href="help.html">HELP</a>
           </nav>
