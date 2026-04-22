@@ -12,13 +12,18 @@ class Header {
             <a href="../pages/catering.html">CATERING</a>
             <a href="../pages/contact.html">CONTACT</a>
 
+            <!-- ⭐ SEARCH BAR WITH CLEAR (X) BUTTON -->
             <div class="header-search">
-              <input 
-                type="text" 
-                id="searchInput" 
-                placeholder="Search dishes..."
-                autocomplete="off"
-              />
+              <div class="search-container">
+                <input 
+                  type="text" 
+                  id="searchInput" 
+                  placeholder="Search dishes..."
+                  autocomplete="off"
+                />
+                <span id="clearSearch" class="clear-btn">&times;</span>
+              </div>
+
               <div id="searchResults" class="search-results"></div>
             </div>
           </nav>

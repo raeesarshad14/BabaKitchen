@@ -6,10 +6,27 @@ class Search {
 
     this.input = document.getElementById("searchInput");
     this.resultsBox = document.getElementById("searchResults");
+    this.clearBtn = document.getElementById("clearSearch");
 
     if (!this.input || !this.resultsBox) return;
 
-    this.input.addEventListener("input", () => this.showSuggestions());
+    // Show suggestions when typing
+    this.input.addEventListener("input", () => {
+      this.showSuggestions();
+      this.toggleClearButton();
+    });
+
+    // Clear search when clicking X
+    this.clearBtn.addEventListener("click", () => {
+      this.input.value = "";
+      this.clearBtn.style.display = "none";
+      this.showSuggestions(); // reset results
+    });
+  }
+
+  toggleClearButton() {
+    this.clearBtn.style.display =
+      this.input.value.trim().length > 0 ? "block" : "none";
   }
 
   showSuggestions() {
@@ -21,7 +38,7 @@ class Search {
     // ⭐ If search is empty → show slider again
     if (!query) {
       this.resultsBox.style.display = "none";
-      sliderWrapper.style.display = "block"; // show slider
+      sliderWrapper.style.display = "block";
       this.renderItems(this.menuData);
       return;
     }
@@ -48,6 +65,7 @@ class Search {
       div.addEventListener("click", () => {
         this.input.value = item.name;
         this.resultsBox.style.display = "none";
+        this.toggleClearButton();
         this.renderItems([item]);
       });
 

@@ -132,3 +132,22 @@
 .search-results div:hover {
   background: #f0f0f0;
 }
+.search-container {
+  position: relative;
+  width: 100%;
+}
+
+.clear-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #888;
+  cursor: pointer;
+  display: none; /* hidden until user types */
+}
+
+.clear-btn:hover {
+  color: #000;
+}
