@@ -26,6 +26,7 @@ class Slider {
     const rightBtn = document.querySelector(".right-btn");
 
     let index = 0;
+    let autoSlide;
 
     function updateSlider() {
       slider.style.transform = `translateX(-${index * 100}%)`;
@@ -33,20 +34,33 @@ class Slider {
       rightBtn.style.display = index === slides.length - 1 ? "none" : "block";
     }
 
-    rightBtn.onclick = () => {
-      if (index < slides.length - 1) {
-        index++;
+    function startAutoSlide() {
+      autoSlide = setInterval(() => {
+        index = (index + 1) % slides.length; // loop forward
         updateSlider();
-      }
+      }, 3000); // auto change every 3 seconds
+    }
+
+    function stopAutoSlide() {
+      clearInterval(autoSlide);
+    }
+
+    // Manual controls
+    rightBtn.onclick = () => {
+      stopAutoSlide();
+      index = (index + 1) % slides.length;
+      updateSlider();
+      startAutoSlide();
     };
 
     leftBtn.onclick = () => {
-      if (index > 0) {
-        index--;
-        updateSlider();
-      }
+      stopAutoSlide();
+      index = (index - 1 + slides.length) % slides.length;
+      updateSlider();
+      startAutoSlide();
     };
 
     updateSlider();
+    startAutoSlide();
   }
 }
