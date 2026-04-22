@@ -12,3 +12,8 @@
   margin-top: 40px;
   padding: 20px 0;
 }
+
+/* ---Whenever the page scrolls to an anchor (like #menuSection), do it smoothly, not instantly.--- */
+html {
+  scroll-behavior: smooth;
+}

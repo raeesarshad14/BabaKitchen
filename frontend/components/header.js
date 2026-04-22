@@ -10,7 +10,7 @@ class Header {
           <nav class="nav-links">
             <a href="index.html">MENU</a>
             <a href="catering.html">CATERING</a>
-            <a href="help.html">HELP</a>
+            <a href="help.html">CONTACT</a>
 
             <!-- ⭐ SEARCH BAR INSIDE HEADER -->
             <div class="header-search">
@@ -27,7 +27,7 @@ class Header {
 
         <div class="header-right">
           <a class="signin" href="signin.html">SIGN IN</a>
-          <a class="order-btn" href="order.html">ORDER NOW</a>
+          <a class="order-btn" href="index.html#menuSection">ORDER NOW</a>
 
           <!-- CART ICON -->
           <a class="cart-icon" href="cart.html">
