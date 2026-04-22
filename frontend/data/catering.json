@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Chicken Over Rice Package",
+    "price": 150,
+    "items": [
+      "1 tray of rice",
+      "1 tray of chicken",
+      "1 tray of mixed salad",
+      "White sauce + hot sauce"
+    ]
+  },
+  {
+    "name": "Lamb Over Rice Package",
+    "price": 150,
+    "items": [
+      "1 tray of rice",
+      "1 tray of lamb",
+      "1 tray of mixed salad",
+      "White sauce + hot sauce"
+    ]
+  },
+  {
+    "name": "Combo Over Rice Package",
+    "price": 160,
+    "items": [
+      "1 tray of rice",
+      "1 tray of chicken",
+      "1 tray of lamb",
+      "1 tray of mixed salad",
+      "White sauce + hot sauce"
+    ]
+  }
+]

@@ -1,0 +1,84 @@
+/* PAGE WRAPPER */
+.catering-page {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 40px;
+}
+
+/* TITLE */
+.catering-title {
+  font-size: 34px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 700;
+  color: #222;
+}
+
+/* GRID LAYOUT */
+.catering-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+/* CARD STYLE */
+.catering-card {
+  background: #f7f9fa; /* ⭐ modern card background */
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* HOVER LIFT EFFECT */
+.catering-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* PACKAGE NAME */
+.catering-card h3 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #111;
+}
+
+/* PRICE */
+.price {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2ecc71;
+  margin-bottom: 14px;
+}
+
+/* ITEM LIST */
+.items-list {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.items-list li {
+  margin-bottom: 8px;
+  font-size: 16px; /* ⭐ bigger text */
+  color: #333;
+  line-height: 1.4;
+}
+.catering-title-bar {
+  background: #2ecc71; /* same green as ORDER NOW */
+  padding: 18px 0;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.catering-title-bar h1 {
+  color: white;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+}

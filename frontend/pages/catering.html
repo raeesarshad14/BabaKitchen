@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Language" content="en" />
+    <title>Catering • BabasKitchen</title>
+
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/catering.css" />
+  </head>
+
+  <body>
+    <div id="header"></div>
+
+    <main class="catering-page">
+      <div class="catering-title-bar">
+        <h1>Catering Packages</h1>
+      </div>
+
+      <div id="catering-container" class="catering-container"></div>
+    </main>
+
+    <script src="../components/header.js"></script>
+    <script src="../components/cateringCard.js"></script>
+
+    <script>
+      document.getElementById("header").innerHTML = new Header().render();
+
+      async function loadCatering() {
+        const response = await fetch("../data/catering.json");
+        const data = await response.json();
+
+        const container = document.getElementById("catering-container");
+
+        container.innerHTML = data
+          .map((pkg) =>
+            new CateringCard(pkg.name, pkg.price, pkg.items).render(),
+          )
+          .join("");
+      }
+
+      loadCatering();
+    </script>
+  </body>
+</html>
