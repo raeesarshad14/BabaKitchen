@@ -8,11 +8,10 @@ class Header {
           </div>
 
           <nav class="nav-links">
-            <a href="index.html">MENU</a>
-            <a href="catering.html">CATERING</a>
-            <a href="help.html">CONTACT</a>
+            <a href="../pages/index.html">MENU</a>
+            <a href="../pages/catering.html">CATERING</a>
+            <a href="../pages/contact.html">CONTACT</a>
 
-            <!-- ⭐ SEARCH BAR INSIDE HEADER -->
             <div class="header-search">
               <input 
                 type="text" 
@@ -26,11 +25,13 @@ class Header {
         </div>
 
         <div class="header-right">
-          <a class="signin" href="signin.html">SIGN IN</a>
-          <a class="order-btn" href="index.html#menuSection">ORDER NOW</a>
+          <a class="signin" href="../pages/signin.html">SIGN IN</a>
 
-          <!-- CART ICON -->
-          <a class="cart-icon" href="cart.html">
+          <a class="order-btn" href="../pages/index.html#menuSection">
+            ORDER NOW
+          </a>
+
+          <a class="cart-icon" href="../pages/cart.html">
             <img src="../assets/cart.png" class="cart-img" alt="Cart">
             <span id="cart-count"></span>
           </a>

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Language" content="en" />
+    <title>Contact • BabasKitchen</title>
+
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/contact.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <div id="header"></div>
+
+    <!-- MAIN CONTACT WRAPPER -->
+    <main class="contact-page">
+      <section class="contact-hero">
+        <h1>Contact BabasKitchen</h1>
+        <p>
+          Questions, catering inquiries, or feedback? We’d love to hear from
+          you.
+        </p>
+      </section>
+
+      <section class="contact-content">
+        <!-- LEFT: CONTACT FORM -->
+        <div class="contact-form-card">
+          <h2>Send us a message</h2>
+          <p class="contact-subtext">
+            Fill out the form and we’ll get back to you as soon as possible.
+          </p>
+
+          <!-- ⭐ WEB3FORMS INTEGRATED FORM -->
+          <form
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            class="contact-form"
+          >
+            <!-- REQUIRED: YOUR ACCESS KEY -->
+            <input
+              type="hidden"
+              name="access_key"
+              value="a617f05a-44d7-4412-a3b4-27c0733773f9"
+            />
+
+            <!-- OPTIONAL: REDIRECT AFTER SUCCESS -->
+            <input
+              type="hidden"
+              name="redirect"
+              value="https://web3forms.com/success"
+            />
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="John Doe"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="john@example.com"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                placeholder="+1 (555) 123‑4567"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="topic">Topic</label>
+              <select id="topic" name="topic">
+                <option value="General Question">General Question</option>
+                <option value="Order Support">Order Support</option>
+                <option value="Catering Inquiry">Catering Inquiry</option>
+                <option value="Feedback">Feedback</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Write your message here..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="contact-submit-btn">
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- RIGHT: INFO + HOURS -->
+        <aside class="contact-info-card">
+          <div class="info-block">
+            <h3>Location</h3>
+            <p>
+              13026 Lashmere ct<br />
+              Woodbridge, VA 22192<br />
+              United States
+            </p>
+          </div>
+
+          <div class="info-block">
+            <h3>Contact</h3>
+            <p>
+              Phone: <a href="tel:+15551234567">+1 (555) 123‑4567</a><br />
+              Email:
+              <a href="mailto:hello@babaskitchen.com">hello@babaskitchen.com</a>
+            </p>
+          </div>
+
+          <div class="info-block">
+            <h3>Hours</h3>
+            <p>
+              Mon–Thu: 11:00 AM – 9:00 PM<br />
+              Fri–Sat: 11:00 AM – 10:30 PM<br />
+              Sun: 12:00 PM – 8:00 PM
+            </p>
+          </div>
+
+          <div class="info-block">
+            <h3>Follow us</h3>
+            <p class="social-links">
+              <a href="#">Instagram</a> · <a href="#">Facebook</a> ·
+              <a href="#">TikTok</a>
+            </p>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <!-- COMPONENTS -->
+    <script src="../components/header.js"></script>
+    <script>
+      document.getElementById("header").innerHTML = new Header().render();
+    </script>
+  </body>
+</html>
