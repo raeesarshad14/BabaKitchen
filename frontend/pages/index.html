@@ -26,17 +26,6 @@
       <div id="slider"></div>
     </div>
 
-    <!-- PAGE CONTAINER -->
-    <div id="menuSection" class="page-container">
-      <div class="menu-section">
-        <!-- SIDEBAR -->
-        <div id="sidebar"></div>
-
-        <!-- MENU ITEMS -->
-        <div id="menu" class="menu-items"></div>
-      </div>
-    </div>
-
     <!-- COMPONENTS -->
     <script src="../components/header.js"></script>
     <script src="../components/slider.js"></script>
@@ -52,46 +41,13 @@
 
       // SLIDER
       const slider = new Slider([
+        "../assets/BabasKitchen Statement.png",
         "../assets/Biryani.png",
         "../assets/ChickenCurry.png",
         "../assets/HalwaPuri.png",
       ]);
       document.getElementById("slider").innerHTML = slider.render();
       slider.init();
-
-      // SIDEBAR
-      const sidebar = new Sidebar(["Sliders", "Pasta", "Dessert"]);
-      document.getElementById("sidebar").innerHTML = sidebar.render();
-
-      // MENU ITEMS
-      // MENU ITEMS FROM JSON + SEARCH
-      async function loadMenu() {
-        const response = await fetch("../data/menu.json");
-        const menuData = await response.json();
-
-        const menuEl = document.getElementById("menu");
-
-        function renderItems(list) {
-          if (!list || list.length === 0) {
-            menuEl.innerHTML = "<p>No items found.</p>";
-            return;
-          }
-
-          menuEl.innerHTML = list
-            .map((item) =>
-              new MenuCard(item.image, item.name, item.price).render(),
-            )
-            .join("");
-        }
-
-        // initial full render
-        renderItems(menuData);
-
-        // hook up search
-        new Search(menuData, renderItems);
-      }
-
-      loadMenu();
 
       // GLOBAL CART INSTANCE
       const cart = new Cart();

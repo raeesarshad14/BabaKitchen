@@ -38,7 +38,7 @@ class Slider {
       autoSlide = setInterval(() => {
         index = (index + 1) % slides.length; // loop forward
         updateSlider();
-      }, 3000); // auto change every 3 seconds
+      }, 7000); // auto change every 7 seconds
     }
 
     function stopAutoSlide() {
