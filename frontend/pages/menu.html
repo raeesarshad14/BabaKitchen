@@ -28,7 +28,7 @@
       <!-- SIDEBAR -->
       <div id="menu-sidebar"></div>
 
-      <!-- MENU GRID -->
+      <!-- MENU CONTENT -->
       <div id="menu"></div>
     </div>
 
@@ -39,29 +39,29 @@
     <script src="../search/search.js"></script>
 
     <!-- MENU CORE -->
-    <script src="../menu/menu.js"></script>
     <script src="../menu/menuCard.js"></script>
     <script src="../menu/menuList.js"></script>
     <script src="../menu/sidebar.js"></script>
     <script src="../menu/categories.js"></script>
-
-    <!-- CATEGORY FILES -->
-    <script src="../menu/categories/wings/wings.js"></script>
-    <script src="../menu/categories/wings/wingsModal.js"></script>
 
     <!-- CART -->
     <script src="../cart/cart.js"></script>
     <script src="../cart/cartDrawer.js"></script>
 
     <script>
-      // HEADER
+      /* ---------------- HEADER ---------------- */
       document.getElementById("header").innerHTML = new Header().render();
 
-      // INITIALIZE MENU
+      /* ---------------- SIDEBAR ---------------- */
+      const sidebar = new Sidebar(categories);
+      document.getElementById("menu-sidebar").innerHTML = sidebar.render();
+      sidebar.init();
+
+      /* ---------------- MENU SECTIONS ---------------- */
       const menuList = new MenuList();
       menuList.render();
 
-      // INITIAL CART COUNT
+      /* ---------------- CART COUNT ---------------- */
       const cart = new Cart();
       cart.updateCartCount();
     </script>

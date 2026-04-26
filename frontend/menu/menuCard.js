@@ -1,6 +1,5 @@
 class MenuCard {
-  constructor(image, name, price) {
-    this.image = image;
+  constructor(name, price) {
     this.name = name;
     this.price = price;
   }
@@ -8,10 +7,16 @@ class MenuCard {
   render() {
     return `
       <div class="menu-card">
-        <img src="${this.image}" alt="${this.name}" />
-        <h3>${this.name}</h3>
-        <p>$${this.price}</p>
-        <button onclick="addToCart('${this.name}', ${this.price}, '${this.image}')">Add</button>
+
+        <div class="menu-card-content">
+          <h3>${this.name}</h3>
+
+          <div class="menu-card-bottom">
+            <span class="menu-price">$${this.price}</span>
+            <button>Add</button>
+          </div>
+        </div>
+
       </div>
     `;
   }

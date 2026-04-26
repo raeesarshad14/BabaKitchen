@@ -1,69 +1,127 @@
 /* --- PAGE LAYOUT: SIDEBAR + MENU --- */
 .menu-page {
   display: flex;
-  width: 100%;
-  gap: 40px;
   align-items: flex-start;
-  padding: 20px;
+  gap: 40px;
+  padding: 40px;
+  box-sizing: border-box;
 }
 
 /* --- SIDEBAR --- */
 .menu-sidebar {
-  width: 140px;
+  width: 160px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
+  position: sticky;
+  top: 200px;
 }
 
-/* --- MENU AREA MUST EXPAND --- */
+.category-text {
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.category-text:hover {
+  color: #2e7d32;
+  transform: translateX(5px);
+}
+
+/* --- MENU AREA --- */
 #menu {
   flex: 1;
-  min-width: 0; /* ⭐ REQUIRED FOR HORIZONTAL GRID */
+  min-width: 0;
 }
 
-/* --- RIGHT SIDE MENU ITEMS GRID --- */
-.menu-items {
-  min-width: 0; /* ⭐ REQUIRED FOR HORIZONTAL GRID */
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 25px;
+/* --- SECTION WRAPPER --- */
+.menu-section {
+  padding: 20px 0 40px 0;
+  margin-top: -20px;
+  width: 100%;
 }
 
-/* --- MENU CARD STYLE --- */
-.menu-card {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 15px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+/* --- SECTION TITLE --- */
+.menu-section-title {
   text-align: center;
-  transition: transform 0.2s ease;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  margin-top: -15px; /* moves title up */
+  padding-bottom: 0; /* remove border spacing */
+}
+
+.menu-section-subtitle {
+  text-align: center;
+  font-size: 15px;
+  color: #666;
+  display: block;
+  margin-bottom: 25px;
+  margin-top: 4px;
+}
+
+/* --- GRID FOR MENU CARDS --- */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 25px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* --- MODERN RESTAURANT CARD --- */
+.menu-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #fff;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .menu-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
 .menu-card img {
-  width: 100%;
-  height: 180px;
+  width: 110px;
+  height: 110px;
+  border-radius: 12px;
   object-fit: cover;
-  border-radius: 10px;
 }
 
-.menu-card h3 {
-  margin: 12px 0 6px;
+/* --- TEXT AREA --- */
+.menu-card-content {
+  flex: 1;
+}
+
+.menu-card-content h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+}
+
+.menu-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-price {
   font-size: 18px;
   font-weight: 700;
+  color: #2e7d32;
 }
 
-.menu-card p {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
+/* --- BUTTON --- */
 .menu-card button {
-  padding: 10px 15px;
+  padding: 8px 14px;
   background: #2e7d32;
   color: white;
   border: none;
@@ -75,4 +133,12 @@
 
 .menu-card button:hover {
   background: #256628;
+}
+
+.menu-section-container {
+  background: #f8f9fa;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  margin-bottom: 10px;
 }
