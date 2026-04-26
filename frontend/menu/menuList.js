@@ -12,7 +12,7 @@ class MenuList {
           <h2 class="menu-section-title">
             Smash Burgers & Bun Palaster
             <span class="menu-section-subtitle">
-              (Each order includes chips + soda. Minimum 12.)
+              (Each order includes chips and a soda. Minimum order of 12 required)
             </span>
           </h2>
 
@@ -34,7 +34,7 @@ class MenuList {
           <h2 class="menu-section-title">
             Wraps
             <span class="menu-section-subtitle">
-              (Minimum Order Of 12 Required - does not include chips or soda)
+              (Minimum order Of 12 required - does not include chips or soda)
             </span>
           </h2>
 
@@ -55,7 +55,7 @@ class MenuList {
       <h2 class="menu-section-title">
         Sandwich’s
         <span class="menu-section-subtitle">
-          (Minimum Order Of 12 Required - does not include chips or soda)
+          (Minimum order Of 12 required - does not include chips or soda)
         </span>
       </h2>
 

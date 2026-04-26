@@ -13,7 +13,9 @@ class MenuCard {
 
           <div class="menu-card-bottom">
             <span class="menu-price">$${this.price}</span>
-            <button>Add</button>
+            <button class="open-modal-btn" data-name="${this.name}" data-price="${this.price}">
+              Add
+            </button>
           </div>
         </div>
 

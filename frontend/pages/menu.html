@@ -32,6 +32,27 @@
       <div id="menu"></div>
     </div>
 
+    <!-- ⭐ MODAL POPUP FOR ADD BUTTON ⭐ -->
+    <div id="menu-modal" class="menu-modal hidden">
+      <div class="menu-modal-content">
+        <h2 id="modal-item-name"></h2>
+
+        <div class="modal-qty-row">
+          <button id="qty-minus" class="qty-btn">−</button>
+          <span id="qty-value">12</span>
+          <button id="qty-plus" class="qty-btn">+</button>
+        </div>
+
+        <div class="modal-price-row">
+          <span>Total:</span>
+          <span id="modal-total-price">$0</span>
+        </div>
+
+        <button id="modal-add-btn" class="modal-add-btn">Add to Cart</button>
+        <button id="modal-close" class="modal-close-btn">Close</button>
+      </div>
+    </div>
+
     <!-- HEADER -->
     <script src="../header/header.js"></script>
 
@@ -47,6 +68,49 @@
     <!-- CART -->
     <script src="../cart/cart.js"></script>
     <script src="../cart/cartDrawer.js"></script>
+
+    <!-- ⭐ MODAL LOGIC ⭐ -->
+    <script>
+      document.addEventListener("click", function (e) {
+        if (e.target.classList.contains("open-modal-btn")) {
+          const name = e.target.dataset.name;
+          const price = Number(e.target.dataset.price);
+          openMenuModal(name, price);
+        }
+      });
+
+      function openMenuModal(name, price) {
+        const modal = document.getElementById("menu-modal");
+        const qtyValue = document.getElementById("qty-value");
+        const totalPrice = document.getElementById("modal-total-price");
+
+        document.getElementById("modal-item-name").textContent = name;
+
+        let qty = 12; // minimum order
+        qtyValue.textContent = qty;
+        totalPrice.textContent = "$" + qty * price;
+
+        modal.classList.remove("hidden");
+
+        document.getElementById("qty-plus").onclick = () => {
+          qty++;
+          qtyValue.textContent = qty;
+          totalPrice.textContent = "$" + qty * price;
+        };
+
+        document.getElementById("qty-minus").onclick = () => {
+          if (qty > 12) {
+            qty--;
+            qtyValue.textContent = qty;
+            totalPrice.textContent = "$" + qty * price;
+          }
+        };
+
+        document.getElementById("modal-close").onclick = () => {
+          modal.classList.add("hidden");
+        };
+      }
+    </script>
 
     <script>
       /* ---------------- HEADER ---------------- */
