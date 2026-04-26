@@ -28,24 +28,21 @@ class Slider {
     let index = 0;
     let autoSlide;
 
-    function updateSlider() {
+    const updateSlider = () => {
       slider.style.transform = `translateX(-${index * 100}%)`;
       leftBtn.style.display = index === 0 ? "none" : "block";
       rightBtn.style.display = index === slides.length - 1 ? "none" : "block";
-    }
+    };
 
-    function startAutoSlide() {
+    const startAutoSlide = () => {
       autoSlide = setInterval(() => {
-        index = (index + 1) % slides.length; // loop forward
+        index = (index + 1) % slides.length;
         updateSlider();
-      }, 7000); // auto change every 7 seconds
-    }
+      }, 7000);
+    };
 
-    function stopAutoSlide() {
-      clearInterval(autoSlide);
-    }
+    const stopAutoSlide = () => clearInterval(autoSlide);
 
-    // Manual controls
     rightBtn.onclick = () => {
       stopAutoSlide();
       index = (index + 1) % slides.length;

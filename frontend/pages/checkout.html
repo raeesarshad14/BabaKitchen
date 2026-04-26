@@ -2,17 +2,24 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Language" content="en" />
-    <title>Checkout</title>
+    <meta charset="UTF-8" />
+    <title>Checkout • BabasKitchen</title>
 
-    <link rel="stylesheet" href="../styles/header.css" />
-    <link rel="stylesheet" href="../styles/checkout.css" />
+    <!-- GLOBAL STYLES -->
+    <link rel="stylesheet" href="../styles/main.css" />
+
+    <!-- HEADER STYLE -->
+    <link rel="stylesheet" href="../header/header.css" />
+
+    <!-- CHECKOUT STYLE -->
+    <link rel="stylesheet" href="../cart/checkout.css" />
   </head>
 
   <body>
     <!-- HEADER -->
     <div id="header"></div>
 
-    <!-- PAGE WRAPPER FOR CLEAN ALIGNMENT -->
+    <!-- PAGE WRAPPER -->
     <div class="checkout-page-wrapper">
       <h1 class="checkout-title">Checkout</h1>
 
@@ -20,11 +27,15 @@
       <div id="checkout-container"></div>
     </div>
 
-    <!-- COMPONENTS (CORRECT ORDER) -->
-    <script src="../components/cart.js"></script>
-    <script src="../components/checkout.js"></script>
-    <script src="../components/header.js"></script>
-    <script src="../app.js"></script>
+    <!-- HEADER -->
+    <script src="../header/header.js"></script>
+
+    <!-- CART -->
+    <script src="../cart/cart.js"></script>
+    <script src="../cart/cartDrawer.js"></script>
+
+    <!-- CHECKOUT LOGIC -->
+    <script src="../cart/checkout.js"></script>
 
     <script>
       // Render header
@@ -35,8 +46,9 @@
       document.getElementById("checkout-container").innerHTML =
         checkoutPage.render();
 
-      // Update cart count in header
-      updateCartCount();
+      // Update cart count
+      const cart = new Cart();
+      cart.updateCartCount();
     </script>
   </body>
 </html>

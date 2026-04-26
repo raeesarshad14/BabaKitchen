@@ -2,13 +2,21 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Language" content="en" />
+    <meta charset="UTF-8" />
     <title>Catering • BabasKitchen</title>
 
-    <link rel="stylesheet" href="../styles/header.css" />
-    <link rel="stylesheet" href="../styles/catering.css" />
+    <!-- GLOBAL STYLES -->
+    <link rel="stylesheet" href="../styles/main.css" />
+
+    <!-- HEADER STYLE -->
+    <link rel="stylesheet" href="../header/header.css" />
+
+    <!-- CATERING PAGE STYLE -->
+    <link rel="stylesheet" href="../catering/catering.css" />
   </head>
 
   <body>
+    <!-- HEADER -->
     <div id="header"></div>
 
     <main class="catering-page">
@@ -19,12 +27,17 @@
       <div id="catering-container" class="catering-container"></div>
     </main>
 
-    <script src="../components/header.js"></script>
-    <script src="../components/cateringCard.js"></script>
+    <!-- HEADER SCRIPT -->
+    <script src="../header/header.js"></script>
+
+    <!-- CATERING CARD COMPONENT -->
+    <script src="../catering/cateringCard.js"></script>
 
     <script>
+      // Render header
       document.getElementById("header").innerHTML = new Header().render();
 
+      // Load catering packages
       async function loadCatering() {
         const response = await fetch("../data/catering.json");
         const data = await response.json();

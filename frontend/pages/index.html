@@ -2,15 +2,17 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Language" content="en" />
-
+    <meta charset="UTF-8" />
     <title>Restaurant App</title>
 
-    <link rel="stylesheet" href="../styles/header.css" />
+    <!-- GLOBAL STYLES -->
     <link rel="stylesheet" href="../styles/animations.css" />
-    <link rel="stylesheet" href="../styles/slider.css" />
     <link rel="stylesheet" href="../styles/layout.css" />
-    <link rel="stylesheet" href="../styles/sidebar.css" />
-    <link rel="stylesheet" href="../styles/menu.css" />
+    <link rel="stylesheet" href="../styles/main.css" />
+
+    <!-- HEADER + SLIDER STYLES -->
+    <link rel="stylesheet" href="../header/header.css" />
+    <link rel="stylesheet" href="../slider/slider.css" />
   </head>
 
   <body>
@@ -21,19 +23,20 @@
     <h1 class="typewriter">Welcome to BabasKitchen</h1>
 
     <!-- SLIDER -->
-    <!-- SLIDER -->
     <div id="sliderWrapper">
       <div id="slider"></div>
     </div>
 
-    <!-- COMPONENTS -->
-    <script src="../components/header.js"></script>
-    <script src="../components/slider.js"></script>
-    <script src="../components/sidebar.js"></script>
-    <script src="../components/menuCard.js"></script>
-    <script src="../components/menuList.js"></script>
-    <script src="../components/search.js"></script>
-    <script src="../components/cart.js"></script>
+    <!-- SCRIPTS -->
+    <!-- Header -->
+    <script src="../header/header.js"></script>
+
+    <!-- Slider -->
+    <script src="../slider/slider.js"></script>
+
+    <!-- Cart (for cart count + drawer) -->
+    <script src="../cart/cart.js"></script>
+    <script src="../cart/cartDrawer.js"></script>
 
     <script>
       // HEADER
@@ -52,25 +55,13 @@
       // GLOBAL CART INSTANCE
       const cart = new Cart();
 
-      // ADD TO CART FUNCTION
-      function addToCart(name, price, image) {
-        cart.addItem({ name, price, image });
-        updateCartCount();
-      }
-
       // UPDATE CART COUNT
       function updateCartCount() {
         const count = cart.getCount();
         const cartCountEl = document.getElementById("cart-count");
-
-        if (count === 0) {
-          cartCountEl.textContent = "";
-        } else {
-          cartCountEl.textContent = count;
-        }
+        cartCountEl.textContent = count === 0 ? "" : count;
       }
 
-      // INITIAL CART COUNT
       updateCartCount();
     </script>
   </body>

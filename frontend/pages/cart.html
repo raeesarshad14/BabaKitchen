@@ -2,11 +2,17 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Language" content="en" />
+    <meta charset="UTF-8" />
+    <title>Your Order • BabasKitchen</title>
 
-    <title>Your Order</title>
+    <!-- GLOBAL STYLES -->
+    <link rel="stylesheet" href="../styles/main.css" />
 
-    <link rel="stylesheet" href="../styles/header.css" />
-    <link rel="stylesheet" href="../styles/cart.css" />
+    <!-- HEADER STYLE -->
+    <link rel="stylesheet" href="../header/header.css" />
+
+    <!-- CART PAGE STYLE -->
+    <link rel="stylesheet" href="../cart/cart.css" />
   </head>
 
   <body>
@@ -18,48 +24,50 @@
     <!-- CART PAGE CONTENT -->
     <div id="cart-container"></div>
 
-    <!-- COMPONENTS -->
-    <script src="../components/header.js"></script>
-    <script src="../components/cart.js"></script>
-    <script src="../components/cartPage.js"></script>
+    <!-- HEADER SCRIPT -->
+    <script src="../header/header.js"></script>
+
+    <!-- CART SCRIPTS -->
+    <script src="../cart/cart.js"></script>
+    <script src="../cart/cartDrawer.js"></script>
+    <script src="../cart/cartPage.js"></script>
 
     <script>
       // Render header
       document.getElementById("header").innerHTML = new Header().render();
+
+      // Cart instance
+      const cart = new Cart();
 
       // Render cart page
       const cartPage = new CartPage();
       document.getElementById("cart-container").innerHTML = cartPage.render();
 
       // Update header cart count
-      updateCartCount();
+      cart.updateCartCount();
 
       // Update quantity (+ / -)
       function updateQty(name, qty) {
-        const cart = new Cart();
         cart.updateQty(name, qty);
 
         // Re-render cart page
-        const updatedPage = new CartPage();
         document.getElementById("cart-container").innerHTML =
-          updatedPage.render();
+          new CartPage().render();
 
         // Update header count
-        updateCartCount();
+        cart.updateCartCount();
       }
 
       // Remove item from cart
       function removeFromCart(name) {
-        const cart = new Cart();
         cart.removeItem(name);
 
         // Re-render cart page
-        const updatedPage = new CartPage();
         document.getElementById("cart-container").innerHTML =
-          updatedPage.render();
+          new CartPage().render();
 
         // Update header count
-        updateCartCount();
+        cart.updateCartCount();
       }
     </script>
   </body>

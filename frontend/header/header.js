@@ -9,13 +9,11 @@ class Header {
             </a>
           </div>
 
-
           <nav class="nav-links">
-            <a href="../pages/index.html">MENU</a>
+            <a href="../pages/menu.html">MENU</a>
             <a href="../pages/catering.html">CATERING</a>
             <a href="../pages/contact.html">CONTACT</a>
 
-            <!-- ⭐ SEARCH BAR WITH CLEAR (X) BUTTON -->
             <div class="header-search">
               <div class="search-container">
                 <input 
@@ -35,7 +33,7 @@ class Header {
         <div class="header-right">
           <a class="signin" href="../pages/signin.html">SIGN IN</a>
 
-          <a class="order-btn" href="../pages/index.html#menuSection">
+          <a class="order-btn" href="../pages/menu.html">
             ORDER NOW
           </a>
 

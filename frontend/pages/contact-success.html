@@ -2,10 +2,17 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Language" content="en" />
+    <meta charset="UTF-8" />
     <title>Message Sent • BabasKitchen</title>
 
-    <link rel="stylesheet" href="../styles/header.css" />
-    <link rel="stylesheet" href="../styles/contact.css" />
+    <!-- GLOBAL STYLES -->
+    <link rel="stylesheet" href="../styles/main.css" />
+
+    <!-- HEADER STYLE -->
+    <link rel="stylesheet" href="../header/header.css" />
+
+    <!-- CONTACT SUCCESS PAGE STYLE -->
+    <link rel="stylesheet" href="../contact/contact-success.css" />
 
     <style>
       body {
@@ -23,12 +30,6 @@
         text-align: center;
         box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
         border: 1px solid #e5e5e5;
-      }
-
-      .success-icon {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 20px;
       }
 
       .success-title {
@@ -79,8 +80,8 @@
       <a href="../pages/index.html" class="success-btn">Back to Home</a>
     </div>
 
-    <!-- COMPONENTS -->
-    <script src="../components/header.js"></script>
+    <!-- HEADER SCRIPT -->
+    <script src="../header/header.js"></script>
     <script>
       document.getElementById("header").innerHTML = new Header().render();
     </script>

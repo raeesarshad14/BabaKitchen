@@ -1,17 +1,35 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Order Confirmed</title>
-    <link rel="stylesheet" href="../styles/checkout.css" />
+    <meta charset="UTF-8" />
+    <title>Order Confirmed • BabasKitchen</title>
+
+    <!-- GLOBAL STYLES -->
+    <link rel="stylesheet" href="../styles/main.css" />
+
+    <!-- HEADER STYLE -->
+    <link rel="stylesheet" href="../header/header.css" />
+
+    <!-- CHECKOUT / CONFIRMATION STYLE -->
+    <link rel="stylesheet" href="../cart/checkout.css" />
   </head>
 
   <body>
+    <!-- HEADER -->
+    <div id="header"></div>
+
     <div class="confirmation-wrapper">
       <h1>🎉 Order Confirmed!</h1>
       <p>Thank you for your order.</p>
       <p>You will receive a confirmation email shortly.</p>
 
-      <a href="index.html" class="back-home-btn">Back to Home</a>
+      <a href="../pages/index.html" class="back-home-btn">Back to Home</a>
     </div>
+
+    <!-- HEADER SCRIPT -->
+    <script src="../header/header.js"></script>
+    <script>
+      document.getElementById("header").innerHTML = new Header().render();
+    </script>
   </body>
 </html>

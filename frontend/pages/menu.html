@@ -2,37 +2,68 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="en" />
     <title>Menu</title>
 
+    <!-- GLOBAL STYLES -->
     <link rel="stylesheet" href="../styles/main.css" />
-    <link rel="stylesheet" href="../styles/menu.css" />
 
-    <script src="../components/header.js" defer></script>
-    <script src="../components/menuCard.js" defer></script>
-    <script src="../components/menuListNew.js" defer></script>
+    <!-- MENU STYLES -->
+    <link rel="stylesheet" href="../menu/menu.css" />
+    <link rel="stylesheet" href="../menu/sidebar.css" />
+
+    <!-- HEADER STYLE -->
+    <link rel="stylesheet" href="../header/header.css" />
+
+    <!-- SEARCH STYLE -->
+    <link rel="stylesheet" href="../search/search.css" />
   </head>
 
   <body>
-    <!-- ⭐ HEADER MUST EXIST -->
+    <!-- HEADER -->
     <div id="header"></div>
 
-    <!-- ⭐ PAGE LAYOUT -->
+    <!-- MENU PAGE LAYOUT -->
     <div class="menu-page">
       <!-- SIDEBAR -->
-      <div class="menu-sidebar">
-        <div class="category-text">Sliders</div>
-        <div class="category-text">Pasta</div>
-        <div class="category-text">Dessert</div>
-      </div>
+      <div id="menu-sidebar"></div>
 
       <!-- MENU GRID -->
       <div id="menu"></div>
     </div>
 
-    <!-- ⭐ SCRIPT MUST BE OUTSIDE THE LAYOUT -->
+    <!-- HEADER -->
+    <script src="../header/header.js"></script>
+
+    <!-- SEARCH -->
+    <script src="../search/search.js"></script>
+
+    <!-- MENU CORE -->
+    <script src="../menu/menu.js"></script>
+    <script src="../menu/menuCard.js"></script>
+    <script src="../menu/menuList.js"></script>
+    <script src="../menu/sidebar.js"></script>
+    <script src="../menu/categories.js"></script>
+
+    <!-- CATEGORY FILES -->
+    <script src="../menu/categories/wings/wings.js"></script>
+    <script src="../menu/categories/wings/wingsModal.js"></script>
+
+    <!-- CART -->
+    <script src="../cart/cart.js"></script>
+    <script src="../cart/cartDrawer.js"></script>
+
     <script>
+      // HEADER
       document.getElementById("header").innerHTML = new Header().render();
-      new MenuList().render(); // ⭐ DO NOT assign this to innerHTML
+
+      // INITIALIZE MENU
+      const menuList = new MenuList();
+      menuList.render();
+
+      // INITIAL CART COUNT
+      const cart = new Cart();
+      cart.updateCartCount();
     </script>
   </body>
 </html>
