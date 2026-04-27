@@ -1,0 +1,52 @@
+/* FULL PAGE CENTERING */
+.confirmation-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  padding: 20px;
+}
+
+/* SMALLER, CLEANER CONFIRMATION CARD */
+.confirmation-box {
+  background: #ffffff;
+  padding: 28px 36px; /* smaller padding */
+  border-radius: 14px;
+  max-width: 420px; /* smaller width */
+  width: 100%;
+  text-align: center;
+
+  border: 1px solid #e2e2e2; /* clean border */
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06); /* softer shadow */
+}
+
+/* TITLE */
+.confirmation-box h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+/* MESSAGE */
+.confirmation-box p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 18px;
+}
+
+/* BACK HOME BUTTON */
+.back-home-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #28a745;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.back-home-btn:hover {
+  background: #1e7e34;
+}
