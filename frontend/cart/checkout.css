@@ -167,3 +167,39 @@
     transform: scale(1);
   }
 }
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-left-remove {
+  width: 90px;
+}
+
+.cart-middle {
+  flex: 1;
+}
+
+.cart-math {
+  width: 120px;
+  text-align: center;
+}
+
+.unit-math {
+  font-size: 16px;
+  font-weight: 600;
+  color: #444;
+}
+
+.cart-right-price {
+  width: 100px;
+  text-align: right;
+}
+
+.cart-right-price .total-price {
+  font-size: 18px;
+  font-weight: 700;
+}

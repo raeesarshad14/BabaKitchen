@@ -1,17 +1,18 @@
-/* MAIN ROW LAYOUT — balanced spacing */
+/* ============================
+   CART ITEM LAYOUT (FINAL)
+============================ */
 .cart-item {
   display: grid;
-  grid-template-columns: 120px 1fr 120px;
+  grid-template-columns: 120px 1fr 120px 120px;
   align-items: center;
   padding: 18px 0;
-  border-bottom: 1px solid #e0e0e0; /* softer line */
+  border-bottom: 1px solid #e0e0e0;
 }
 
 /* LEFT: REMOVE BUTTON */
 .cart-left-remove {
   display: flex;
   justify-content: flex-start;
-  padding-left: 5px; /* bring remove button back */
 }
 
 .remove-btn {
@@ -30,19 +31,17 @@
   background: #d60000;
 }
 
-/* MIDDLE: IMAGE + NAME + QTY */
+/* MIDDLE: NAME + QTY */
 .cart-middle {
   display: flex;
   align-items: center;
   gap: 18px;
-  padding-left: 20px; /* move item slightly right */
 }
 
-.cart-item-img {
-  width: 75px;
-  height: 75px;
-  border-radius: 8px;
-  object-fit: cover;
+.cart-info h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .qty-controls {
@@ -71,22 +70,30 @@
   font-weight: bold;
 }
 
-/* RIGHT: ITEM PRICE — moved left for balance */
+/* CENTER: UNIT MATH */
+.cart-math {
+  text-align: center;
+  margin-left: -1000px; /* move left */
+}
+
+.unit-math {
+  font-size: 16px;
+  font-weight: 600;
+  color: #444;
+}
+
+/* RIGHT: TOTAL PRICE */
 .cart-right-price {
   text-align: right;
   font-size: 18px;
   font-weight: bold;
-  padding-right: 75px; /* pull price away from corner */
 }
 
-/* SUMMARY — aligned with price column */
+/* SUMMARY */
 .cart-summary {
   width: 300px;
   margin-left: auto;
-  margin-right: 75px; /* match price padding */
-  margin-top: 75px;
-  padding: 0; /* remove extra padding that caused extra line */
-  border-top: none; /* remove extra line above subtotal */
+  margin-top: 50px;
 }
 
 .summary-row,
@@ -117,4 +124,9 @@
 
 .checkout-btn:hover {
   background: #1e7e34;
+}
+/* PAGE SIDE SPACING */
+.cart-container {
+  padding-left: 70px;
+  padding-right: 7ch;
 }

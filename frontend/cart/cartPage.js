@@ -25,9 +25,8 @@ class CartPage {
           </button>
         </div>
 
-        <!-- MIDDLE: NAME + QTY (NO IMAGE) -->
+        <!-- MIDDLE: NAME + QTY -->
         <div class="cart-middle">
-
           <div class="cart-info">
             <h3>${item.name}</h3>
 
@@ -39,9 +38,14 @@ class CartPage {
           </div>
         </div>
 
-        <!-- RIGHT: ITEM TOTAL PRICE -->
+        <!-- CENTER: UNIT MATH -->
+        <div class="cart-math">
+          <span class="unit-math">${item.price} × ${item.qty}</span>
+        </div>
+
+        <!-- RIGHT: TOTAL PRICE -->
         <div class="cart-right-price">
-          $${(item.price * item.qty).toFixed(2)}
+          <div class="total-price">$${(item.price * item.qty).toFixed(2)}</div>
         </div>
 
       </div>
@@ -95,7 +99,6 @@ class CartPage {
   }
 }
 
-/* FIX: ADD THIS FUNCTION */
 function goToCheckout() {
   window.location.href = "../pages/checkout.html";
 }

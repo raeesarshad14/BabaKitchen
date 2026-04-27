@@ -65,7 +65,7 @@
 
 /* Order Now button */
 .order-btn {
-  background: #2ecc71;
+  background: #1e7e34;
   color: white;
   padding: 10px 22px;
   border-radius: 6px;
@@ -76,7 +76,7 @@
 }
 
 .order-btn:hover {
-  background: #29b765;
+  background: #1e7e34;
 }
 
 .cart-icon {
