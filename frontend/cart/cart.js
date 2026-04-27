@@ -14,15 +14,19 @@ class Cart {
   }
 
   addItem(item) {
-    const existing = this.items.find((i) => i.name === item.name);
+    const existing = this.items.find(
+      (i) =>
+        i.name === item.name &&
+        JSON.stringify(i.options || {}) === JSON.stringify(item.options || {}),
+    );
 
     if (existing) {
-      existing.qty += 1;
+      existing.qty += item.qty;
     } else {
-      this.items.push({ ...item, qty: 1 });
+      this.items.push({ ...item });
     }
 
-    this.save();
+    this.save(); // FIXED
   }
 
   removeItem(name) {
@@ -34,13 +38,14 @@ class Cart {
     const item = this.items.find((i) => i.name === name);
     if (!item) return;
 
-    item.qty = qty;
-
-    if (item.qty <= 0) {
-      this.removeItem(name);
+    // enforce minimum 12
+    if (qty < 12) {
+      item.qty = 12;
     } else {
-      this.save();
+      item.qty = qty;
     }
+
+    this.save();
   }
 
   getTotal() {
@@ -49,5 +54,15 @@ class Cart {
 
   getCount() {
     return this.items.reduce((sum, item) => sum + item.qty, 0);
+  }
+
+  /* ⭐ ADD THIS FUNCTION ⭐ */
+  updateCartCount() {
+    const count = this.getCount();
+    const el = document.getElementById("cart-count");
+
+    if (el) {
+      el.textContent = count;
+    }
   }
 }

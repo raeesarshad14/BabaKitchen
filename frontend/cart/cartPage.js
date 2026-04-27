@@ -25,9 +25,8 @@ class CartPage {
           </button>
         </div>
 
-        <!-- MIDDLE: IMAGE + NAME + QTY -->
+        <!-- MIDDLE: NAME + QTY (NO IMAGE) -->
         <div class="cart-middle">
-          <img src="${item.image}" class="cart-item-img" />
 
           <div class="cart-info">
             <h3>${item.name}</h3>

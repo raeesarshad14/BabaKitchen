@@ -69,8 +69,13 @@
     <script src="../cart/cart.js"></script>
     <script src="../cart/cartDrawer.js"></script>
 
-    <!-- ⭐ MODAL LOGIC ⭐ -->
+    <!-- ⭐ MODAL + ADD TO CART LOGIC ⭐ -->
     <script>
+      let selectedItemName = "";
+      let selectedItemPrice = 0;
+      let selectedQty = 12;
+
+      /* OPEN MODAL WHEN CLICKING ADD BUTTON */
       document.addEventListener("click", function (e) {
         if (e.target.classList.contains("open-modal-btn")) {
           const name = e.target.dataset.name;
@@ -84,34 +89,59 @@
         const qtyValue = document.getElementById("qty-value");
         const totalPrice = document.getElementById("modal-total-price");
 
-        document.getElementById("modal-item-name").textContent = name;
+        selectedItemName = name;
+        selectedItemPrice = price;
+        selectedQty = 12;
 
-        let qty = 12; // minimum order
-        qtyValue.textContent = qty;
-        totalPrice.textContent = "$" + qty * price;
+        qtyValue.textContent = selectedQty;
+        totalPrice.textContent = "$" + selectedQty * selectedItemPrice;
 
         modal.classList.remove("hidden");
 
+        /* PLUS BUTTON */
         document.getElementById("qty-plus").onclick = () => {
-          qty++;
-          qtyValue.textContent = qty;
-          totalPrice.textContent = "$" + qty * price;
+          selectedQty++;
+          qtyValue.textContent = selectedQty;
+          totalPrice.textContent = "$" + selectedQty * selectedItemPrice;
         };
 
+        /* MINUS BUTTON */
         document.getElementById("qty-minus").onclick = () => {
-          if (qty > 12) {
-            qty--;
-            qtyValue.textContent = qty;
-            totalPrice.textContent = "$" + qty * price;
+          if (selectedQty > 12) {
+            selectedQty--;
+            qtyValue.textContent = selectedQty;
+            totalPrice.textContent = "$" + selectedQty * selectedItemPrice;
           }
         };
 
+        /* CLOSE BUTTON */
         document.getElementById("modal-close").onclick = () => {
           modal.classList.add("hidden");
         };
+
+        /* ADD TO CART BUTTON */
+        document.getElementById("modal-add-btn").onclick = () => {
+          addItemToCart();
+          modal.classList.add("hidden");
+        };
+      }
+
+      /* ADD ITEM TO CART */
+      function addItemToCart() {
+        const cart = new Cart();
+
+        cart.addItem({
+          name: selectedItemName,
+          price: selectedItemPrice,
+          qty: selectedQty,
+          options: {},
+        });
+
+        cart.updateCartCount();
       }
     </script>
 
+    <!-- PAGE INIT -->
     <script>
       /* ---------------- HEADER ---------------- */
       document.getElementById("header").innerHTML = new Header().render();
