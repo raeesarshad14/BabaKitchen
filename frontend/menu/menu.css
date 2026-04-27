@@ -1,3 +1,7 @@
+/* GLOBAL FONT RESET — applies to entire website */
+* {
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+}
 /* --- PAGE LAYOUT: SIDEBAR + MENU --- */
 .menu-page {
   display: flex;

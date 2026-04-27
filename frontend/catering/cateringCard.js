@@ -1,19 +1,18 @@
 class CateringCard {
-  constructor(name, price, items) {
-    this.name = name;
-    this.price = price;
-    this.items = items;
+  constructor(item) {
+    this.item = item;
   }
 
   render() {
     return `
       <div class="catering-card">
-        <h3>${this.name}</h3>
-        <p class="price">$${this.price}</p>
+        <div>
+          <h3>${this.item.name}</h3>
+        </div>
 
-        <ul class="items-list">
-          ${this.items.map((item) => `<li>${item}</li>`).join("")}
-        </ul>
+        <button onclick="openCateringModal('${this.item.name}', ${this.item.smallPrice}, ${this.item.largePrice})">
+          View Trays Sizes
+        </button>
       </div>
     `;
   }

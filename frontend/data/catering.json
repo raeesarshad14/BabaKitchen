@@ -1,33 +1,100 @@
 [
   {
-    "name": "Chicken Over Rice Package",
-    "price": 150,
+    "category": "Appetizers",
     "items": [
-      "1 tray of rice",
-      "1 tray of chicken",
-      "1 tray of mixed salad",
-      "White sauce + hot sauce"
+      {
+        "name": "Dahi Bhallay",
+        "smallPrice": 60,
+        "largePrice": 100
+      },
+      {
+        "name": "Aloo Channa Chaat",
+        "smallPrice": 60,
+        "largePrice": 100
+      },
+      {
+        "name": "Fruit Chaat",
+        "smallPrice": 65,
+        "largePrice": 110
+      },
+      {
+        "name": "Chana Chaat Papri",
+        "smallPrice": 65,
+        "largePrice": 105
+      },
+      {
+        "name": "Pakoray",
+        "smallPrice": 60,
+        "largePrice": 100
+      },
+      {
+        "name": "Elote Pasta Salad",
+        "smallPrice": 60,
+        "largePrice": 100
+      },
+      {
+        "name": "Caprese Bow Tie Pasta Salad",
+        "smallPrice": 60,
+        "largePrice": 100
+      },
+      {
+        "name": "Mediterranean Salad",
+        "smallPrice": 60,
+        "largePrice": 100
+      }
     ]
   },
+
   {
-    "name": "Lamb Over Rice Package",
-    "price": 150,
+    "category": "Sliders",
     "items": [
-      "1 tray of rice",
-      "1 tray of lamb",
-      "1 tray of mixed salad",
-      "White sauce + hot sauce"
+      {
+        "name": "Beef Sliders",
+        "smallPrice": 70,
+        "largePrice": 120
+      },
+      {
+        "name": "Chicken Sliders",
+        "smallPrice": 65,
+        "largePrice": 110
+      }
     ]
   },
+
   {
-    "name": "Combo Over Rice Package",
-    "price": 160,
+    "category": "Finger Foods",
     "items": [
-      "1 tray of rice",
-      "1 tray of chicken",
-      "1 tray of lamb",
-      "1 tray of mixed salad",
-      "White sauce + hot sauce"
+      {
+        "name": "Chicken Wings",
+        "smallPrice": 75,
+        "largePrice": 130
+      },
+      {
+        "name": "Mozzarella Sticks",
+        "smallPrice": 55,
+        "largePrice": 95
+      }
+    ]
+  },
+
+  {
+    "category": "Tikkis / Kabobs / Fish",
+    "items": [
+      {
+        "name": "Chicken Kabobs",
+        "smallPrice": 80,
+        "largePrice": 140
+      },
+      {
+        "name": "Beef Seekh Kabobs",
+        "smallPrice": 85,
+        "largePrice": 150
+      },
+      {
+        "name": "Fried Fish",
+        "smallPrice": 90,
+        "largePrice": 160
+      }
     ]
   }
 ]

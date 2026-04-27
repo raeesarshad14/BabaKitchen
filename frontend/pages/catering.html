@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Language" content="en" />
     <meta charset="UTF-8" />
     <title>Catering • BabasKitchen</title>
 
@@ -19,39 +18,60 @@
     <!-- HEADER -->
     <div id="header"></div>
 
-    <main class="catering-page">
-      <div class="catering-title-bar">
-        <h1>Catering Packages</h1>
+    <!-- ⭐ PAGE CONTAINER (correct placement) -->
+    <div class="page-container">
+      <main class="catering-page">
+        <!-- LEFT SIDEBAR -->
+        <div id="catering-sidebar"></div>
+
+        <!-- RIGHT CONTENT -->
+        <div id="catering-content"></div>
+      </main>
+    </div>
+    <!-- END PAGE CONTAINER -->
+
+    <!-- MODAL -->
+    <div class="catering-modal-overlay">
+      <div class="catering-modal">
+        <h2 id="modal-item-name"></h2>
+
+        <div class="tray-row">
+          <span>Small Tray ($<span id="small-price"></span>)</span>
+          <div class="qty-controls">
+            <button class="qty-btn" onclick="changeQty('small', -1)">-</button>
+            <span id="small-qty">0</span>
+            <button class="qty-btn" onclick="changeQty('small', 1)">+</button>
+          </div>
+        </div>
+
+        <div class="tray-row">
+          <span>Large Tray ($<span id="large-price"></span>)</span>
+          <div class="qty-controls">
+            <button class="qty-btn" onclick="changeQty('large', -1)">-</button>
+            <span id="large-qty">0</span>
+            <button class="qty-btn" onclick="changeQty('large', 1)">+</button>
+          </div>
+        </div>
+
+        <button class="add-btn" onclick="addCateringToCart()">
+          Add to Cart
+        </button>
+        <br /><br />
+        <button onclick="closeCateringModal()">Close</button>
       </div>
+    </div>
 
-      <div id="catering-container" class="catering-container"></div>
-    </main>
-
-    <!-- HEADER SCRIPT -->
+    <!-- SCRIPTS -->
     <script src="../header/header.js"></script>
+    <script src="../cart/cart.js"></script>
 
-    <!-- CATERING CARD COMPONENT -->
+    <script src="../catering/cateringSidebar.js"></script>
     <script src="../catering/cateringCard.js"></script>
+    <script src="../catering/cateringModal.js"></script>
+    <script src="../catering/catering.js"></script>
 
     <script>
-      // Render header
       document.getElementById("header").innerHTML = new Header().render();
-
-      // Load catering packages
-      async function loadCatering() {
-        const response = await fetch("../data/catering.json");
-        const data = await response.json();
-
-        const container = document.getElementById("catering-container");
-
-        container.innerHTML = data
-          .map((pkg) =>
-            new CateringCard(pkg.name, pkg.price, pkg.items).render(),
-          )
-          .join("");
-      }
-
-      loadCatering();
     </script>
   </body>
 </html>
