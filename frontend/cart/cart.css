@@ -3,7 +3,7 @@
 ============================ */
 .cart-item {
   display: grid;
-  grid-template-columns: 120px 1fr 120px 120px;
+  grid-template-columns: 120px 1fr 150px 120px;
   align-items: center;
   padding: 18px 0;
   border-bottom: 1px solid #e0e0e0;
@@ -70,16 +70,26 @@
   font-weight: bold;
 }
 
-/* CENTER: UNIT MATH */
+/* CENTER: UNIT MATH (equation only, no total) */
 .cart-math {
-  text-align: center;
-  margin-left: -1000px; /* move left */
+  text-align: left;
+  padding-left: 10px;
 }
 
 .unit-math {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: #444;
+  display: flex;
+  align-items: center;
+  gap: 25px; /* spacing between numbers and = */
+  white-space: nowrap;
+}
+
+.math-equals {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0 20px; /* spacing around = */
 }
 
 /* RIGHT: TOTAL PRICE */
@@ -125,8 +135,9 @@
 .checkout-btn:hover {
   background: #1e7e34;
 }
+
 /* PAGE SIDE SPACING */
 .cart-container {
-  padding-left: 70px;
-  padding-right: 7ch;
+  padding-left: 40px;
+  padding-right: 40px;
 }

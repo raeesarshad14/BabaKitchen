@@ -39,9 +39,13 @@ class CartPage {
         </div>
 
         <!-- CENTER: UNIT MATH -->
-        <div class="cart-math">
-          <span class="unit-math">${item.price} × ${item.qty}</span>
-        </div>
+          <div class="cart-math">
+            <span class="unit-math">
+               ${String(item.price).padStart(2, "0")} × ${String(item.qty).padStart(2, "0")}
+                <span class="math-equals">=</span>
+            </span>
+          </div>
+
 
         <!-- RIGHT: TOTAL PRICE -->
         <div class="cart-right-price">
@@ -88,7 +92,6 @@ class CartPage {
             <span>$${total.toFixed(2)}</span>
           </div>
 
-          <!-- FIXED CHECKOUT BUTTON -->
           <button class="checkout-btn" onclick="goToCheckout()">
             Checkout
           </button>
