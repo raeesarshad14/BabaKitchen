@@ -19,6 +19,10 @@ function openCateringModal(name, sPrice, lPrice) {
   document.getElementById("small-qty").innerText = smallQty;
   document.getElementById("large-qty").innerText = largeQty;
 
+  document.getElementById("small-total").innerText = 0;
+  document.getElementById("large-total").innerText = 0;
+  document.getElementById("tray-subtotal").innerText = 0;
+
   document.querySelector(".catering-modal-overlay").style.display = "flex";
 }
 
@@ -30,10 +34,16 @@ function changeQty(type, amount) {
   if (type === "small") {
     smallQty = Math.max(0, smallQty + amount);
     document.getElementById("small-qty").innerText = smallQty;
+    document.getElementById("small-total").innerText = smallQty * smallPrice;
   } else {
     largeQty = Math.max(0, largeQty + amount);
     document.getElementById("large-qty").innerText = largeQty;
+    document.getElementById("large-total").innerText = largeQty * largePrice;
   }
+
+  // ⭐ Update subtotal
+  const subtotal = smallQty * smallPrice + largeQty * largePrice;
+  document.getElementById("tray-subtotal").innerText = subtotal;
 }
 
 function addCateringToCart() {

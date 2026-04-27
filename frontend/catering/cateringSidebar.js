@@ -5,12 +5,12 @@ class CateringSidebar {
 
   render() {
     return `
-      <div id="catering-sidebar" class="catering-sidebar"></div>
+      <div id="catering-sidebar" class="catering-sidebar">
         ${this.categories
           .map(
             (cat) => `
-          <button onclick="scrollToCategory('${cat}')">${cat}</button>
-        `,
+              <button onclick="scrollToCategory('${cat}')">${cat}</button>
+            `,
           )
           .join("")}
       </div>

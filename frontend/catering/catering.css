@@ -1,6 +1,6 @@
-/* GLOBAL FONT RESET — applies to entire website */
+/* SHAKE SHACK FONT STYLE */
 * {
-  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: "Poppins", "Inter", "Segoe UI", sans-serif;
 }
 
 /* PAGE CONTAINER (same as menu) */
@@ -14,13 +14,13 @@
 .catering-page {
   display: flex;
   align-items: flex-start;
-  gap: 40px; /* same spacing as menu */
-  padding: 40px 20px; /* same top/bottom padding as menu */
+  gap: 40px;
+  padding: 40px 20px;
 }
 
-/* SIDEBAR — MATCH MENU STYLE */
+/* SIDEBAR */
 #catering-sidebar {
-  width: 160px; /* same width as menu sidebar */
+  width: 160px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -44,17 +44,18 @@
   transform: translateX(5px);
 }
 
-/* MAIN CATEGORY BOX — MATCH MENU SECTION BOX */
+/* CATEGORY BOX */
 .catering-box {
   background: #ffffff;
-  padding: 40px 40px; /* same padding as menu sections */
+  padding: 40px 40px;
   border-radius: 12px;
   border: 1px solid #e5e5e5;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
   width: 100%;
+  scroll-margin-top: 140px; /* adjust until perfect */
 }
 
-/* CATEGORY TITLE — MATCH MENU TITLES */
+/* CATEGORY TITLE */
 .catering-box-title {
   text-align: center;
   margin-bottom: 25px;
@@ -66,28 +67,24 @@
   margin: 0;
 }
 
-/* ITEM LIST — MATCH MENU (ONE PER ROW) */
+/* ITEM GRID */
 .catering-items {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* ⭐ two items per row */
-  gap: 20px; /* ⭐ clean spacing like menu */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
-/* ITEM CARD — MATCH MENU CARD STYLE */
+/* ITEM CARD */
 .catering-card {
   background: #ffffff;
   border: 1px solid #e5e5e5;
   border-radius: 12px;
-  padding: 14px 18px; /* ⭐ tighter, matches menu */
+  padding: 14px 18px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  min-height: 70px; /* keeps minimum size */
-  height: auto; /* allows expansion */
-  align-items: center;
+  min-height: 70px;
 }
 
 .catering-card h3 {
@@ -96,7 +93,6 @@
   margin: 0;
 }
 
-/* BUTTON — EXACT MENU BUTTON STYLE */
 .catering-card button {
   background: #28a745;
   color: white;
@@ -113,9 +109,146 @@
   background: #1e7e34;
 }
 
-/* REMOVE EXTRA SPACING */
-.catering-section {
-  width: 100%;
-  margin: 0;
+/* MODAL OVERLAY */
+.catering-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* MODAL BOX — Shake Shack style */
+.catering-modal {
+  background: #ffffff;
+  padding: 32px 36px;
+  border-radius: 18px;
+  width: 380px;
+  max-width: 90%;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+  animation: popupFade 0.25s ease-out;
+}
+
+/* MODAL TITLE */
+.catering-modal h2 {
+  margin: 0 0 24px 0;
+  font-size: 28px;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+/* TRAY ROW */
+.tray-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f4f5f7;
+  padding: 16px 18px;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  border: 1px solid #e2e2e2;
+}
+
+.tray-row span {
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+/* QTY CONTROLS */
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* QTY BUTTONS — PERFECT SHAPE */
+.qty-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e0e0e0;
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 0;
+  cursor: pointer;
+  transition: 0.2s;
   padding: 0;
+}
+
+.qty-btn:hover {
+  background: #d5d5d5;
+}
+
+/* TOTAL PRICE */
+.tray-total {
+  text-align: right;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+/* SUBTOTAL */
+.tray-subtotal {
+  text-align: right;
+  font-size: 20px;
+  font-weight: 800;
+  margin-top: 10px;
+  margin-bottom: 22px;
+  color: #000;
+}
+
+/* ADD BUTTON — Shake Shack green */
+.add-btn {
+  width: 100%;
+  background: #2ecc71;
+  color: white;
+  border: none;
+  padding: 16px 0;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.add-btn:hover {
+  background: #27ae60;
+}
+
+/* CLOSE BUTTON */
+.catering-modal button:last-child {
+  width: 100%;
+  margin-top: 14px;
+  padding: 14px 0;
+  background: #e0e0e0;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.catering-modal button:last-child:hover {
+  background: #cfcfcf;
+}
+
+/* ANIMATION */
+@keyframes popupFade {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

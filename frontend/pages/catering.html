@@ -18,7 +18,7 @@
     <!-- HEADER -->
     <div id="header"></div>
 
-    <!-- ⭐ PAGE CONTAINER (correct placement) -->
+    <!-- PAGE CONTAINER -->
     <div class="page-container">
       <main class="catering-page">
         <!-- LEFT SIDEBAR -->
@@ -28,35 +28,49 @@
         <div id="catering-content"></div>
       </main>
     </div>
-    <!-- END PAGE CONTAINER -->
 
-    <!-- MODAL -->
+    <!-- ⭐ MODAL (SHAKE SHACK STYLE) -->
     <div class="catering-modal-overlay">
       <div class="catering-modal">
         <h2 id="modal-item-name"></h2>
 
+        <!-- SMALL TRAY -->
         <div class="tray-row">
           <span>Small Tray ($<span id="small-price"></span>)</span>
           <div class="qty-controls">
-            <button class="qty-btn" onclick="changeQty('small', -1)">-</button>
+            <button class="qty-btn" onclick="changeQty('small', -1)">
+              &#8722;
+            </button>
             <span id="small-qty">0</span>
             <button class="qty-btn" onclick="changeQty('small', 1)">+</button>
           </div>
         </div>
 
+        <div class="tray-total">Total: $<span id="small-total">0</span></div>
+
+        <!-- LARGE TRAY -->
         <div class="tray-row">
           <span>Large Tray ($<span id="large-price"></span>)</span>
           <div class="qty-controls">
-            <button class="qty-btn" onclick="changeQty('large', -1)">-</button>
+            <button class="qty-btn" onclick="changeQty('large', -1)">
+              &#8722;
+            </button>
             <span id="large-qty">0</span>
             <button class="qty-btn" onclick="changeQty('large', 1)">+</button>
           </div>
         </div>
 
+        <div class="tray-total">Total: $<span id="large-total">0</span></div>
+
+        <!-- SUBTOTAL -->
+        <div class="tray-subtotal">
+          Subtotal: $<span id="tray-subtotal">0</span>
+        </div>
+
+        <!-- BUTTONS -->
         <button class="add-btn" onclick="addCateringToCart()">
           Add to Cart
         </button>
-        <br /><br />
         <button onclick="closeCateringModal()">Close</button>
       </div>
     </div>
