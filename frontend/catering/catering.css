@@ -286,3 +286,49 @@
 .tray-line button:hover {
   background: #1e7e34;
 }
+.category-subtitle {
+  text-align: center;
+  margin-top: -10px;
+  margin-bottom: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #6c757d; /* clean modern grey */
+  opacity: 0.9;
+}
+
+.slider-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 18px;
+}
+
+.slider-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 20px; /* adjust spacing */
+}
+
+.slider-price {
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap; /* ⭐ keeps “$2.50 each” on one line */
+}
+
+.slider-add-btn {
+  padding: 10px 18px; /* same as appetizer button */
+  font-size: 16px; /* same as appetizer button */
+  font-weight: 600;
+  border-radius: 8px; /* same as appetizer button */
+  background: #28a745;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.slider-add-btn:hover {
+  background: #1e7e34;
+}

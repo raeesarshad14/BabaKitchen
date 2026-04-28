@@ -16,6 +16,12 @@ async function loadCatering() {
         <div class="catering-box">
           <div class="catering-box-title">
             <h2>${section.category}</h2>
+
+            ${
+              section.subtitle
+                ? `<p class="category-subtitle">${section.subtitle}</p>`
+                : ""
+            }
           </div>
 
           <div class="catering-items">
