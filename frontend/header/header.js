@@ -12,7 +12,10 @@ class Header {
           <nav class="nav-links">
             <a href="../pages/menu.html">MENU</a>
             <a href="../pages/catering.html">CATERING</a>
-            <a href="../pages/contact.html">CONTACT</a>
+            <a href="../pages/desserts.html">DESSERTS</a>
+
+            <!-- UPDATED: CONTACT → WEEKLY MENU -->
+            <a href="../pages/weekly-menu.html">WEEKLY MENU</a>
 
             <div class="header-search">
               <div class="search-container">
@@ -31,7 +34,9 @@ class Header {
         </div>
 
         <div class="header-right">
-          <a class="signin" href="../pages/signin.html">SIGN IN</a>
+
+          <!-- UPDATED: SIGN IN → CONTACT -->
+          <a class="signin" href="../pages/contact.html">CONTACT</a>
 
           <a class="order-btn" href="../pages/menu.html">
             ORDER NOW
