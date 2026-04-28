@@ -76,3 +76,18 @@ class Cart {
 }
 window.cart = new Cart();
 cart.updateCartCount();
+
+function addSliderToCart(name, price, minOrder = 1) {
+  const qty = minOrder || 1;
+
+  cart.addItem({
+    name: name,
+    price: price,
+    qty: qty,
+    options: {},
+  });
+
+  cart.updateCartCount();
+
+  alert(`${name} added to cart.`);
+}

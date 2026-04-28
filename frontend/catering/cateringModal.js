@@ -83,3 +83,44 @@ function addCateringToCart() {
   cart.updateCartCount();
   closeCateringModal();
 }
+let singleItemName = "";
+let singlePrice = 0;
+let singleQty = 12;
+
+function openSingleModal(name, price, minOrder = 12) {
+  singleItemName = name;
+  singlePrice = price;
+  singleQty = minOrder;
+
+  document.getElementById("single-item-name").innerText = name;
+  document.getElementById("single-qty").innerText = singleQty;
+  document.getElementById("single-total").innerText = (
+    singleQty * singlePrice
+  ).toFixed(2);
+
+  document.querySelector(".single-modal-overlay").style.display = "flex";
+}
+
+function closeSingleModal() {
+  document.querySelector(".single-modal-overlay").style.display = "none";
+}
+
+function changeSingleQty(amount) {
+  singleQty = Math.max(12, singleQty + amount); // ⭐ cannot go below 12
+  document.getElementById("single-qty").innerText = singleQty;
+  document.getElementById("single-total").innerText = (
+    singleQty * singlePrice
+  ).toFixed(2);
+}
+
+function addSingleToCart() {
+  cart.addItem({
+    name: singleItemName,
+    price: singlePrice,
+    qty: singleQty,
+    options: {},
+  });
+
+  cart.updateCartCount();
+  closeSingleModal();
+}

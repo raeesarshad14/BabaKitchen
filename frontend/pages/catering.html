@@ -29,7 +29,7 @@
       </main>
     </div>
 
-    <!-- ⭐ MODAL (ONLY FOR APPETIZERS) -->
+    <!-- ⭐ TRAY MODAL (APPETIZERS, RICE DISHES, MAIN COURSES, ETC.) -->
     <div class="catering-modal-overlay">
       <div class="catering-modal">
         <h2 id="modal-item-name"></h2>
@@ -72,6 +72,24 @@
           Add to Cart
         </button>
         <button onclick="closeCateringModal()">Close</button>
+      </div>
+    </div>
+
+    <!-- ⭐ SINGLE‑ITEM MODAL (SLIDERS, FINGER FOODS, KABOBS, ROAST CHICKEN, ETC.) -->
+    <div class="single-modal-overlay" style="display: none">
+      <div class="single-modal">
+        <h2 id="single-item-name"></h2>
+
+        <div class="qty-controls">
+          <button class="qty-btn" onclick="changeSingleQty(-1)">&#8722;</button>
+          <span id="single-qty">12</span>
+          <button class="qty-btn" onclick="changeSingleQty(1)">+</button>
+        </div>
+
+        <div class="single-total">Total: $<span id="single-total">0</span></div>
+
+        <button class="add-btn" onclick="addSingleToCart()">Add to Cart</button>
+        <button onclick="closeSingleModal()">Close</button>
       </div>
     </div>
 

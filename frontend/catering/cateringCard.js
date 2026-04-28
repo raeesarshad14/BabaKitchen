@@ -11,25 +11,25 @@ class CateringCard {
     // ⭐ ONE PRICE ITEMS (Finger Foods, Sliders, Kabobs, Fish)
     if (isSinglePrice && !hasTrays) {
       return `
-        <div class="catering-card slider-card">
-          <h3>${this.item.name}</h3>
+    <div class="catering-card slider-card">
+      <h3>${this.item.name}</h3>
 
-          <div class="slider-line">
-            <span class="slider-price">
-              ${
-                this.item.note
-                  ? `$${this.item.price} (${this.item.note})`
-                  : `$${this.item.price} ${this.item.minOrder ? "each" : "each"}`
-              }
-            </span>
+      <div class="slider-line">
+        <span class="slider-price">
+          ${
+            this.item.note
+              ? `$${this.item.price} (${this.item.note})`
+              : `$${this.item.price} each`
+          }
+        </span>
 
-            <button class="slider-add-btn"
-              onclick="addSliderToCart('${this.item.name}', ${this.item.price}, ${this.item.minOrder || 1})">
-              Add
-            </button>
-          </div>
-        </div>
-      `;
+        <button class="slider-add-btn"
+          onclick="openSingleModal('${this.item.name}', ${this.item.price}, ${this.item.minOrder || 12})">
+          Add
+        </button>
+      </div>
+    </div>
+  `;
     }
 
     // ⭐ APPETIZERS (ONLY THESE HAVE TRAYS)

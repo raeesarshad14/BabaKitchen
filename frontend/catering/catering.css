@@ -1,16 +1,19 @@
-/* SHAKE SHACK FONT STYLE */
+/* ---------------------------------------------------
+   GLOBAL FONT
+--------------------------------------------------- */
 * {
   font-family: "Poppins", "Inter", "Segoe UI", sans-serif;
 }
 
-/* PAGE CONTAINER (same as menu) */
+/* ---------------------------------------------------
+   PAGE LAYOUT
+--------------------------------------------------- */
 .page-container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0;
 }
 
-/* PAGE LAYOUT — MATCH MENU */
 .catering-page {
   display: flex;
   align-items: flex-start;
@@ -18,7 +21,9 @@
   padding: 40px 20px;
 }
 
-/* SIDEBAR */
+/* ---------------------------------------------------
+   SIDEBAR
+--------------------------------------------------- */
 #catering-sidebar {
   width: 160px;
   display: flex;
@@ -44,7 +49,9 @@
   transform: translateX(5px);
 }
 
-/* CATEGORY BOX */
+/* ---------------------------------------------------
+   CATEGORY BOX
+--------------------------------------------------- */
 .catering-box {
   background: #ffffff;
   padding: 40px 40px;
@@ -52,10 +59,9 @@
   border: 1px solid #e5e5e5;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
   width: 100%;
-  scroll-margin-top: 140px; /* adjust until perfect */
+  scroll-margin-top: 140px;
 }
 
-/* CATEGORY TITLE */
 .catering-box-title {
   text-align: center;
   margin-bottom: 25px;
@@ -67,14 +73,28 @@
   margin: 0;
 }
 
-/* ITEM GRID */
+.category-subtitle {
+  text-align: center;
+  margin-top: -10px;
+  margin-bottom: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #6c757d;
+  opacity: 0.9;
+}
+
+/* ---------------------------------------------------
+   ITEM GRID
+--------------------------------------------------- */
 .catering-items {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
-/* ITEM CARD */
+/* ---------------------------------------------------
+   ITEM CARD (BASE)
+--------------------------------------------------- */
 .catering-card {
   background: #ffffff;
   border: 1px solid #e5e5e5;
@@ -109,7 +129,87 @@
   background: #1e7e34;
 }
 
-/* MODAL OVERLAY */
+/* ---------------------------------------------------
+   TRAY ITEMS (Appetizers, Rice, etc.)
+--------------------------------------------------- */
+.catering-tray-card {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.tray-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 100px;
+  margin-top: 6px;
+}
+
+.tray-line span {
+  flex-shrink: 0;
+}
+
+.tray-line button {
+  flex-shrink: 0;
+  padding: 6px 14px;
+  font-size: 14px;
+  border-radius: 6px;
+  background: #28a745;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tray-line button:hover {
+  background: #1e7e34;
+}
+
+/* ---------------------------------------------------
+   SLIDER / SINGLE-PRICE ITEMS
+--------------------------------------------------- */
+.slider-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 18px;
+}
+
+.slider-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.slider-price {
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.slider-add-btn {
+  padding: 10px 18px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  background: #28a745;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.slider-add-btn:hover {
+  background: #1e7e34;
+}
+
+/* ---------------------------------------------------
+   TRAY MODAL
+--------------------------------------------------- */
 .catering-modal-overlay {
   display: none;
   position: fixed;
@@ -120,7 +220,6 @@
   z-index: 9999;
 }
 
-/* MODAL BOX — Shake Shack style */
 .catering-modal {
   background: #ffffff;
   padding: 32px 36px;
@@ -131,16 +230,13 @@
   animation: popupFade 0.25s ease-out;
 }
 
-/* MODAL TITLE */
 .catering-modal h2 {
   margin: 0 0 24px 0;
   font-size: 28px;
   font-weight: 800;
   text-align: center;
-  letter-spacing: -0.5px;
 }
 
-/* TRAY ROW */
 .tray-row {
   display: flex;
   justify-content: space-between;
@@ -153,20 +249,16 @@
 }
 
 .tray-row span {
-  display: flex;
-  align-items: center;
   font-size: 17px;
   font-weight: 600;
 }
 
-/* QTY CONTROLS */
 .qty-controls {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-/* QTY BUTTONS — PERFECT SHAPE */
 .qty-btn {
   display: flex;
   justify-content: center;
@@ -178,17 +270,14 @@
   border-radius: 10px;
   font-size: 22px;
   font-weight: 700;
-  line-height: 0;
   cursor: pointer;
   transition: 0.2s;
-  padding: 0;
 }
 
 .qty-btn:hover {
   background: #d5d5d5;
 }
 
-/* TOTAL PRICE */
 .tray-total {
   text-align: right;
   font-size: 16px;
@@ -197,7 +286,6 @@
   margin-bottom: 16px;
 }
 
-/* SUBTOTAL */
 .tray-subtotal {
   text-align: right;
   font-size: 20px;
@@ -207,7 +295,9 @@
   color: #000;
 }
 
-/* ADD BUTTON — Shake Shack green */
+/* ---------------------------------------------------
+   ADD & CLOSE BUTTONS
+--------------------------------------------------- */
 .add-btn {
   width: 100%;
   background: #2ecc71;
@@ -225,8 +315,59 @@
   background: #27ae60;
 }
 
-/* CLOSE BUTTON */
-.catering-modal button:last-child {
+/* ---------------------------------------------------
+   SINGLE-ITEM MODAL
+--------------------------------------------------- */
+.single-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.single-modal {
+  background: #fff;
+  padding: 32px 36px;
+  border-radius: 18px;
+  width: 360px;
+  max-width: 100%;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+  animation: popupFade 0.25s ease-out;
+  text-align: center;
+}
+
+.single-modal .qty-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.single-modal .qty-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: #e0e0e0;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.single-modal .qty-btn:hover {
+  background: #d5d5d5;
+}
+
+.single-total {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.single-modal button:last-child {
   width: 100%;
   margin-top: 14px;
   padding: 14px 0;
@@ -237,11 +378,13 @@
   cursor: pointer;
 }
 
-.catering-modal button:last-child:hover {
+.single-modal button:last-child:hover {
   background: #cfcfcf;
 }
 
-/* ANIMATION */
+/* ---------------------------------------------------
+   ANIMATION
+--------------------------------------------------- */
 @keyframes popupFade {
   from {
     transform: scale(0.9);
@@ -251,84 +394,4 @@
     transform: scale(1);
     opacity: 1;
   }
-}
-.catering-tray-card {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.tray-line {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  gap: 100px; /* ⭐ keep your preferred spacing */
-  margin-top: 6px;
-}
-
-.tray-line span {
-  flex-shrink: 0; /* ⭐ prevents text from collapsing */
-}
-
-.tray-line button {
-  flex-shrink: 0; /* ⭐ prevents button from shrinking or overlapping */
-  padding: 6px 14px;
-  font-size: 14px;
-  border-radius: 6px;
-  background: #28a745;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.tray-line button:hover {
-  background: #1e7e34;
-}
-.category-subtitle {
-  text-align: center;
-  margin-top: -10px;
-  margin-bottom: 25px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #6c757d; /* clean modern grey */
-  opacity: 0.9;
-}
-
-.slider-card {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 14px 18px;
-}
-
-.slider-line {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  gap: 20px; /* adjust spacing */
-}
-
-.slider-price {
-  font-size: 16px;
-  font-weight: 600;
-  white-space: nowrap; /* ⭐ keeps “$2.50 each” on one line */
-}
-
-.slider-add-btn {
-  padding: 10px 18px; /* same as appetizer button */
-  font-size: 16px; /* same as appetizer button */
-  font-weight: 600;
-  border-radius: 8px; /* same as appetizer button */
-  background: #28a745;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.slider-add-btn:hover {
-  background: #1e7e34;
 }
