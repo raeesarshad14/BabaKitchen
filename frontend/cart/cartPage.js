@@ -109,7 +109,7 @@ function goToCheckout() {
     const names = zeroItems.map((i) => i.name).join(", ");
 
     alert(
-      `Please remove the following item(s) before proceeding: ${names}. These items have a quantity of 0 and are not selected.`,
+      `Please remove the following item(s) before proceeding: ${names}.These items have a quantity of 0 and are not selected.`,
     );
 
     return;

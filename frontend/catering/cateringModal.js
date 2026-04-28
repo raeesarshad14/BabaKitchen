@@ -4,7 +4,7 @@ let largeQty = 0;
 let smallPrice = 0;
 let largePrice = 0;
 
-function openCateringModal(name, sPrice, lPrice) {
+function openCateringModal(name, sPrice, lPrice, preselect = null) {
   modalItemName = name;
   smallPrice = sPrice;
   largePrice = lPrice;
@@ -19,9 +19,16 @@ function openCateringModal(name, sPrice, lPrice) {
   document.getElementById("small-qty").innerText = smallQty;
   document.getElementById("large-qty").innerText = largeQty;
 
-  document.getElementById("small-total").innerText = 0;
-  document.getElementById("large-total").innerText = 0;
-  document.getElementById("tray-subtotal").innerText = 0;
+  // ⭐ Preselect tray
+  if (preselect === "small") {
+    smallQty = 1;
+    document.getElementById("small-qty").innerText = 1;
+  }
+
+  if (preselect === "large") {
+    largeQty = 1;
+    document.getElementById("large-qty").innerText = 1;
+  }
 
   document.querySelector(".catering-modal-overlay").style.display = "flex";
 }

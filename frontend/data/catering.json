@@ -41,22 +41,43 @@
         "name": "Mediterranean Salad",
         "smallPrice": 60,
         "largePrice": 100
+      },
+      {
+        "name": "Salad",
+        "smallPrice": 45,
+        "largePrice": 75
       }
     ]
   },
 
   {
     "category": "Sliders",
+    "subtitle": "Minimum order of 12 required",
     "items": [
       {
-        "name": "Beef Sliders",
-        "smallPrice": 70,
-        "largePrice": 120
+        "name": "Chicken Salad Sliders",
+        "price": 2.5,
+        "minOrder": 12
       },
       {
-        "name": "Chicken Sliders",
-        "smallPrice": 65,
-        "largePrice": 110
+        "name": "Chicken Shami Sliders",
+        "price": 3.0,
+        "minOrder": 12
+      },
+      {
+        "name": "Beef Shami Sliders",
+        "price": 3.0,
+        "minOrder": 12
+      },
+      {
+        "name": "Beef Chapli Kabob Sliders",
+        "price": 3.0,
+        "minOrder": 12
+      },
+      {
+        "name": "Nashville Fried Chicken Sliders",
+        "price": 3.75,
+        "minOrder": 12
       }
     ]
   },

@@ -88,8 +88,8 @@
 }
 
 .catering-card h3 {
-  font-size: 20px;
-  font-weight: 700;
+  width: 100%;
+  text-align: center;
   margin: 0;
 }
 
@@ -126,7 +126,7 @@
   padding: 32px 36px;
   border-radius: 18px;
   width: 380px;
-  max-width: 90%;
+  max-width: 100%;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
   animation: popupFade 0.25s ease-out;
 }
@@ -251,4 +251,38 @@
     transform: scale(1);
     opacity: 1;
   }
+}
+.catering-tray-card {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.tray-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 100px; /* ⭐ keep your preferred spacing */
+  margin-top: 6px;
+}
+
+.tray-line span {
+  flex-shrink: 0; /* ⭐ prevents text from collapsing */
+}
+
+.tray-line button {
+  flex-shrink: 0; /* ⭐ prevents button from shrinking or overlapping */
+  padding: 6px 14px;
+  font-size: 14px;
+  border-radius: 6px;
+  background: #28a745;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tray-line button:hover {
+  background: #1e7e34;
 }
