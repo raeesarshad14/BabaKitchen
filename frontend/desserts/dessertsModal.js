@@ -88,25 +88,30 @@ function addDessertToCart() {
     return;
   }
 
-  const item = {
-    name: currentDessertName,
-    smallQty: dessertSmallQty,
-    largeQty: dessertLargeQty,
-    smallPrice: dessertSmallPrice,
-    largePrice: dessertLargePrice,
-    subtotal:
-      dessertSmallQty * dessertSmallPrice + dessertLargeQty * dessertLargePrice,
-  };
+  // ADD SMALL TRAY
+  if (dessertSmallQty > 0) {
+    cart.addItem({
+      name: `${currentDessertName} (Small Tray)`,
+      price: dessertSmallPrice,
+      qty: dessertSmallQty,
+      options: {},
+    });
+  }
 
-  console.log("ADDING TO CART:", item);
+  // ADD LARGE TRAY
+  if (dessertLargeQty > 0) {
+    cart.addItem({
+      name: `${currentDessertName} (Large Tray)`,
+      price: dessertLargePrice,
+      qty: dessertLargeQty,
+      options: {},
+    });
+  }
 
-  alert(
-    `${item.name}\n` +
-      `Small Tray: ${item.smallQty} x $${item.smallPrice}\n` +
-      `Large Tray: ${item.largeQty} x $${item.largePrice}\n` +
-      `Subtotal: $${item.subtotal}`,
-  );
+  // UPDATE CART COUNT
+  cart.updateCartCount();
 
+  // CLOSE MODAL
   closeDessertModal();
 }
 
