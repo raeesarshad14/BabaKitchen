@@ -11,10 +11,74 @@
     <!-- DESSERT STYLES -->
     <link rel="stylesheet" href="desserts.css" />
     <link rel="stylesheet" href="desserts.slider.css" />
+    <link rel="stylesheet" href="desserts.modal.css" />
   </head>
 
   <body>
     <div id="header"></div>
+
+    <!-- ⭐ FINAL DESSERT POPUP (CATERING LAYOUT + DESSERT COLORS) -->
+    <div id="dessertModal" class="dessert-modal">
+      <div class="dessert-modal-content">
+        <h2 id="dessertModalName"></h2>
+
+        <!-- SMALL TRAY -->
+        <div class="tray-row">
+          <div class="tray-left">
+            <span class="tray-title">Small Tray</span>
+            <span class="tray-price" id="dessertSmallPriceUnit"></span>
+            <span class="tray-price" id="dessertSmallPriceTotal"></span>
+          </div>
+
+          <div class="tray-controls">
+            <button class="qty-btn" onclick="changeDessertQty('small', -1)">
+              −
+            </button>
+            <span id="dessertSmallQty">0</span>
+            <button class="qty-btn" onclick="changeDessertQty('small', 1)">
+              +
+            </button>
+          </div>
+
+          <div class="tray-total">
+            Total: <span id="dessertSmallTotal">$0</span>
+          </div>
+        </div>
+
+        <!-- LARGE TRAY -->
+        <div class="tray-row">
+          <div class="tray-left">
+            <span class="tray-title">Large Tray</span>
+            <span class="tray-price" id="dessertLargePriceUnit"></span>
+            <span class="tray-price" id="dessertLargePriceTotal"></span>
+          </div>
+
+          <div class="tray-controls">
+            <button class="qty-btn" onclick="changeDessertQty('large', -1)">
+              −
+            </button>
+            <span id="dessertLargeQty">0</span>
+            <button class="qty-btn" onclick="changeDessertQty('large', 1)">
+              +
+            </button>
+          </div>
+
+          <div class="tray-total">
+            Total: <span id="dessertLargeTotal">$0</span>
+          </div>
+        </div>
+
+        <!-- SUBTOTAL -->
+        <div class="dessert-subtotal">
+          Subtotal: <span id="dessertSubtotal">$0</span>
+        </div>
+
+        <button class="add-btn" onclick="addDessertToCart()">
+          Add to Cart
+        </button>
+        <button class="close-btn" onclick="closeDessertModal()">Close</button>
+      </div>
+    </div>
 
     <!-- ⭐ DESSERT SLIDER -->
     <div class="dessert-slider-wrapper">
@@ -38,6 +102,7 @@
     <script src="../header/header.js"></script>
     <script src="desserts.slider.js"></script>
     <script src="dessertsCard.js"></script>
+    <script src="dessertsModal.js"></script>
     <script src="desserts.js"></script>
 
     <script>

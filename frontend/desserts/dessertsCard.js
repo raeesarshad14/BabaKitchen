@@ -3,9 +3,14 @@ function renderDessertCard(item) {
     <div class="dessert-card">
       <img src="${item.image}" alt="${item.name}">
       <h3>${item.name}</h3>
-      <p>$${item.price}</p>
-      <button onclick="addDessertToCart('${item.name}', ${item.price}, '${item.image}')">
-        Add to Cart
+
+      <div class="dessert-prices">
+        ${item.smallPrice ? `<p>Small Tray: $${item.smallPrice}</p>` : ""}
+        ${item.largePrice ? `<p>Large Tray: $${item.largePrice}</p>` : ""}
+      </div>
+
+      <button onclick="openDessertModal('${item.name}', ${item.smallPrice}, ${item.largePrice})">
+        Add
       </button>
     </div>
   `;

@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Magnolia Banana Pudding",
+    "smallPrice": 55,
+    "largePrice": 100,
+    "image": "../assets/desserts.png"
+  },
+  {
+    "name": "Mango Tiramisu",
+    "smallPrice": 55,
+    "largePrice": 100,
+    "image": "../assets/desserts2.png"
+  },
+  {
+    "name": "Zarda",
+    "smallPrice": 60,
+    "largePrice": 110,
+    "image": "../assets/desserts.png"
+  },
+  {
+    "name": "Kheer",
+    "smallPrice": 80,
+    "largePrice": 150,
+    "image": "../assets/desserts2.png"
+  },
+  {
+    "name": "Seviyan",
+    "smallPrice": 55,
+    "largePrice": 100,
+    "image": "../assets/desserts.png"
+  },
+  {
+    "name": "Baklava (40 pieces)",
+    "smallPrice": 70,
+    "largePrice": null,
+    "image": "../assets/desserts2.png"
+  }
+]
