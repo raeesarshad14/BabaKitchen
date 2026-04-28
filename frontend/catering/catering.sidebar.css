@@ -1,0 +1,24 @@
+#catering-sidebar {
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: sticky;
+  top: 180px;
+}
+
+#catering-sidebar button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+#catering-sidebar button:hover {
+  color: #2e7d32;
+  transform: translateX(5px);
+}
