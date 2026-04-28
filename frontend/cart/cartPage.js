@@ -103,5 +103,17 @@ class CartPage {
 }
 
 function goToCheckout() {
+  const zeroItems = cart.items.filter((item) => item.qty === 0);
+
+  if (zeroItems.length > 0) {
+    const names = zeroItems.map((i) => i.name).join(", ");
+
+    alert(
+      `Please remove the following item(s) before proceeding: ${names}. These items have a quantity of 0 and are not selected.`,
+    );
+
+    return;
+  }
+
   window.location.href = "../pages/checkout.html";
 }

@@ -47,13 +47,32 @@ function changeQty(type, amount) {
 }
 
 function addCateringToCart() {
-  if (smallQty > 0) {
-    cart.addItem(`${modalItemName} (Small Tray)`, smallPrice, smallQty);
-  }
-  if (largeQty > 0) {
-    cart.addItem(`${modalItemName} (Large Tray)`, largePrice, largeQty);
+  const subtotal = smallQty * smallPrice + largeQty * largePrice;
+
+  // ⭐ VALIDATION — nothing selected
+  if (subtotal === 0) {
+    alert("Please select at least one tray before adding to cart.");
+    return; // stop here
   }
 
+  if (smallQty > 0) {
+    cart.addItem({
+      name: `${modalItemName} (Small Tray)`,
+      price: smallPrice,
+      qty: smallQty,
+      options: {},
+    });
+  }
+
+  if (largeQty > 0) {
+    cart.addItem({
+      name: `${modalItemName} (Large Tray)`,
+      price: largePrice,
+      qty: largeQty,
+      options: {},
+    });
+  }
+
+  cart.updateCartCount();
   closeCateringModal();
-  alert("Added to cart!");
 }

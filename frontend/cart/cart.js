@@ -38,10 +38,18 @@ class Cart {
     const item = this.items.find((i) => i.name === name);
     if (!item) return;
 
-    // enforce minimum 12
-    if (qty < 12) {
-      item.qty = 12;
+    const isCatering = item.name.includes("Tray");
+
+    if (!isCatering) {
+      // ⭐ MENU ITEMS — keep minimum 12
+      if (qty < 12) {
+        item.qty = 12;
+      } else {
+        item.qty = qty;
+      }
     } else {
+      // ⭐ CATERING ITEMS — allow 0, but DO NOT remove
+      if (qty < 0) qty = 0;
       item.qty = qty;
     }
 
@@ -66,3 +74,5 @@ class Cart {
     }
   }
 }
+window.cart = new Cart();
+cart.updateCartCount();
