@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Desserts • BabasKitchen</title>
+
+    <!-- GLOBAL -->
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../header/header.css" />
+
+    <!-- DESSERT STYLES -->
+    <link rel="stylesheet" href="desserts.css" />
+    <link rel="stylesheet" href="desserts.slider.css" />
+  </head>
+
+  <body>
+    <div id="header"></div>
+
+    <!-- ⭐ DESSERT SLIDER -->
+    <div class="dessert-slider-wrapper">
+      <div class="dessert-slider" id="dessertSlider"></div>
+
+      <button class="dessert-slide-btn left" onclick="prevDessertSlide()">
+        &#10094;
+      </button>
+      <button class="dessert-slide-btn right" onclick="nextDessertSlide()">
+        &#10095;
+      </button>
+    </div>
+
+    <!-- ⭐ DESSERT ITEMS -->
+    <div class="dessert-container">
+      <h2 class="dessert-title">Our Desserts</h2>
+      <div id="dessert-items" class="dessert-grid"></div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="../header/header.js"></script>
+    <script src="desserts.slider.js"></script>
+    <script src="dessertsCard.js"></script>
+    <script src="desserts.js"></script>
+
+    <script>
+      document.getElementById("header").innerHTML = new Header().render();
+    </script>
+  </body>
+</html>

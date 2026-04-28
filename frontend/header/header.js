@@ -12,7 +12,7 @@ class Header {
           <nav class="nav-links">
             <a href="../pages/menu.html">MENU</a>
             <a href="../pages/catering.html">CATERING</a>
-            <a href="../pages/desserts.html">DESSERTS</a>
+            <a href="../desserts/desserts.html">DESSERTS</a>
 
             <!-- UPDATED: CONTACT → WEEKLY MENU -->
             <a href="../pages/weekly-menu.html">WEEKLY MENU</a>
