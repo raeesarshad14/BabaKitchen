@@ -84,38 +84,52 @@
 
   {
     "category": "Finger Foods",
+    "subtitle": "Minimum Order Of 12 Required",
     "items": [
-      {
-        "name": "Chicken Wings",
-        "smallPrice": 75,
-        "largePrice": 130
-      },
-      {
-        "name": "Mozzarella Sticks",
-        "smallPrice": 55,
-        "largePrice": 95
-      }
+      { "name": "Aloo Samosa", "price": 1.75, "minOrder": 12 },
+      { "name": "Chicken & Veggie Spring Roll", "price": 2.25 },
+      { "name": "Imitation Crab Rangoons", "price": 36, "note": "24 pieces" },
+      { "name": "Chicken Qeema Puff Pastries", "price": 3.0 },
+      { "name": "Beef Qeema Puff Pastries", "price": 3.5 },
+      { "name": "Beef Keema Samosa", "price": 2.25 },
+      { "name": "Chicken Keema Samosa", "price": 2.25 },
+      { "name": "Creamy Chicken Puff Pastries", "price": 3.5 }
     ]
   },
 
   {
     "category": "Tikkis / Kabobs / Fish",
+    "subtitle": "Minimum Order Of 12 Required",
     "items": [
+      { "name": "Beef Chapli Kabob", "price": 3.0, "minOrder": 12 },
+      { "name": "Chicken Chapli Kabob", "price": 3.0, "minOrder": 12 },
+      { "name": "Chicken Shami Kabob", "price": 2.5, "minOrder": 12 },
+      { "name": "Beef Shami Kabob", "price": 2.75, "minOrder": 12 },
+      { "name": "Aloo Tikki", "price": 1.75, "minOrder": 12 },
+      { "name": "Fried Tilapia", "price": 4.0, "note": "1 filet" },
+      { "name": "Beef Chapli Kabob Sliders", "price": 3.0, "minOrder": 12 }
+    ]
+  },
+  {
+    "category": "Rice Dishes",
+    "items": [
+      { "name": "White Rice", "smallPrice": 50, "largePrice": 90 },
+      { "name": "Zeera Rice", "smallPrice": 55, "largePrice": 105 },
+      { "name": "Matar Pulao", "smallPrice": 60, "largePrice": 110 },
+      { "name": "Channa Pulao", "smallPrice": 60, "largePrice": 110 },
+      { "name": "Mixed Vegetable Pulao", "smallPrice": 60, "largePrice": 110 },
+      { "name": "Chicken Pulao", "smallPrice": 80, "largePrice": 130 },
+      { "name": "Beef Pulao", "smallPrice": 90, "largePrice": 180 },
+      { "name": "Goat Pulao", "smallPrice": 95, "largePrice": 195 },
+      { "name": "Vegetable Fried Rice", "smallPrice": 65, "largePrice": 115 },
       {
-        "name": "Chicken Kabobs",
-        "smallPrice": 80,
-        "largePrice": 140
-      },
-      {
-        "name": "Beef Seekh Kabobs",
+        "name": "Vegetable & Chicken Fried Rice",
         "smallPrice": 85,
-        "largePrice": 150
+        "largePrice": 135
       },
-      {
-        "name": "Fried Fish",
-        "smallPrice": 90,
-        "largePrice": 160
-      }
+      { "name": "Chicken Biryani", "smallPrice": 80, "largePrice": 130 },
+      { "name": "Goat Biryani", "smallPrice": 110, "largePrice": 200 },
+      { "name": "Beef Biryani", "smallPrice": 90, "largePrice": 180 }
     ]
   }
 ]

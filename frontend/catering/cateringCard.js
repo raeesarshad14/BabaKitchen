@@ -4,25 +4,35 @@ class CateringCard {
   }
 
   render() {
-    const isSlider = this.item.minOrder === 12;
+    const hasTrays = this.item.smallPrice && this.item.largePrice;
+    const isSinglePrice =
+      this.item.price || this.item.minOrder || this.item.note;
 
-    // ⭐ SLIDERS (simple price + Add button, NO trays, NO modal)
-    if (isSlider) {
+    // ⭐ ONE PRICE ITEMS (Finger Foods, Sliders, Kabobs, Fish)
+    if (isSinglePrice && !hasTrays) {
       return `
-    <div class="catering-card slider-card">
-      <h3>${this.item.name}</h3>
+        <div class="catering-card slider-card">
+          <h3>${this.item.name}</h3>
 
-      <div class="slider-line">
-        <span class="slider-price">$${this.item.price.toFixed(2)} each</span>
-        <button class="slider-add-btn" onclick="addSliderToCart('${this.item.name}', ${this.item.price}, ${this.item.minOrder})">
-          Add
-        </button>
-      </div>
-    </div>
-  `;
+          <div class="slider-line">
+            <span class="slider-price">
+              ${
+                this.item.note
+                  ? `$${this.item.price} (${this.item.note})`
+                  : `$${this.item.price} ${this.item.minOrder ? "each" : "each"}`
+              }
+            </span>
+
+            <button class="slider-add-btn"
+              onclick="addSliderToCart('${this.item.name}', ${this.item.price}, ${this.item.minOrder || 1})">
+              Add
+            </button>
+          </div>
+        </div>
+      `;
     }
 
-    // ⭐ APPETIZERS (keep EXACT tray modal system)
+    // ⭐ APPETIZERS (ONLY THESE HAVE TRAYS)
     return `
       <div class="catering-card catering-tray-card">
         <div class="tray-info">
