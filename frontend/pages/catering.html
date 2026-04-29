@@ -31,64 +31,67 @@
       </main>
     </div>
 
-    <!-- ⭐ CATERING TRAY POPUP (MATCHES DESSERT POPUP) -->
-    <div id="cateringModal" class="dessert-modal">
-      <div class="dessert-modal-content">
-        <h2 id="cateringModalName"></h2>
+    <!-- ⭐ CATERING TRAY POPUP (MATCHES DESSERT POPUP EXACTLY) -->
+    <!-- ⭐ CATERING TRAY POPUP (MATCHES DESSERT POPUP EXACTLY) -->
+    <div class="catering-modal-overlay" id="cateringModal">
+      <div class="catering-modal">
+        <div class="catering-modal-content">
+          <h2 id="cateringModalName"></h2>
 
-        <!-- SMALL TRAY -->
-        <div class="tray-row">
-          <div class="tray-left">
-            <span class="tray-title">Small Tray</span>
-            <span class="tray-price" id="cateringSmallPriceUnit"></span>
+          <!-- SMALL TRAY -->
+          <div class="tray-row">
+            <div class="tray-top">
+              <span class="tray-title">Small Tray</span>
+              <span class="tray-price" id="cateringSmallPriceUnit"></span>
+              <span class="tray-total-inline">
+                Total: <span id="cateringSmallTotal">$0</span>
+              </span>
+            </div>
+
+            <div class="tray-controls">
+              <button class="qty-btn" onclick="changeCateringQty('small', -1)">
+                −
+              </button>
+              <span id="cateringSmallQty">0</span>
+              <button class="qty-btn" onclick="changeCateringQty('small', 1)">
+                +
+              </button>
+            </div>
           </div>
 
-          <div class="tray-controls">
-            <button class="qty-btn" onclick="changeCateringQty('small', -1)">
-              −
-            </button>
-            <span id="cateringSmallQty">0</span>
-            <button class="qty-btn" onclick="changeCateringQty('small', 1)">
-              +
-            </button>
+          <!-- LARGE TRAY -->
+          <div class="tray-row">
+            <div class="tray-top">
+              <span class="tray-title">Large Tray</span>
+              <span class="tray-price" id="cateringLargePriceUnit"></span>
+              <span class="tray-total-inline">
+                Total: <span id="cateringLargeTotal">$0</span>
+              </span>
+            </div>
+
+            <div class="tray-controls">
+              <button class="qty-btn" onclick="changeCateringQty('large', -1)">
+                −
+              </button>
+              <span id="cateringLargeQty">0</span>
+              <button class="qty-btn" onclick="changeCateringQty('large', 1)">
+                +
+              </button>
+            </div>
           </div>
 
-          <div class="tray-total">
-            Total: <span id="cateringSmallTotal">$0</span>
+          <!-- SUBTOTAL -->
+          <div class="dessert-subtotal">
+            Subtotal: <span id="cateringSubtotal">$0</span>
           </div>
+
+          <button class="add-btn" onclick="addCateringToCart()">
+            Add to Cart
+          </button>
+          <button class="close-btn" onclick="closeCateringModal()">
+            Close
+          </button>
         </div>
-
-        <!-- LARGE TRAY -->
-        <div class="tray-row">
-          <div class="tray-left">
-            <span class="tray-title">Large Tray</span>
-            <span class="tray-price" id="cateringLargePriceUnit"></span>
-          </div>
-
-          <div class="tray-controls">
-            <button class="qty-btn" onclick="changeCateringQty('large', -1)">
-              −
-            </button>
-            <span id="cateringLargeQty">0</span>
-            <button class="qty-btn" onclick="changeCateringQty('large', 1)">
-              +
-            </button>
-          </div>
-
-          <div class="tray-total">
-            Total: <span id="cateringLargeTotal">$0</span>
-          </div>
-        </div>
-
-        <!-- SUBTOTAL -->
-        <div class="dessert-subtotal">
-          Subtotal: <span id="cateringSubtotal">$0</span>
-        </div>
-
-        <button class="add-btn" onclick="addCateringToCart()">
-          Add to Cart
-        </button>
-        <button class="close-btn" onclick="closeCateringModal()">Close</button>
       </div>
     </div>
 

@@ -213,3 +213,46 @@
   margin-bottom: 15px;
   text-align: center;
 }
+/* ⭐ CATERING POPUP LAYOUT FIX */
+
+/* Stack top row and qty row vertically */
+#cateringModal .tray-row {
+  display: flex;
+  flex-direction: column; /* top row, then qty row */
+  align-items: stretch;
+  gap: 8px;
+}
+
+/* Top row: Small Tray | $60 | Total: $60 */
+#cateringModal .tray-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+#cateringModal .tray-price {
+  margin-left: 10px;
+}
+
+#cateringModal .tray-total-inline {
+  margin-left: auto;
+  font-weight: 600;
+}
+
+/* Qty row centered: [ − ] 1 [ + ] */
+#cateringModal .tray-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Keep buttons visually aligned */
+#cateringModal .qty-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
