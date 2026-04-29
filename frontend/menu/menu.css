@@ -137,20 +137,24 @@
   width: 100%;
 }
 
-/* --- BUTTON --- */
+/* ⭐ Bigger Add button on menu cards */
 .menu-card button {
-  padding: 8px 14px;
-  background: #2e7d32;
+  padding: 11px 18px; /* bigger height + width */
+  font-size: 16px; /* bigger text */
+  border-radius: 10px; /* smoother rounded corners */
+  background: #28a745;
   color: white;
   border: none;
-  border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
-  transition: background 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
 }
 
 .menu-card button:hover {
-  background: #256628;
+  background: #28a745;
+  transform: translateY(-2px);
 }
 
 /* --- SECTION CONTAINER --- */
