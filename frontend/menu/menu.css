@@ -1,10 +1,8 @@
+/* GLOBAL FONT RESET */
 * {
-  font-family: "Inter", sans-serif !important;
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif !important;
 }
-/* GLOBAL FONT RESET — applies to entire website */
-* {
-  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
-}
+
 /* --- PAGE LAYOUT: SIDEBAR + MENU --- */
 .menu-page {
   display: flex;
@@ -55,8 +53,7 @@
   font-size: 32px;
   font-weight: 800;
   margin-bottom: 6px;
-  margin-top: -15px; /* moves title up */
-  padding-bottom: 0; /* remove border spacing */
+  margin-top: -15px;
 }
 
 .menu-section-subtitle {
@@ -77,7 +74,7 @@
   box-sizing: border-box;
 }
 
-/* --- MODERN RESTAURANT CARD --- */
+/* --- MENU CARD --- */
 .menu-card {
   display: flex;
   align-items: center;
@@ -103,27 +100,41 @@
   object-fit: cover;
 }
 
-/* --- TEXT AREA --- */
+/* --- TEXT AREA (CENTER EVERYTHING) --- */
 .menu-card-content {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center horizontally */
+  text-align: center; /* center text */
 }
 
-.menu-card-content h3 {
+/* Center the title */
+.menu-card-content h3,
+.menu-card h3 {
   font-size: 20px;
   font-weight: 700;
   margin: 0 0 6px 0;
+  text-align: center !important;
+  width: 100%;
 }
 
-.menu-card-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
+/* --- PRICE (CENTER + UNBOLD) --- */
 .menu-price {
   font-size: 18px;
-  font-weight: 700;
-  color: #2e7d32;
+  font-weight: 400 !important; /* unbold */
+  color: #212529 !important; /* same dark gray as Dahi Bhallay */
+  text-align: center !important;
+  width: 100%;
+}
+
+/* --- BOTTOM AREA (PRICE + BUTTON) --- */
+.menu-card-bottom {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  align-items: center; /* center horizontally */
+  gap: 10px;
+  width: 100%;
 }
 
 /* --- BUTTON --- */
@@ -142,6 +153,7 @@
   background: #256628;
 }
 
+/* --- SECTION CONTAINER --- */
 .menu-section-container {
   background: #f8f9fa;
   padding: 35px;
@@ -150,6 +162,7 @@
   margin-bottom: 10px;
 }
 
+/* --- MENU MODAL --- */
 .menu-modal {
   position: fixed;
   top: 0;
@@ -176,6 +189,7 @@
   text-align: center;
 }
 
+/* --- MODAL QTY ROW --- */
 .modal-qty-row {
   display: flex;
   justify-content: center;
@@ -200,6 +214,7 @@
   font-weight: 700;
 }
 
+/* --- MODAL PRICE ROW --- */
 .modal-price-row {
   display: flex;
   justify-content: space-between;
@@ -208,6 +223,7 @@
   margin-bottom: 20px;
 }
 
+/* --- MODAL BUTTONS --- */
 .modal-add-btn {
   width: 100%;
   padding: 12px;

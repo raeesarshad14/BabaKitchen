@@ -74,10 +74,10 @@
   gap: 10px;
 }
 
-.slider-price {
-  font-size: 16px;
-  font-weight: 600;
-  color: #444;
+/* Unbold slider prices */
+.slider-price,
+.catering-card p {
+  font-weight: 400 !important;
 }
 
 /* ----------------------------------------------------
