@@ -30,7 +30,7 @@
 }
 
 .category-text:hover {
-  color: #2e7d32;
+  color: #28a745;
   transform: translateX(5px);
 }
 
@@ -207,7 +207,7 @@
   height: 40px;
   font-size: 22px;
   border: none;
-  background: #2e7d32;
+  background: #28a745;
   color: white;
   border-radius: 8px;
   cursor: pointer;
@@ -231,7 +231,7 @@
 .modal-add-btn {
   width: 100%;
   padding: 12px;
-  background: #2e7d32;
+  background: #28a745;
   color: white;
   border: none;
   border-radius: 8px;
@@ -243,8 +243,9 @@
 .modal-close-btn {
   width: 100%;
   padding: 10px;
-  background: #ccc;
+  background: darkgray;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  font-size: 18px;
 }
