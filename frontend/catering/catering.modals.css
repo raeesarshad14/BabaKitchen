@@ -1,3 +1,6 @@
+* {
+  font-family: "Inter", sans-serif !important;
+}
 /* MODAL OVERLAY (shared) */
 .catering-modal-overlay,
 .single-modal-overlay {
