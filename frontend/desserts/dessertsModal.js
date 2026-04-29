@@ -62,16 +62,10 @@ function updateDessertPrices() {
     ? `$${dessertSmallPrice}`
     : "";
 
-  document.getElementById("dessertSmallPriceTotal").innerText =
-    dessertSmallQty > 0 ? ` → $${dessertSmallQty * dessertSmallPrice}` : "";
-
   // Large tray
   document.getElementById("dessertLargePriceUnit").innerText = dessertLargePrice
     ? `$${dessertLargePrice}`
     : "";
-
-  document.getElementById("dessertLargePriceTotal").innerText =
-    dessertLargeQty > 0 ? ` → $${dessertLargeQty * dessertLargePrice}` : "";
 }
 
 function updateDessertSubtotal() {

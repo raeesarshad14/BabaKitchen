@@ -17,19 +17,22 @@
   <body>
     <div id="header"></div>
 
-    <!-- ⭐ FINAL DESSERT POPUP (CATERING LAYOUT + DESSERT COLORS) -->
     <div id="dessertModal" class="dessert-modal">
       <div class="dessert-modal-content">
         <h2 id="dessertModalName"></h2>
 
         <!-- SMALL TRAY -->
         <div class="tray-row">
-          <div class="tray-left">
+          <!-- TOP ROW: title + price + total -->
+          <div class="tray-top">
             <span class="tray-title">Small Tray</span>
             <span class="tray-price" id="dessertSmallPriceUnit"></span>
-            <span class="tray-price" id="dessertSmallPriceTotal"></span>
+            <span class="tray-total-inline"
+              >Total: <span id="dessertSmallTotal">$0</span></span
+            >
           </div>
 
+          <!-- QTY ROW -->
           <div class="tray-controls">
             <button class="qty-btn" onclick="changeDessertQty('small', -1)">
               −
@@ -39,20 +42,20 @@
               +
             </button>
           </div>
-
-          <div class="tray-total">
-            Total: <span id="dessertSmallTotal">$0</span>
-          </div>
         </div>
 
         <!-- LARGE TRAY -->
         <div class="tray-row">
-          <div class="tray-left">
+          <!-- TOP ROW: title + price + total -->
+          <div class="tray-top">
             <span class="tray-title">Large Tray</span>
             <span class="tray-price" id="dessertLargePriceUnit"></span>
-            <span class="tray-price" id="dessertLargePriceTotal"></span>
+            <span class="tray-total-inline"
+              >Total: <span id="dessertLargeTotal">$0</span></span
+            >
           </div>
 
+          <!-- QTY ROW -->
           <div class="tray-controls">
             <button class="qty-btn" onclick="changeDessertQty('large', -1)">
               −
@@ -61,10 +64,6 @@
             <button class="qty-btn" onclick="changeDessertQty('large', 1)">
               +
             </button>
-          </div>
-
-          <div class="tray-total">
-            Total: <span id="dessertLargeTotal">$0</span>
           </div>
         </div>
 

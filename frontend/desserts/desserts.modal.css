@@ -36,7 +36,9 @@
 .tray-left {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  align-items: center;
+  width: 100%;
+  white-space: nowrap;
 }
 
 /* Small Tray / Large Tray — BOLD */
@@ -46,7 +48,7 @@
 
 /* Price — UNBOLD */
 .tray-price {
-  font-weight: 400;
+  margin-left: 12px; /* adds space between label and price */
 }
 
 /* QTY CONTROLS */
@@ -107,4 +109,17 @@
   border-radius: 8px;
   font-size: 18px;
   cursor: pointer;
+}
+.tray-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.tray-total-inline {
+  margin-left: auto;
+  font-weight: 600;
 }
