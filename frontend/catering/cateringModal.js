@@ -1,81 +1,104 @@
-let modalItemName = "";
-let smallQty = 0;
-let largeQty = 0;
-let smallPrice = 0;
-let largePrice = 0;
+/* ---------------------------------------------------------
+   CATERING TRAY POPUP (MATCHES DESSERT POPUP)
+--------------------------------------------------------- */
+
+let cateringItemName = "";
+let cateringSmallQty = 0;
+let cateringLargeQty = 0;
+let cateringSmallPrice = 0;
+let cateringLargePrice = 0;
 
 function openCateringModal(name, sPrice, lPrice, preselect = null) {
-  modalItemName = name;
-  smallPrice = sPrice;
-  largePrice = lPrice;
+  cateringItemName = name;
+  cateringSmallPrice = sPrice;
+  cateringLargePrice = lPrice;
 
-  smallQty = 0;
-  largeQty = 0;
+  cateringSmallQty = 0;
+  cateringLargeQty = 0;
 
-  document.getElementById("modal-item-name").innerText = name;
-  document.getElementById("small-price").innerText = smallPrice;
-  document.getElementById("large-price").innerText = largePrice;
+  // ⭐ TITLE (MATCHES DESSERT POPUP)
+  document.getElementById("cateringModalName").innerText = name;
 
-  document.getElementById("small-qty").innerText = smallQty;
-  document.getElementById("large-qty").innerText = largeQty;
+  // ⭐ PRICES
+  document.getElementById("cateringSmallPriceUnit").innerText = `$${sPrice}`;
+  document.getElementById("cateringLargePriceUnit").innerText = `$${lPrice}`;
 
-  // ⭐ Preselect tray
+  // ⭐ RESET QTY
+  document.getElementById("cateringSmallQty").innerText = 0;
+  document.getElementById("cateringLargeQty").innerText = 0;
+
+  // ⭐ RESET TOTALS
+  document.getElementById("cateringSmallTotal").innerText = "$0";
+  document.getElementById("cateringLargeTotal").innerText = "$0";
+  document.getElementById("cateringSubtotal").innerText = "$0";
+
+  // ⭐ PRESELECT TRAY
   if (preselect === "small") {
-    smallQty = 1;
-    document.getElementById("small-qty").innerText = 1;
+    cateringSmallQty = 1;
+    document.getElementById("cateringSmallQty").innerText = 1;
+    document.getElementById("cateringSmallTotal").innerText = `$${sPrice}`;
+    document.getElementById("cateringSubtotal").innerText = `$${sPrice}`;
   }
 
   if (preselect === "large") {
-    largeQty = 1;
-    document.getElementById("large-qty").innerText = 1;
+    cateringLargeQty = 1;
+    document.getElementById("cateringLargeQty").innerText = 1;
+    document.getElementById("cateringLargeTotal").innerText = `$${lPrice}`;
+    document.getElementById("cateringSubtotal").innerText = `$${lPrice}`;
   }
 
-  document.querySelector(".catering-modal-overlay").style.display = "flex";
+  // ⭐ SHOW POPUP
+  document.getElementById("cateringModal").style.display = "flex";
 }
 
 function closeCateringModal() {
-  document.querySelector(".catering-modal-overlay").style.display = "none";
+  document.getElementById("cateringModal").style.display = "none";
 }
 
-function changeQty(type, amount) {
+function changeCateringQty(type, amount) {
   if (type === "small") {
-    smallQty = Math.max(0, smallQty + amount);
-    document.getElementById("small-qty").innerText = smallQty;
-    document.getElementById("small-total").innerText = smallQty * smallPrice;
+    cateringSmallQty = Math.max(0, cateringSmallQty + amount);
+    document.getElementById("cateringSmallQty").innerText = cateringSmallQty;
+    document.getElementById("cateringSmallTotal").innerText =
+      `$${cateringSmallQty * cateringSmallPrice}`;
   } else {
-    largeQty = Math.max(0, largeQty + amount);
-    document.getElementById("large-qty").innerText = largeQty;
-    document.getElementById("large-total").innerText = largeQty * largePrice;
+    cateringLargeQty = Math.max(0, cateringLargeQty + amount);
+    document.getElementById("cateringLargeQty").innerText = cateringLargeQty;
+    document.getElementById("cateringLargeTotal").innerText =
+      `$${cateringLargeQty * cateringLargePrice}`;
   }
 
-  // ⭐ Update subtotal
-  const subtotal = smallQty * smallPrice + largeQty * largePrice;
-  document.getElementById("tray-subtotal").innerText = subtotal;
+  const subtotal =
+    cateringSmallQty * cateringSmallPrice +
+    cateringLargeQty * cateringLargePrice;
+
+  document.getElementById("cateringSubtotal").innerText = `$${subtotal}`;
 }
 
 function addCateringToCart() {
-  const subtotal = smallQty * smallPrice + largeQty * largePrice;
+  const subtotal =
+    cateringSmallQty * cateringSmallPrice +
+    cateringLargeQty * cateringLargePrice;
 
-  // ⭐ VALIDATION — nothing selected
   if (subtotal === 0) {
     alert("Please select at least one tray before adding to cart.");
-    return; // stop here
+    return;
   }
 
-  if (smallQty > 0) {
+  if (cateringSmallQty > 0) {
     cart.addItem({
-      name: `${modalItemName} (Small Tray)`,
-      price: smallPrice,
-      qty: smallQty,
+      name: `${cateringItemName} (Small Tray)`,
+      price: cateringSmallPrice,
+      qty: cateringSmallQty,
       options: {},
     });
   }
 
-  if (largeQty > 0) {
+  if (cateringLargeQty > 0) {
     cart.addItem({
-      name: `${modalItemName} (Large Tray)`,
-      price: largePrice,
-      qty: largeQty,
+      name: `${cateringItemName} (Large Tray)`,
+      price: cateringLargePrice,
+      qty: cateringLargeQty,
       options: {},
     });
   }
@@ -83,6 +106,11 @@ function addCateringToCart() {
   cart.updateCartCount();
   closeCateringModal();
 }
+
+/* ---------------------------------------------------------
+   SINGLE‑ITEM POPUP (UNCHANGED)
+--------------------------------------------------------- */
+
 let singleItemName = "";
 let singlePrice = 0;
 let singleQty = 12;
@@ -106,7 +134,7 @@ function closeSingleModal() {
 }
 
 function changeSingleQty(amount) {
-  singleQty = Math.max(12, singleQty + amount); // ⭐ cannot go below 12
+  singleQty = Math.max(12, singleQty + amount);
   document.getElementById("single-qty").innerText = singleQty;
   document.getElementById("single-total").innerText = (
     singleQty * singlePrice

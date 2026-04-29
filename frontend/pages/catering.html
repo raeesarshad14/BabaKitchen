@@ -6,6 +6,7 @@
 
     <!-- GLOBAL STYLES -->
     <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../desserts/desserts.modal.css" />
 
     <!-- HEADER STYLE -->
     <link rel="stylesheet" href="../header/header.css" />
@@ -30,45 +31,60 @@
       </main>
     </div>
 
-    <!-- ⭐ TRAY MODAL -->
-    <div class="catering-modal-overlay">
-      <div class="catering-modal">
-        <h2 id="modal-item-name"></h2>
+    <!-- ⭐ CATERING TRAY POPUP (MATCHES DESSERT POPUP) -->
+    <div id="cateringModal" class="dessert-modal">
+      <div class="dessert-modal-content">
+        <h2 id="cateringModalName"></h2>
 
         <!-- SMALL TRAY -->
         <div class="tray-row">
-          <span>Small Tray ($<span id="small-price"></span>)</span>
-          <div class="qty-controls">
-            <button class="qty-btn" onclick="changeQty('small', -1)">
-              &#8722;
+          <div class="tray-left">
+            <span class="tray-title">Small Tray</span>
+            <span class="tray-price" id="cateringSmallPriceUnit"></span>
+          </div>
+
+          <div class="tray-controls">
+            <button class="qty-btn" onclick="changeCateringQty('small', -1)">
+              −
             </button>
-            <span id="small-qty">0</span>
-            <button class="qty-btn" onclick="changeQty('small', 1)">+</button>
+            <span id="cateringSmallQty">0</span>
+            <button class="qty-btn" onclick="changeCateringQty('small', 1)">
+              +
+            </button>
+          </div>
+
+          <div class="tray-total">
+            Total: <span id="cateringSmallTotal">$0</span>
           </div>
         </div>
-
-        <div class="tray-total">Total: $<span id="small-total">0</span></div>
 
         <!-- LARGE TRAY -->
         <div class="tray-row">
-          <span>Large Tray ($<span id="large-price"></span>)</span>
-          <div class="qty-controls">
-            <button class="qty-btn" onclick="changeQty('large', -1)">
-              &#8722;
+          <div class="tray-left">
+            <span class="tray-title">Large Tray</span>
+            <span class="tray-price" id="cateringLargePriceUnit"></span>
+          </div>
+
+          <div class="tray-controls">
+            <button class="qty-btn" onclick="changeCateringQty('large', -1)">
+              −
             </button>
-            <span id="large-qty">0</span>
-            <button class="qty-btn" onclick="changeQty('large', 1)">+</button>
+            <span id="cateringLargeQty">0</span>
+            <button class="qty-btn" onclick="changeCateringQty('large', 1)">
+              +
+            </button>
+          </div>
+
+          <div class="tray-total">
+            Total: <span id="cateringLargeTotal">$0</span>
           </div>
         </div>
 
-        <div class="tray-total">Total: $<span id="large-total">0</span></div>
-
         <!-- SUBTOTAL -->
-        <div class="tray-subtotal">
-          Subtotal: $<span id="tray-subtotal">0</span>
+        <div class="dessert-subtotal">
+          Subtotal: <span id="cateringSubtotal">$0</span>
         </div>
 
-        <!-- BUTTONS -->
         <button class="add-btn" onclick="addCateringToCart()">
           Add to Cart
         </button>

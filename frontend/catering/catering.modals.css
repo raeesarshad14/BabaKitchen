@@ -68,7 +68,7 @@
   width: 100%;
   margin-top: 14px;
   padding: 14px 0;
-  background: #e0e0e0;
+  background: #6c757d; /* ⭐ Gray close button */
   border: none;
   border-radius: 12px;
   font-size: 16px;
@@ -76,7 +76,7 @@
 }
 
 .close-btn:hover {
-  background: #cfcfcf;
+  background: #6c757d; /* ⭐ Gray close button */
 }
 
 /* QTY CONTROLS (shared) */
@@ -90,7 +90,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #e0e0e0;
+  background: #28a745;
   border: none;
   width: 34px;
   height: 34px;
@@ -101,7 +101,7 @@
 }
 
 .qty-btn:hover {
-  background: #d5d5d5;
+  background: #28a745;
 }
 
 /* TRAY ADD BUTTON */
@@ -143,7 +143,7 @@
   width: 34px;
   height: 34px;
   border-radius: 10px;
-  background: #e0e0e0;
+  background: #28a745;
   border: none;
   font-size: 22px;
 }
@@ -183,15 +183,16 @@
 .single-close-btn {
   width: 100%;
   padding: 14px 0;
-  background: #e0e0e0;
+  background: #6c757d; /* ⭐ Gray close button */
   border: none;
   border-radius: 12px;
   font-size: 16px;
   cursor: pointer;
+  color: white;
 }
 
 .single-close-btn:hover {
-  background: #cfcfcf;
+  background: #6c757d; /* ⭐ Gray close button */
 }
 
 /* ANIMATION */
@@ -204,4 +205,11 @@
     transform: scale(1);
     opacity: 1;
   }
+}
+#cateringModalName {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 15px;
+  text-align: center;
 }

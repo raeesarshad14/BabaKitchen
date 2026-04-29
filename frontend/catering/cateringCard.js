@@ -5,49 +5,48 @@ class CateringCard {
 
   render() {
     const hasTrays = this.item.smallPrice && this.item.largePrice;
-    const isSinglePrice =
-      this.item.price || this.item.minOrder || this.item.note;
 
-    // ⭐ ONE PRICE ITEMS (Finger Foods, Sliders, Kabobs, Fish)
-    if (isSinglePrice && !hasTrays) {
+    const singlePriceValue =
+      this.item.price || this.item.unitPrice || this.item.pricePerPiece;
+
+    const isSinglePrice = singlePriceValue && !hasTrays;
+
+    /* ⭐ SINGLE PRICE ITEMS */
+    if (isSinglePrice) {
       return `
-    <div class="catering-card slider-card">
-      <h3>${this.item.name}</h3>
-
-      <div class="slider-line">
-        <span class="slider-price">
-          ${
-            this.item.note
-              ? `$${this.item.price} (${this.item.note})`
-              : `$${this.item.price} each`
-          }
-        </span>
-
-        <button class="slider-add-btn"
-          onclick="openSingleModal('${this.item.name}', ${this.item.price}, ${this.item.minOrder || 12})">
-          Add
-        </button>
-      </div>
-    </div>
-  `;
-    }
-
-    // ⭐ APPETIZERS (ONLY THESE HAVE TRAYS)
-    return `
-      <div class="catering-card catering-tray-card">
-        <div class="tray-info">
+        <div class="catering-card slider-card">
           <h3>${this.item.name}</h3>
 
-          <div class="tray-line">
-            <span>Small Tray — $${this.item.smallPrice}</span>
-            <button onclick="openCateringModal('${this.item.name}', ${this.item.smallPrice}, ${this.item.largePrice}, 'small')">Add</button>
+          <div class="slider-price">
+            ${
+              this.item.note
+                ? `$${singlePriceValue} (${this.item.note})`
+                : `$${singlePriceValue} each`
+            }
           </div>
 
-          <div class="tray-line">
-            <span>Large Tray — $${this.item.largePrice}</span>
-            <button onclick="openCateringModal('${this.item.name}', ${this.item.smallPrice}, ${this.item.largePrice}, 'large')">Add</button>
-          </div>
+          <button class="slider-add-btn"
+            onclick="openSingleModal('${this.item.name}', ${singlePriceValue}, ${
+              this.item.minOrder || 12
+            })">
+            Add
+          </button>
         </div>
+      `;
+    }
+
+    /* ⭐ TRAY ITEMS */
+    return `
+      <div class="catering-card catering-tray-card">
+        <h3>${this.item.name}</h3>
+
+        <p>Small Tray — $${this.item.smallPrice}</p>
+        <p>Large Tray — $${this.item.largePrice}</p>
+
+        <button class="catering-add-btn"
+          onclick="openCateringModal('${this.item.name}', ${this.item.smallPrice}, ${this.item.largePrice})">
+          Add
+        </button>
       </div>
     `;
   }

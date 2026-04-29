@@ -1,109 +1,105 @@
 * {
   font-family: "Inter", sans-serif !important;
 }
-/* BASE CARD */
-.catering-card {
-  background: #ffffff;
-  border: 1px solid #e5e5e5;
-  border-radius: 12px;
-  padding: 14px 18px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 70px;
-}
 
+/* ----------------------------------------------------
+   BASE CARD (MATCHES DESSERT STYLE)
+---------------------------------------------------- */
 .catering-card h3 {
   width: 100%;
   text-align: center;
-  margin: 0;
+  margin: 0 0 10px 0;
+  font-size: 20px; /* same as desserts */
+  font-weight: 700; /* same as desserts */
+  letter-spacing: -0.02em; /* same as desserts */
+  color: #000;
 }
 
-.catering-card button {
+/* ITEM NAME */
+.catering-card h3 {
+  width: 100%;
+  text-align: center;
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  font-weight: 700; /* ⭐ same as desserts */
+  letter-spacing: -0.02em; /* ⭐ same as desserts */
+  color: #000; /* optional: ensures clean black text */
+}
+
+/* PRICE LINES */
+.catering-card p {
+  margin: 4px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #444;
+}
+
+/* ADD BUTTON (FULL WIDTH, CENTERED) */
+.catering-add-btn,
+.slider-add-btn {
+  margin-top: 8px;
   background: #28a745;
   color: white;
   border: none;
+  padding: 10px 16px;
   border-radius: 8px;
-  padding: 10px 18px;
+  cursor: pointer;
   font-size: 16px;
   font-weight: 600;
-  cursor: pointer;
-  white-space: nowrap;
+  width: 15%;
+
+  /* ⭐ CENTER THE BUTTON */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.catering-card button:hover {
+.catering-add-btn:hover,
+.slider-add-btn:hover {
   background: #1e7e34;
 }
 
-/* SLIDER / SINGLE PRICE ITEMS */
+/* ----------------------------------------------------
+   SINGLE PRICE ITEMS (SLIDERS, FINGER FOODS, KABOBS)
+---------------------------------------------------- */
 .slider-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 14px 18px;
-}
-
-.slider-line {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  gap: 20px;
+  gap: 10px;
 }
 
 .slider-price {
   font-size: 16px;
   font-weight: 600;
-  white-space: nowrap;
+  color: #444;
 }
 
-.slider-add-btn {
-  padding: 10px 18px;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 8px;
-  background: #28a745;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-
-.slider-add-btn:hover {
-  background: #1e7e34;
-}
-
-/* TRAY ITEMS */
+/* ----------------------------------------------------
+   TRAY ITEMS (APPETIZERS)
+---------------------------------------------------- */
 .catering-tray-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  width: 100%;
+  display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
+  gap: 8px;
 }
 
 .tray-line {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  gap: 100px;
-  margin-top: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #444;
+  margin: 2px 0;
 }
 
-.tray-line span {
-  flex-shrink: 0;
-}
-
-.tray-line button {
-  flex-shrink: 0;
-  padding: 6px 14px;
-  font-size: 14px;
-  border-radius: 6px;
-  background: #28a745;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-
-.tray-line button:hover {
-  background: #1e7e34;
-}
+/* OLD BUTTONS REMOVED — NOW USING FULL-WIDTH BUTTON */
