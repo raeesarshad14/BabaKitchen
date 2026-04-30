@@ -1,0 +1,338 @@
+/* PAGE WRAPPER */
+.weekly-menu-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.weekly-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* DAY BLOCK */
+.weekly-day-block {
+  margin-bottom: 30px;
+}
+
+.weekly-day-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+/* ITEM CARD */
+.weekly-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* LEFT SIDE TEXT */
+.weekly-item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.weekly-dish {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.weekly-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #28a745;
+  margin-top: 4px;
+}
+
+/* ADD BUTTON */
+.weekly-add-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.weekly-add-btn:hover {
+  background: #218838;
+}
+
+/* -------------------------
+   MODAL STYLING
+-------------------------- */
+
+.weekly-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.weekly-modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.weekly-modal-content h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+#wmdish-price {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* QUANTITY ROW */
+.wm-qty-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+  gap: 15px;
+}
+
+.wm-qty-row button {
+  width: 38px;
+  height: 38px;
+  font-size: 20px;
+  border: none;
+  background: #eee;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.wm-qty-row button:hover {
+  background: #ddd;
+}
+
+#wm-qty {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* TOTAL */
+.wm-total {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* ADD TO CART BUTTON */
+.wm-add-cart {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.wm-add-cart:hover {
+  background: #218838;
+}
+
+/* CLOSE BUTTON */
+.wm-close {
+  background: #ccc;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.wm-close:hover {
+  background: #b5b5b5;
+}
+/* LAYOUT */
+.weekly-layout {
+  display: flex;
+  gap: 25px;
+  padding: 20px;
+}
+
+/* SIDEBAR */
+.weekly-sidebar {
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  position: sticky;
+  top: 10px; /* stays at top when scrolling */
+  align-self: flex-start;
+}
+
+.weekly-sidebar button {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: left;
+  transition: 0.2s;
+  font-weight: 700;
+}
+
+.weekly-sidebar button:hover {
+  color: #28a745;
+  font-weight: 700;
+}
+
+/* MAIN PAGE */
+.weekly-menu-page {
+  flex: 1;
+}
+
+.weekly-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+/* DAY BLOCK */
+.weekly-day-block {
+  margin-bottom: 35px;
+}
+
+.weekly-day-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* ITEM CARD */
+.weekly-item {
+  background: #ffffff;
+  padding: 18px 20px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.weekly-dish {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.weekly-price {
+  font-size: 18px;
+  font-weight: 500;
+  color: gray;
+}
+
+/* ADD BUTTON */
+.weekly-add-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* MODAL */
+.weekly-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.weekly-modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.wm-qty-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+  gap: 15px;
+}
+
+.wm-qty-row button {
+  width: 38px;
+  height: 38px;
+  font-size: 20px;
+  border: none;
+  background: #eee;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.wm-total {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.wm-add-cart {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.wm-close {
+  background: #ccc;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 15px;
+  cursor: pointer;
+}

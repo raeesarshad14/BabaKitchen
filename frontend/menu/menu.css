@@ -122,8 +122,8 @@
 /* --- PRICE (CENTER + UNBOLD) --- */
 .menu-price {
   font-size: 18px;
-  font-weight: 400 !important; /* unbold */
-  color: #212529 !important; /* same dark gray as Dahi Bhallay */
+  font-weight: 500 !important; /* unbold */
+  color: gray !important; /* same dark gray as Dahi Bhallay */
   text-align: center !important;
   width: 100%;
 }
@@ -145,6 +145,7 @@
   background: #28a745;
   color: white;
   border: none;
+
   cursor: pointer;
   font-weight: 600;
   transition:

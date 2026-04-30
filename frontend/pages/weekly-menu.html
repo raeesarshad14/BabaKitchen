@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Weekly Menu</title>
+
+    <!-- GLOBAL STYLES -->
+    <link rel="stylesheet" href="../styles/main.css" />
+
+    <!-- HEADER -->
+    <link rel="stylesheet" href="../header/header.css" />
+
+    <!-- WEEKLY MENU STYLES -->
+    <link rel="stylesheet" href="../weeklyMenu/weekly-menu.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <div id="header"></div>
+
+    <div class="weekly-layout">
+      <!-- LEFT SIDEBAR -->
+      <div class="weekly-sidebar">
+        <button onclick="scrollToDay('Monday')">Monday</button>
+        <button onclick="scrollToDay('Tuesday')">Tuesday</button>
+        <button onclick="scrollToDay('Wednesday')">Wednesday</button>
+        <button onclick="scrollToDay('Thursday')">Thursday</button>
+        <button onclick="scrollToDay('Friday')">Friday</button>
+        <button onclick="scrollToDay('Saturday')">Saturday</button>
+        <button onclick="scrollToDay('Sunday')">Sunday</button>
+      </div>
+
+      <!-- MAIN CONTENT -->
+      <div class="weekly-menu-page">
+        <h1 class="weekly-title">Weekly Menu</h1>
+        <div id="weekly-menu"></div>
+      </div>
+    </div>
+
+    <!-- WEEKLY MENU MODAL -->
+    <div id="weeklyModal" class="weekly-modal">
+      <div class="weekly-modal-content">
+        <h2 id="wm-dish-name"></h2>
+        <p id="wm-dish-price"></p>
+
+        <div class="wm-qty-row">
+          <button onclick="wmDecrease()">-</button>
+          <span id="wm-qty">1</span>
+          <button onclick="wmIncrease()">+</button>
+        </div>
+
+        <div class="wm-total">Total: $<span id="wm-total-price"></span></div>
+
+        <button class="wm-add-cart">Add to Cart</button>
+        <button class="wm-close" onclick="closeWeeklyModal()">Close</button>
+      </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="../header/header.js"></script>
+    <script src="../weeklyMenu/weekly-menu.js"></script>
+
+    <script>
+      document.getElementById("header").innerHTML = new Header().render();
+    </script>
+  </body>
+</html>
