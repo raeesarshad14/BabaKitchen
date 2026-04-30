@@ -1,21 +1,37 @@
 * {
   font-family: "Inter", sans-serif !important;
 }
-/* --- LEFT SIDE VERTICAL SIDEBAR --- */
+/* --- SIDEBAR CONTAINER --- */
 .menu-sidebar {
-  width: 160px;
+  width: 180px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 18px;
   position: sticky;
-  top: 200px; /* FIXED — aligns perfectly under your header */
+  top: 180px;
 }
 
+/* --- CATEGORY BUTTONS (MATCH PRODUCT CARDS) --- */
 .category-text {
-  font-size: 20px;
+  background: #ffffff;
+  padding: 14px 18px;
+  border-radius: 14px;
+  text-align: center;
+  font-size: 18px;
   font-weight: 700;
   cursor: pointer;
+
+  /* subtle shadow like product cards */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+
   transition: 0.2s ease;
+}
+
+.category-text:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.12);
+  color: #2e7d32;
 }
 
 .category-text:hover {
