@@ -11,21 +11,21 @@ class CateringCard {
 
     const isSinglePrice = singlePriceValue && !hasTrays;
 
-    /* ⭐ SINGLE PRICE ITEMS */
+    /* ⭐ SINGLE PRICE ITEMS (MATCH SMASH BURGER CARD STRUCTURE) */
     if (isSinglePrice) {
       return `
-        <div class="catering-card slider-card">
-          <h3>${this.item.name}</h3>
+        <div class="menu-card">
+          <h3 class="menu-card-title">${this.item.name}</h3>
 
-          <div class="slider-price">
+          <p class="menu-card-price">
             ${
               this.item.note
                 ? `$${singlePriceValue} (${this.item.note})`
                 : `$${singlePriceValue} each`
             }
-          </div>
+          </p>
 
-          <button class="slider-add-btn"
+          <button class="menu-add-btn"
             onclick="openSingleModal('${this.item.name}', ${singlePriceValue}, ${
               this.item.minOrder || 12
             })">
@@ -35,15 +35,15 @@ class CateringCard {
       `;
     }
 
-    /* ⭐ TRAY ITEMS */
+    /* ⭐ TRAY ITEMS (MATCH SMASH BURGER CARD STRUCTURE) */
     return `
-      <div class="catering-card catering-tray-card">
-        <h3>${this.item.name}</h3>
+      <div class="menu-card">
+        <h3 class="menu-card-title">${this.item.name}</h3>
 
-        <p>Small Tray — $${this.item.smallPrice}</p>
-        <p>Large Tray — $${this.item.largePrice}</p>
+        <p class="menu-card-price">Small Tray — $${this.item.smallPrice}</p>
+        <p class="menu-card-price">Large Tray — $${this.item.largePrice}</p>
 
-        <button class="catering-add-btn"
+        <button class="menu-add-btn"
           onclick="openCateringModal('${this.item.name}', ${this.item.smallPrice}, ${this.item.largePrice})">
           Add
         </button>

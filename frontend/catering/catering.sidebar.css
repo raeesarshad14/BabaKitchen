@@ -1,27 +1,44 @@
+/* ---------------------------------------------------
+   GLOBAL FONT
+--------------------------------------------------- */
 * {
   font-family: "Inter", sans-serif !important;
 }
+
+/* ---------------------------------------------------
+   SIDEBAR CONTAINER (INSIDE GRAY AREA)
+--------------------------------------------------- */
 #catering-sidebar {
-  width: 160px;
+  width: 180px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
   position: sticky;
   top: 180px;
 }
 
+/* ---------------------------------------------------
+   SIDEBAR BUTTONS (MATCH SMASH BURGER CATEGORY CARDS)
+--------------------------------------------------- */
 #catering-sidebar button {
-  background: none;
+  background: #ffffff;
   border: none;
-  padding: 0;
-  font-size: 20px;
+  padding: 14px 18px;
+  font-size: 18px;
   font-weight: 700;
-  text-align: left;
+  text-align: center;
   cursor: pointer;
+
+  border-radius: 14px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+
   transition: 0.2s ease;
 }
 
+/* Hover effect identical to Smash Burgers */
 #catering-sidebar button:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.12);
   color: #2e7d32;
-  transform: translateX(5px);
 }

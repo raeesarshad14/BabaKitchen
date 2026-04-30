@@ -1,33 +1,83 @@
+/* ---------------------------------------------------
+   GLOBAL FONT
+--------------------------------------------------- */
 * {
   font-family: "Inter", sans-serif !important;
 }
-/* PAGE CONTAINER */
+
+/* ---------------------------------------------------
+   PAGE CONTAINER (MATCHES SMASH BURGERS)
+--------------------------------------------------- */
 .page-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 20px;
 }
 
-/* PAGE LAYOUT */
+/* ---------------------------------------------------
+   MAIN LAYOUT (MATCHES SMASH BURGERS)
+--------------------------------------------------- */
 .catering-page {
   display: flex;
   align-items: flex-start;
   gap: 40px;
-  padding: 40px 20px;
+  padding: 40px 0;
+  background: #f8f9fa; /* same gray background */
+  border-radius: 16px;
 }
 
-/* CATEGORY BOX */
+/* ---------------------------------------------------
+   SIDEBAR (NOW INSIDE GRAY AREA)
+--------------------------------------------------- */
+#catering-sidebar {
+  padding-left: 15px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: sticky;
+  top: 180px;
+}
+
+/* Sidebar buttons styled like Smash Burger category cards */
+#catering-sidebar button {
+  background: #ffffff;
+  border: none;
+  padding: 14px 18px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 14px;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: 0.2s ease;
+}
+
+#catering-sidebar button:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.12);
+  color: #2e7d32;
+}
+
+/* ---------------------------------------------------
+   CATEGORY BOX (KEPT, BUT MATCHED TO BURGER SPACING)
+--------------------------------------------------- */
 .catering-box {
   background: #ffffff;
-  padding: 40px 40px;
+  padding: 40px;
   border-radius: 12px;
   border: 1px solid #e5e5e5;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
   width: 100%;
   scroll-margin-top: 140px;
+  margin-bottom: 40px; /* spacing between sections */
 }
 
-/* CATEGORY TITLE */
+/* ---------------------------------------------------
+   CATEGORY TITLE
+--------------------------------------------------- */
 .catering-box-title {
   text-align: center;
   margin-bottom: 25px;
@@ -37,11 +87,28 @@
   font-size: 32px;
   font-weight: 800;
   margin: 0;
+  letter-spacing: -0.02em; /* match Smash Burgers */
 }
 
-/* ITEM GRID */
+/* ---------------------------------------------------
+   ITEM GRID (MATCH SMASH BURGERS)
+--------------------------------------------------- */
 .catering-items {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+
+  /* 1. This centers the entire grid on the page */
+  margin: 0 auto;
+
+  /* 2. Sets a consistent max-width so it doesn't get too wide */
+  max-width: 1200px;
+
+  /* 3. Balanced padding for left and right */
+  padding: 20px 40px;
+
+  /* 4. Keeps the 50px gap you wanted */
+  column-gap: 70px;
+  row-gap: 35px;
+  padding-left: 40px;
+  box-sizing: border-box;
 }

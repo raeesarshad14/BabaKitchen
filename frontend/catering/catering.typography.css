@@ -1,12 +1,13 @@
+/* ---------------------------------------------------
+   GLOBAL FONT (clean + single source of truth)
+--------------------------------------------------- */
 * {
   font-family: "Inter", sans-serif !important;
 }
-/* GLOBAL FONT */
-* {
-  font-family: "Poppins", "Inter", "Segoe UI", sans-serif;
-}
 
-/* CATEGORY SUBTITLE */
+/* ---------------------------------------------------
+   CATEGORY SUBTITLE
+--------------------------------------------------- */
 .category-subtitle {
   text-align: center;
   margin-top: -10px;
