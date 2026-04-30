@@ -39,16 +39,21 @@ class Cart {
     if (!item) return;
 
     const isCatering = item.name.includes("Tray");
+    const isWeekly = item.type === "weekly";
 
-    if (!isCatering) {
-      // ⭐ MENU ITEMS — keep minimum 12
+    if (isWeekly) {
+      // ⭐ Weekly Menu — allow ANY qty >= 1
+      if (qty < 1) qty = 1;
+      item.qty = qty;
+    } else if (!isCatering) {
+      // ⭐ Sliders/Menu — minimum 12 (unchanged)
       if (qty < 12) {
         item.qty = 12;
       } else {
         item.qty = qty;
       }
     } else {
-      // ⭐ CATERING ITEMS — allow 0, but DO NOT remove
+      // ⭐ Catering — allow 0+
       if (qty < 0) qty = 0;
       item.qty = qty;
     }
