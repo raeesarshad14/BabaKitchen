@@ -52,7 +52,7 @@
 
   {
     "category": "Sliders",
-    "subtitle": "Minimum order of 12 required",
+    "subtitle": "(Minimum order of 12 required)",
     "items": [
       {
         "name": "Chicken Salad Sliders",
@@ -84,7 +84,7 @@
 
   {
     "category": "Finger Foods",
-    "subtitle": "Minimum Order Of 12 Required",
+    "subtitle": "(Minimum Order Of 12 Required)",
     "items": [
       { "name": "Aloo Samosa", "price": 1.75, "minOrder": 12 },
       { "name": "Chicken & Veggie Spring Roll", "price": 2.25 },
@@ -99,7 +99,7 @@
 
   {
     "category": "Tikkis / Kabobs / Fish",
-    "subtitle": "Minimum Order Of 12 Required",
+    "subtitle": "(Minimum Order Of 12 Required)",
     "items": [
       { "name": "Beef Chapli Kabob", "price": 3.0, "minOrder": 12 },
       { "name": "Chicken Chapli Kabob", "price": 3.0, "minOrder": 12 },

@@ -14,21 +14,26 @@ async function loadCatering() {
       (section) => `
       <div id="${section.category}">
         <div class="catering-box">
+
+          <!-- TITLE ONLY -->
           <div class="catering-box-title">
             <h2>${section.category}</h2>
-
-            ${
-              section.subtitle
-                ? `<p class="category-subtitle">${section.subtitle}</p>`
-                : ""
-            }
           </div>
 
+          <!-- SUBTITLE OUTSIDE TITLE BLOCK -->
+          ${
+            section.subtitle
+              ? `<p class="category-subtitle">${section.subtitle}</p>`
+              : ""
+          }
+
+          <!-- ITEMS GRID -->
           <div class="catering-items">
             ${section.items
               .map((item) => new CateringCard(item).render())
               .join("")}
           </div>
+
         </div>
       </div>
     `,

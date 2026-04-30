@@ -67,23 +67,12 @@
 
 .catering-box-title {
   text-align: center;
-  margin-bottom: 25px;
-}
-
-.catering-box-title h2 {
-  font-size: 32px;
-  font-weight: 800;
-  margin: 0;
+  margin-bottom: 15px; /* reduced from 40 */
 }
 
 .category-subtitle {
-  text-align: center;
-  margin-top: -10px;
-  margin-bottom: 25px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #6c757d;
-  opacity: 0.9;
+  margin-top: 0; /* remove negative pull */
+  margin-bottom: 20px; /* reduced from 35 */
 }
 
 /* ---------------------------------------------------
