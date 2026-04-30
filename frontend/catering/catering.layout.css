@@ -67,12 +67,12 @@
 .catering-box {
   background: #ffffff;
   padding: 40px;
-  border-radius: 12px;
+  border-radius: 8px;
   border: 1px solid #e5e5e5;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   width: 100%;
-  scroll-margin-top: 140px;
-  margin-bottom: 40px; /* spacing between sections */
+  scroll-margin-top: 0px;
+  margin-bottom: 30px; /* spacing between sections */
 }
 
 /* ---------------------------------------------------
@@ -111,4 +111,8 @@
   row-gap: 35px;
   padding-left: 40px;
   box-sizing: border-box;
+}
+
+.catering-page {
+  background: #ffffff !important;
 }
