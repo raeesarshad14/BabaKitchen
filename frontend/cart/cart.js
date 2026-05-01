@@ -82,6 +82,16 @@ class Cart {
 window.cart = new Cart();
 cart.updateCartCount();
 
+function restoreCartCount() {
+  const savedCart = JSON.parse(localStorage.getItem("baba_cart")) || [];
+  const count = savedCart.reduce((sum, item) => sum + item.qty, 0);
+
+  const badge = document.getElementById("cart-count");
+  if (badge) badge.innerText = count;
+}
+document.getElementById("header").innerHTML = new Header().render();
+restoreCartCount();
+
 function addSliderToCart(name, price, minOrder = 1) {
   const qty = minOrder || 1;
 

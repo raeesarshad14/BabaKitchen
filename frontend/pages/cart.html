@@ -34,27 +34,19 @@
 
     <script>
       // Render header
-      document.getElementById("header").innerHTML = new Header().render();
+      initHeader();
 
-      // Cart instance
-      const cart = new Cart();
-
-      // Render cart page
+      // Use the global cart instance created in cart.js
       const cartPage = new CartPage();
       document.getElementById("cart-container").innerHTML = cartPage.render();
-
-      // Update header cart count
-      cart.updateCartCount();
 
       // Update quantity (+ / -)
       function updateQty(name, qty) {
         cart.updateQty(name, qty);
 
-        // Re-render cart page
         document.getElementById("cart-container").innerHTML =
           new CartPage().render();
 
-        // Update header count
         cart.updateCartCount();
       }
 
@@ -62,11 +54,9 @@
       function removeFromCart(name) {
         cart.removeItem(name);
 
-        // Re-render cart page
         document.getElementById("cart-container").innerHTML =
           new CartPage().render();
 
-        // Update header count
         cart.updateCartCount();
       }
     </script>

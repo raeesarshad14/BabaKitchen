@@ -2,8 +2,6 @@ class Header {
   render() {
     return `
       <header class="header">
-
-        <!-- LEFT: LOGO -->
         <div class="header-left">
           <div class="logo">
             <a href="../pages/index.html">
@@ -12,7 +10,6 @@ class Header {
           </div>
         </div>
 
-        <!-- CENTER: ALL NAV LINKS (even spacing) -->
         <nav class="header-center">
           <a href="../pages/menu.html">MENU</a>
           <a href="../pages/catering.html">CATERING</a>
@@ -23,15 +20,24 @@ class Header {
           <a class="order-btn" href="../pages/catering.html">ORDER NOW</a>
         </nav>
 
-        <!-- RIGHT: CART ONLY -->
         <div class="header-right">
           <a class="cart-icon" href="../pages/cart.html">
             <img src="../assets/cart.png" class="cart-img" alt="Cart">
             <span id="cart-count"></span>
           </a>
         </div>
-
       </header>
     `;
   }
+}
+
+/* ⭐ ALWAYS RESTORE CART COUNT AFTER HEADER RENDERS ⭐ */
+function initHeader() {
+  document.getElementById("header").innerHTML = new Header().render();
+
+  const savedCart = JSON.parse(localStorage.getItem("baba_cart")) || [];
+  const count = savedCart.reduce((sum, item) => sum + item.qty, 0);
+
+  const badge = document.getElementById("cart-count");
+  if (badge) badge.textContent = count;
 }
