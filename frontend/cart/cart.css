@@ -145,3 +145,18 @@
   padding-left: 40px;
   padding-right: 40px;
 }
+.cart-img {
+  width: 36px; /* bigger icon */
+  height: 36px;
+}
+
+.cart-icon span {
+  font-size: 18px; /* bigger number */
+  font-weight: 700;
+}
+
+.cart-icon {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* spacing between icon and number */
+}
