@@ -20,7 +20,7 @@ class Header {
           <a href="../pages/weekly-menu.html">WEEKLY MENU</a>
           <a href="../pages/contact.html">CONTACT</a>
 
-          <a class="order-btn" href="../pages/menu.html">ORDER NOW</a>
+          <a class="order-btn" href="../pages/catering.html">ORDER NOW</a>
         </nav>
 
         <!-- RIGHT: CART ONLY -->
