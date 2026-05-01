@@ -22,8 +22,11 @@
 .header-center {
   display: flex;
   align-items: center;
-  gap: 40px; /* ⭐ equal spacing between ALL items */
+  gap: 75px; /* ⭐ equal spacing between ALL items */
   margin: 0 auto; /* ⭐ centers the whole group */
+}
+.header-center a:nth-child(1) {
+  display: none !important;
 }
 
 /* NAV LINKS */
