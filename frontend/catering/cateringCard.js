@@ -4,15 +4,41 @@ class CateringCard {
   }
 
   render() {
-    const hasTrays = this.item.smallPrice && this.item.largePrice;
+    const hasTrays =
+      this.item.smallPrice !== undefined && this.item.largePrice !== undefined;
 
     const singlePriceValue =
       this.item.price || this.item.unitPrice || this.item.pricePerPiece;
 
     const isSinglePrice = singlePriceValue && !hasTrays;
 
-    /* ⭐ SINGLE PRICE ITEMS (MATCH SMASH BURGER CARD STRUCTURE) */
+    /* ⭐ SPECIAL CASE — WHOLE ROAST CHICKEN */
+    /* ⭐ SPECIAL CASE — WHOLE ROAST CHICKEN */
+    if (this.item.name === "Whole Roast Chicken") {
+      return `
+    <div class="menu-card">
+      <h3 class="menu-card-title">${this.item.name}</h3>
+
+      <p class="menu-card-price">
+        ${
+          this.item.note
+            ? `$${singlePriceValue} (${this.item.note})`
+            : `$${singlePriceValue} each`
+        }
+      </p>
+
+      <button class="menu-add-btn"
+        onclick="openRoastChickenModal('${this.item.name}', ${singlePriceValue})">
+        Add
+      </button>
+    </div>
+  `;
+    }
+
+    /* ⭐ SINGLE PRICE ITEMS */
     if (isSinglePrice) {
+      const minOrder = this.item.minOrder || 12;
+
       return `
         <div class="menu-card">
           <h3 class="menu-card-title">${this.item.name}</h3>
@@ -26,16 +52,14 @@ class CateringCard {
           </p>
 
           <button class="menu-add-btn"
-            onclick="openSingleModal('${this.item.name}', ${singlePriceValue}, ${
-              this.item.minOrder || 12
-            })">
+            onclick="openSingleModal('${this.item.name}', ${singlePriceValue}, ${minOrder})">
             Add
           </button>
         </div>
       `;
     }
 
-    /* ⭐ TRAY ITEMS (MATCH SMASH BURGER CARD STRUCTURE) */
+    /* ⭐ TRAY ITEMS */
     return `
       <div class="menu-card">
         <h3 class="menu-card-title">${this.item.name}</h3>

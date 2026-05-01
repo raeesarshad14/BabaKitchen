@@ -96,20 +96,21 @@
     </div>
 
     <!-- ⭐ SINGLE‑ITEM MODAL -->
+    <!-- ⭐ SINGLE‑ITEM / ROAST CHICKEN MODAL -->
     <div class="single-modal-overlay" style="display: none">
       <div class="single-modal">
         <h2 id="single-item-name"></h2>
 
         <div class="qty-controls">
-          <button class="qty-btn" onclick="changeSingleQty(-1)">&#8722;</button>
-          <span id="single-qty">12</span>
-          <button class="qty-btn" onclick="changeSingleQty(1)">+</button>
+          <button class="qty-btn" id="single-minus">−</button>
+          <span id="single-qty">1</span>
+          <button class="qty-btn" id="single-plus">+</button>
         </div>
 
         <div class="single-total">Total: $<span id="single-total">0</span></div>
 
         <div class="single-modal-footer">
-          <button class="single-add-btn" onclick="addSingleToCart()">
+          <button class="single-add-btn" id="single-add-btn">
             Add to Cart
           </button>
           <button class="single-close-btn" onclick="closeSingleModal()">
