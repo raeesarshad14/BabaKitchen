@@ -8,12 +8,17 @@
 /* ---------------------------------------------------
    SIDEBAR CONTAINER (INSIDE GRAY AREA)
 --------------------------------------------------- */
+.sidebar-wrapper {
+  position: relative;
+  height: 100%;
+}
+
 #catering-sidebar {
   width: 180px;
   display: flex;
   flex-direction: column;
   gap: 18px;
-  position: sticky;
+  position: relative; /* ⭐ normal scrolling */
   top: 20px;
 }
 

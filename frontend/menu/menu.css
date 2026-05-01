@@ -75,18 +75,6 @@
 }
 
 /* --- MENU CARD --- */
-.menu-card {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  background: #fff;
-  padding: 18px;
-  border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
 
 .menu-card:hover {
   transform: translateY(-3px);
@@ -99,7 +87,18 @@
   border-radius: 12px;
   object-fit: cover;
 }
-
+.menu-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #fff;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
 /* --- TEXT AREA (CENTER EVERYTHING) --- */
 .menu-card-content {
   flex: 1;
