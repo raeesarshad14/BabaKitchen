@@ -8,20 +8,39 @@
   background: #ffffff;
   border-bottom: 1px solid #e5e5e5;
   display: flex;
-  align-items: center; /* vertical centering */
+  align-items: center;
   justify-content: space-between;
-  padding: 0 60px; /* equal spacing left + right */
-  box-sizing: border-box; /* prevents cutoff */
-  font-family: "Inter", sans-serif;
+  padding: 0 40px;
+  box-sizing: border-box;
 }
 
-/* Left side: logo + menu */
+/* LEFT: LOGO */
 .header-left {
   display: flex;
   align-items: center;
-  gap: 50px;
+}
+.header-center {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* ⭐ equal spacing between ALL items */
+  margin: 0 auto; /* ⭐ centers the whole group */
 }
 
+/* NAV LINKS */
+.header-center a {
+  text-decoration: none;
+  font-size: 15px;
+  color: #000;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+.header-center .order-btn {
+  background: #1e7e34;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 6px;
+}
 /* Logo */
 .logo img {
   height: 45px;
@@ -47,8 +66,6 @@
 .header-right {
   display: flex;
   align-items: center;
-  gap: 40px;
-  white-space: nowrap; /* prevents wrapping/cutoff */
 }
 
 /* Divider bar */
@@ -153,4 +170,10 @@
 
 .clear-btn:hover {
   color: #000;
+}
+
+#searchInput,
+#clearSearch,
+#searchResults {
+  display: none !important;
 }
