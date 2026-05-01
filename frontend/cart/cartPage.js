@@ -39,13 +39,12 @@ class CartPage {
         </div>
 
         <!-- CENTER: UNIT MATH -->
-          <div class="cart-math">
-            <span class="unit-math">
-               ${String(item.price).padStart(2, "0")} × ${String(item.qty).padStart(2, "0")}
-                <span class="math-equals">=</span>
-            </span>
-          </div>
-
+        <div class="cart-math">
+          <span class="unit-math">
+            ${String(item.price).padStart(2, "0")} × ${String(item.qty).padStart(2, "0")}
+            <span class="math-equals">=</span>
+          </span>
+        </div>
 
         <!-- RIGHT: TOTAL PRICE -->
         <div class="cart-right-price">
@@ -57,11 +56,9 @@ class CartPage {
       )
       .join("");
 
-    // TAX + DELIVERY
+    // ⭐ TAX + DELIVERY REMOVED
     const subtotal = this.cart.getTotal();
-    const tax = subtotal * 0.06;
-    const delivery = subtotal > 0 ? 3.99 : 0;
-    const total = subtotal + tax + delivery;
+    const total = subtotal;
 
     return `
       <div class="cart-container">
@@ -75,16 +72,6 @@ class CartPage {
           <div class="summary-row">
             <span>Subtotal:</span>
             <span>$${subtotal.toFixed(2)}</span>
-          </div>
-
-          <div class="summary-row">
-            <span>Tax (6%):</span>
-            <span>$${tax.toFixed(2)}</span>
-          </div>
-
-          <div class="summary-row">
-            <span>Delivery Fee:</span>
-            <span>$${delivery.toFixed(2)}</span>
           </div>
 
           <div class="summary-total">
@@ -109,7 +96,7 @@ function goToCheckout() {
     const names = zeroItems.map((i) => i.name).join(", ");
 
     alert(
-      `Please remove the following item(s) before proceeding: ${names}.These items have a quantity of 0 and are not selected.`,
+      `Please remove the following item(s) before proceeding: ${names}. These items have a quantity of 0 and are not selected.`,
     );
 
     return;
