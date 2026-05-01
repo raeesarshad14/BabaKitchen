@@ -49,17 +49,25 @@ class CheckoutPage {
 
           <select id="payment" onchange="toggleZelleInfo()">
             <option value="cash">Cash on Delivery</option>
-            <option value="card">Credit / Debit Card</option>
             <option value="zelle">Zelle</option>
           </select>
 
           <!-- ZELLE INFO BOX -->
-          <div id="zelle-info" class="zelle-box" style="display:none;">
-            <p><strong>Zelle Payment Instructions:</strong></p>
-            <p>Send payment to:</p>
-            <p><strong>zubiyasolutions@gmail.com</strong></p>
-            <p>After sending, tap "Place Order".</p>
-          </div>
+    <div id="zelle-info" class="zelle-box" style="display:none;">
+  <h4 class="zelle-title">Zelle Payment Instructions</h4>
+
+  <p class="zelle-text">Send your payment to the Zelle number below:</p>
+
+  <div class="zelle-details">
+    <div class="zelle-number">571‑353‑9225</div>
+    <div class="zelle-name">The name <strong>Fozia Jan</strong> will appear automatically</div>
+  </div>
+
+  <p class="zelle-note">
+    After sending the payment, tap <strong>“Place Order”</strong> to complete your checkout.
+  </p>
+</div>
+
 
           <!-- CREDIT / DEBIT CARD UI -->
           <div id="card-section" class="card-box" style="display:none;">

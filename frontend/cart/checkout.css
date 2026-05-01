@@ -206,3 +206,45 @@
   font-size: 18px;
   font-weight: 700;
 }
+.zelle-box {
+  background: #f8f9fa;
+  border-left: 4px solid #6f42c1;
+  padding: 18px 20px;
+  border-radius: 6px;
+  margin-top: 14px;
+}
+
+.zelle-title {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #6f42c1;
+}
+
+.zelle-text {
+  margin: 0 0 8px 0;
+  font-size: 15px;
+  color: #333;
+}
+
+.zelle-details {
+  margin-bottom: 10px;
+}
+
+.zelle-number {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 4px;
+}
+
+.zelle-name {
+  font-size: 14px;
+  color: #555;
+}
+
+.zelle-note {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #444;
+}
