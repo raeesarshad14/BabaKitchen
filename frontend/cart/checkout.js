@@ -5,9 +5,9 @@ class CheckoutPage {
 
   render() {
     const subtotal = this.cart.getTotal();
-    const tax = subtotal * 0.06;
-    const delivery = subtotal > 0 ? 3.99 : 0;
-    const total = subtotal + tax + delivery;
+    const tax = 0;
+    const delivery = 0;
+    const total = subtotal;
 
     return `
       <div class="checkout-wrapper">
@@ -20,17 +20,7 @@ class CheckoutPage {
             <span>Subtotal:</span>
             <span>$${subtotal.toFixed(2)}</span>
           </div>
-
-          <div class="summary-row">
-            <span>Tax (6%):</span>
-            <span>$${tax.toFixed(2)}</span>
-          </div>
-
-          <div class="summary-row">
-            <span>Delivery Fee:</span>
-            <span>$${delivery.toFixed(2)}</span>
-          </div>
-
+          
           <div class="summary-total">
             <span>Total:</span>
             <span>$${total.toFixed(2)}</span>
@@ -242,9 +232,9 @@ async function placeOrder() {
     .join("\n");
 
   const subtotal = cart.getTotal();
-  const tax = subtotal * 0.06;
-  const delivery = subtotal > 0 ? 3.99 : 0;
-  const total = subtotal + tax + delivery;
+  const tax = 0;
+  const delivery = 0;
+  const total = subtotal;
 
   const formData = new FormData();
   formData.append("access_key", "a617f05a-44d7-4412-a3b4-27c0733773f9");
