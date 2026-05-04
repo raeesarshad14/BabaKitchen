@@ -13,7 +13,6 @@ class CateringCard {
     const isSinglePrice = singlePriceValue && !hasTrays;
 
     /* ⭐ SPECIAL CASE — WHOLE ROAST CHICKEN */
-    /* ⭐ SPECIAL CASE — WHOLE ROAST CHICKEN */
     if (this.item.name === "Whole Roast Chicken") {
       return `
     <div class="menu-card">

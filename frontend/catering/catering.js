@@ -1,5 +1,5 @@
 async function loadCatering() {
-  const response = await fetch("../data/catering.json");
+  const response = await fetch("./data/catering.json");
   const data = await response.json();
 
   /* ⭐ ADD MENU SECTIONS HERE ⭐ */

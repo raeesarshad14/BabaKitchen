@@ -6,13 +6,13 @@
     <title>Restaurant App</title>
 
     <!-- GLOBAL STYLES -->
-    <link rel="stylesheet" href="../styles/animations.css" />
-    <link rel="stylesheet" href="../styles/layout.css" />
-    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="./styles/animations.css" />
+    <link rel="stylesheet" href="./styles/layout.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
 
     <!-- HEADER + SLIDER STYLES -->
-    <link rel="stylesheet" href="../header/header.css" />
-    <link rel="stylesheet" href="../slider/slider.css" />
+    <link rel="stylesheet" href="./header/header.css" />
+    <link rel="stylesheet" href="./slider/slider.css" />
   </head>
 
   <body>
@@ -29,14 +29,14 @@
 
     <!-- SCRIPTS -->
     <!-- Header -->
-    <script src="../header/header.js"></script>
+    <script src="./header/header.js"></script>
 
     <!-- Slider -->
-    <script src="../slider/slider.js"></script>
+    <script src="./slider/slider.js"></script>
 
     <!-- Cart (for cart count + drawer) -->
-    <script src="../cart/cart.js"></script>
-    <script src="../cart/cartDrawer.js"></script>
+    <script src="./cart/cart.js"></script>
+    <script src="./cart/cartDrawer.js"></script>
 
     <script>
       // HEADER
@@ -44,10 +44,10 @@
 
       // SLIDER
       const slider = new Slider([
-        "../assets/BabasKitchen Statement.png",
-        "../assets/Biryani.png",
-        "../assets/ChickenCurry.png",
-        "../assets/HalwaPuri.png",
+        "./assets/BabasKitchen Statement.png",
+        "./assets/Biryani.png",
+        "./assets/ChickenCurry.png",
+        "./assets/HalwaPuri.png",
       ]);
       document.getElementById("slider").innerHTML = slider.render();
       slider.init();

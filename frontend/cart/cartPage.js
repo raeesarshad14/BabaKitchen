@@ -102,5 +102,5 @@ function goToCheckout() {
     return;
   }
 
-  window.location.href = "../pages/checkout.html";
+  window.location.href = "./checkout.html";
 }

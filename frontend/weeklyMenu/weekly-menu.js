@@ -47,7 +47,7 @@ async function loadWeeklyMenu() {
       })
       .join("");
 
-    attachAddToCartHandler(); // ⭐ FIXED — attach after HTML exists
+    attachAddToCartHandler();
   } catch (err) {
     console.error("Weekly Menu Error:", err);
   }
@@ -94,7 +94,6 @@ function updateWmTotal() {
   ).toFixed(2);
 }
 
-/* ⭐ FIXED — Attach Add to Cart AFTER modal exists */
 function attachAddToCartHandler() {
   const btn = document.querySelector(".wm-add-cart");
   if (!btn) return;
@@ -108,12 +107,11 @@ function attachAddToCartHandler() {
     };
 
     cart.addItem(item);
-    cart.updateCartCount(); // ⭐ FIXED
+    cart.updateCartCount();
     closeWeeklyModal();
   });
 }
 
-/* SCROLL TO DAY */
 function scrollToDay(day) {
   const el = document.getElementById("day-" + day);
   if (el) {
@@ -166,18 +164,15 @@ class Cart {
     const isWeekly = item.type === "weekly";
 
     if (isWeekly) {
-      // ⭐ Weekly Menu — allow ANY qty >= 1
       if (qty < 1) qty = 1;
       item.qty = qty;
     } else if (!isCatering) {
-      // ⭐ Sliders/Menu — minimum 12 (unchanged)
       if (qty < 12) {
         item.qty = 12;
       } else {
         item.qty = qty;
       }
     } else {
-      // ⭐ Catering — allow 0+
       if (qty < 0) qty = 0;
       item.qty = qty;
     }

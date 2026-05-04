@@ -6,13 +6,13 @@
     <title>Your Order • BabasKitchen</title>
 
     <!-- GLOBAL STYLES -->
-    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
 
     <!-- HEADER STYLE -->
-    <link rel="stylesheet" href="../header/header.css" />
+    <link rel="stylesheet" href="./header/header.css" />
 
     <!-- CART PAGE STYLE -->
-    <link rel="stylesheet" href="../cart/cart.css" />
+    <link rel="stylesheet" href="./cart/cart.css" />
   </head>
 
   <body>
@@ -25,18 +25,18 @@
     <div id="cart-container"></div>
 
     <!-- HEADER SCRIPT -->
-    <script src="../header/header.js"></script>
+    <script src="./header/header.js"></script>
 
     <!-- CART SCRIPTS -->
-    <script src="../cart/cart.js"></script>
-    <script src="../cart/cartDrawer.js"></script>
-    <script src="../cart/cartPage.js"></script>
+    <script src="./cart/cart.js"></script>
+    <script src="./cart/cartDrawer.js"></script>
+    <script src="./cart/cartPage.js"></script>
 
     <script>
       // Render header
       initHeader();
 
-      // Use the global cart instance created in cart.js
+      // Create cart page instance
       const cartPage = new CartPage();
       document.getElementById("cart-container").innerHTML = cartPage.render();
 

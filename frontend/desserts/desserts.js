@@ -1,5 +1,5 @@
 async function loadDesserts() {
-  const res = await fetch("dessertsData.json");
+  const res = await fetch("./desserts/dessertsData.json");
   const desserts = await res.json();
 
   const container = document.getElementById("dessert-items");

@@ -5,13 +5,13 @@
     <title>Desserts • BabasKitchen</title>
 
     <!-- GLOBAL -->
-    <link rel="stylesheet" href="../styles/main.css" />
-    <link rel="stylesheet" href="../header/header.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./header/header.css" />
 
     <!-- DESSERT STYLES -->
-    <link rel="stylesheet" href="desserts.css" />
-    <link rel="stylesheet" href="desserts.slider.css" />
-    <link rel="stylesheet" href="desserts.modal.css" />
+    <link rel="stylesheet" href="./desserts/desserts.css" />
+    <link rel="stylesheet" href="./desserts/desserts.slider.css" />
+    <link rel="stylesheet" href="./desserts/desserts.modal.css" />
   </head>
 
   <body>
@@ -23,16 +23,14 @@
 
         <!-- SMALL TRAY -->
         <div class="tray-row">
-          <!-- TOP ROW: title + price + total -->
           <div class="tray-top">
             <span class="tray-title">Small Tray</span>
             <span class="tray-price" id="dessertSmallPriceUnit"></span>
-            <span class="tray-total-inline"
-              >Total: <span id="dessertSmallTotal">$0</span></span
-            >
+            <span class="tray-total-inline">
+              Total: <span id="dessertSmallTotal">$0</span>
+            </span>
           </div>
 
-          <!-- QTY ROW -->
           <div class="tray-controls">
             <button class="qty-btn" onclick="changeDessertQty('small', -1)">
               −
@@ -46,16 +44,14 @@
 
         <!-- LARGE TRAY -->
         <div class="tray-row">
-          <!-- TOP ROW: title + price + total -->
           <div class="tray-top">
             <span class="tray-title">Large Tray</span>
             <span class="tray-price" id="dessertLargePriceUnit"></span>
-            <span class="tray-total-inline"
-              >Total: <span id="dessertLargeTotal">$0</span></span
-            >
+            <span class="tray-total-inline">
+              Total: <span id="dessertLargeTotal">$0</span>
+            </span>
           </div>
 
-          <!-- QTY ROW -->
           <div class="tray-controls">
             <button class="qty-btn" onclick="changeDessertQty('large', -1)">
               −
@@ -98,12 +94,13 @@
     </div>
 
     <!-- SCRIPTS -->
-    <script src="../header/header.js"></script>
-    <script src="../cart/cart.js"></script>
-    <script src="desserts.slider.js"></script>
-    <script src="dessertsCard.js"></script>
-    <script src="dessertsModal.js"></script>
-    <script src="desserts.js"></script>
+    <script src="./header/header.js"></script>
+    <script src="./cart/cart.js"></script>
+
+    <script src="./desserts/desserts.slider.js"></script>
+    <script src="./desserts/dessertsCard.js"></script>
+    <script src="./desserts/dessertsModal.js"></script>
+    <script src="./desserts/desserts.js"></script>
 
     <script>
       initHeader();

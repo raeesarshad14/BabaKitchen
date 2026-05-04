@@ -4,25 +4,25 @@ class Header {
       <header class="header">
         <div class="header-left">
           <div class="logo">
-            <a href="../pages/index.html">
-               <img src="../assets/logo picture.png" alt="Logo">
+            <a href="./index.html">
+               <img src="./assets/logo picture.png" alt="Logo">
             </a>
           </div>
         </div>
 
         <nav class="header-center">
-          <a href="../pages/menu.html">MENU</a>
-          <a href="../pages/catering.html">CATERING</a>
-          <a href="../desserts/desserts.html">DESSERTS</a>
-          <a href="../pages/weekly-menu.html">WEEKLY MENU</a>
-          <a href="../pages/contact.html">CONTACT</a>
+          <a href="./menu.html">MENU</a>
+          <a href="./catering.html">CATERING</a>
+          <a href="./desserts.html">DESSERTS</a>
+          <a href="./weekly-menu.html">WEEKLY MENU</a>
+          <a href="./contact.html">CONTACT</a>
 
-          <a class="order-btn" href="../pages/catering.html">ORDER NOW</a>
+          <a class="order-btn" href="./catering.html">ORDER NOW</a>
         </nav>
 
         <div class="header-right">
-          <a class="cart-icon" href="../pages/cart.html">
-            <img src="../assets/cart.png" class="cart-img" alt="Cart">
+          <a class="cart-icon" href="./cart.html">
+            <img src="./assets/cart.png" class="cart-img" alt="Cart">
             <span id="cart-count"></span>
           </a>
         </div>

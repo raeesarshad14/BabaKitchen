@@ -26,7 +26,7 @@ class Cart {
       this.items.push({ ...item });
     }
 
-    this.save(); // FIXED
+    this.save();
   }
 
   removeItem(name) {
@@ -42,18 +42,12 @@ class Cart {
     const isWeekly = item.type === "weekly";
 
     if (isWeekly) {
-      // ⭐ Weekly Menu — allow ANY qty >= 1
       if (qty < 1) qty = 1;
       item.qty = qty;
     } else if (!isCatering) {
-      // ⭐ Sliders/Menu — minimum 12 (unchanged)
-      if (qty < 12) {
-        item.qty = 12;
-      } else {
-        item.qty = qty;
-      }
+      if (qty < 12) qty = 12;
+      else item.qty = qty;
     } else {
-      // ⭐ Catering — allow 0+
       if (qty < 0) qty = 0;
       item.qty = qty;
     }
@@ -69,40 +63,29 @@ class Cart {
     return this.items.reduce((sum, item) => sum + item.qty, 0);
   }
 
-  /* ⭐ ADD THIS FUNCTION ⭐ */
   updateCartCount() {
     const count = this.getCount();
     const el = document.getElementById("cart-count");
-
-    if (el) {
-      el.textContent = count;
-    }
+    if (el) el.textContent = count;
   }
 }
+
 window.cart = new Cart();
 cart.updateCartCount();
 
-function restoreCartCount() {
-  const savedCart = JSON.parse(localStorage.getItem("baba_cart")) || [];
-  const count = savedCart.reduce((sum, item) => sum + item.qty, 0);
+/* ⭐ REMOVE restoreCartCount + header render — handled by header.js */
 
-  const badge = document.getElementById("cart-count");
-  if (badge) badge.innerText = count;
-}
-document.getElementById("header").innerHTML = new Header().render();
-restoreCartCount();
-
+/* Add slider items */
 function addSliderToCart(name, price, minOrder = 1) {
   const qty = minOrder || 1;
 
   cart.addItem({
-    name: name,
-    price: price,
-    qty: qty,
+    name,
+    price,
+    qty,
     options: {},
   });
 
   cart.updateCartCount();
-
   alert(`${name} added to cart.`);
 }

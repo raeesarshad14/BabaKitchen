@@ -287,7 +287,7 @@ Total: $${total.toFixed(2)}
   btn.innerText = "Order Placed!";
   await new Promise((res) => setTimeout(res, 800));
 
-  window.location.href = "../pages/confirmation.html";
+  window.location.href = "./confirmation.html";
 }
 
 window.placeOrder = placeOrder;

@@ -1,6 +1,6 @@
 let dessertSlideIndex = 0;
 
-const dessertSlides = ["../assets/desserts.png", "../assets/desserts2.png"];
+const dessertSlides = ["./assets/desserts.png", "./assets/desserts2.png"];
 
 function loadDessertSlider() {
   const slider = document.getElementById("dessertSlider");
@@ -28,7 +28,7 @@ function prevDessertSlide() {
   updateDessertSlider();
 }
 
-/* ⭐ AUTO SLIDE EVERY 3 SECONDS */
+/* ⭐ AUTO SLIDE EVERY 7 SECONDS */
 setInterval(() => {
   nextDessertSlide();
 }, 7000);
