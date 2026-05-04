@@ -185,3 +185,22 @@
 #searchResults {
   display: none !important;
 }
+/* MOBILE FIX — prevent links from touching the cart icon */
+@media (max-width: 600px) {
+  .header {
+    padding: 0 20px; /* reduce side padding for more room */
+  }
+
+  .header-center {
+    gap: 28px; /* increase spacing between links */
+  }
+
+  .header-right {
+    margin-left: 12px; /* push cart icon slightly right */
+  }
+
+  .cart-img {
+    width: 40px;
+    height: 40px; /* slightly smaller cart icon on mobile */
+  }
+}
