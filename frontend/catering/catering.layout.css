@@ -65,14 +65,11 @@
    CATEGORY BOX (KEPT, BUT MATCHED TO BURGER SPACING)
 --------------------------------------------------- */
 .catering-box {
+  background: #fdf8ee;
+  padding: 0px;
   background: #ffffff;
-  padding: 40px;
-  border-radius: 8px;
-  border: 1px solid #e5e5e5;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  width: 100%;
-  scroll-margin-top: 0px;
-  margin-bottom: 30px; /* spacing between sections */
+  padding: 40px 50px;
+  border-radius: 0px;
 }
 
 /* ---------------------------------------------------
