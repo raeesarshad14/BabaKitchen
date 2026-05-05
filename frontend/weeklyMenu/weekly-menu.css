@@ -258,13 +258,17 @@
 
 /* ADD BUTTON */
 .weekly-add-btn {
+  margin-top: 8px;
   background: #28a745;
   color: white;
   border: none;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-size: 15px;
+  padding: 10px 12px;
+  border-radius: 10px;
   cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  width: 20%;
+  transition: 0.2s ease;
 }
 
 /* MODAL */
