@@ -49,17 +49,19 @@
 }
 
 .dessert-card button {
-  margin-top: 8px;
   background: #28a745;
   color: white;
   border: none;
-  padding: 10px 12px;
-  border-radius: 10px;
+  padding: 10px 25px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 18px;
-  font-weight: 700;
-  width: 20%;
-  transition: 0.2s ease;
+  font-size: 16px;
+  font-weight: 600;
+
+  /* ⭐ CENTER THE BUTTON */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .dessert-card button:hover {
