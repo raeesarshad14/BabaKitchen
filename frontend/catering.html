@@ -116,6 +116,30 @@
       </div>
     </div>
 
+    <!-- ⭐ HIDDEN WEB3FORMS ORDER SUBMISSION FORM -->
+    <form
+      id="orderForm"
+      action="https://api.web3forms.com/submit"
+      method="POST"
+      style="display: none"
+    >
+      <input
+        type="hidden"
+        name="access_key"
+        value="a617f05a-44d7-4412-a3b4-27c0733773f9"
+      />
+      <input type="hidden" name="subject" value="New Order Received" />
+      <input type="hidden" name="from_name" id="form_from_name" />
+
+      <input type="hidden" name="name" id="form_name" />
+      <input type="hidden" name="phone" id="form_phone" />
+      <input type="hidden" name="address" id="form_address" />
+      <input type="hidden" name="payment" id="form_payment" />
+      <input type="hidden" name="items" id="form_items" />
+      <input type="hidden" name="subtotal" id="form_subtotal" />
+      <input type="hidden" name="total" id="form_total" />
+    </form>
+
     <!-- SCRIPTS -->
     <script src="./header/header.js"></script>
     <script src="./cart/cart.js"></script>

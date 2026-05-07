@@ -5,8 +5,6 @@ class CheckoutPage {
 
   render() {
     const subtotal = this.cart.getTotal();
-    const tax = 0;
-    const delivery = 0;
     const total = subtotal;
 
     return `
@@ -43,39 +41,21 @@ class CheckoutPage {
           </select>
 
           <!-- ZELLE INFO BOX -->
-    <div id="zelle-info" class="zelle-box" style="display:none;">
-  <h4 class="zelle-title">Zelle Payment Instructions</h4>
+          <div id="zelle-info" class="zelle-box" style="display:none;">
+            <h4 class="zelle-title">Zelle Payment Instructions</h4>
 
-  <p class="zelle-text">Send your payment to the Zelle number below:</p>
+            <p class="zelle-text">Send your payment to the Zelle number below:</p>
 
-  <div class="zelle-details">
-    <div class="zelle-number">571‑353‑9225</div>
-    <div class="zelle-name">The name <strong>Fozia Jan</strong> will appear automatically</div>
-  </div>
-
-  <p class="zelle-note">
-    After sending the payment, tap <strong>“Place Order”</strong> to complete your checkout.
-  </p>
-</div>
-
-
-          <!-- CREDIT / DEBIT CARD UI -->
-          <div id="card-section" class="card-box" style="display:none;">
-
-            <h3>Card Details</h3>
-
-            <input type="text" id="card-name" placeholder="Cardholder Name" />
-
-            <div class="card-input-group">
-              <input type="text" id="card-number" placeholder="Card Number" maxlength="19" />
-              <img id="card-brand" src="" class="card-brand-icon" />
+            <div class="zelle-details">
+              <div class="zelle-number">571‑353‑9225</div>
+              <div class="zelle-name">
+                The name <strong>Fozia Jan</strong> will appear automatically
+              </div>
             </div>
 
-            <div class="card-row">
-              <input type="text" id="card-exp" placeholder="MM/YY" maxlength="5" />
-              <input type="text" id="card-cvv" placeholder="CVV" maxlength="4" />
-            </div>
-
+            <p class="zelle-note">
+              After sending the payment, tap <strong>“Place Order”</strong> to complete your checkout.
+            </p>
           </div>
 
           <button class="place-order-btn" id="placeOrderBtn" onclick="placeOrder()">
@@ -84,7 +64,7 @@ class CheckoutPage {
 
           <!-- SUCCESS CHECKMARK -->
           <div id="payment-success" class="success-check" style="display:none;">
-            Payment Successful
+            Order Submitted
           </div>
 
         </div>
@@ -96,88 +76,8 @@ class CheckoutPage {
 
 function toggleZelleInfo() {
   const method = document.getElementById("payment").value;
-
   document.getElementById("zelle-info").style.display =
     method === "zelle" ? "block" : "none";
-
-  document.getElementById("card-section").style.display =
-    method === "card" ? "block" : "none";
-}
-
-// Auto-format card number + detect brand + perfect expiry auto-slash
-document.addEventListener("input", (e) => {
-  // CARD NUMBER FORMATTING
-  if (e.target.id === "card-number") {
-    let value = e.target.value.replace(/\D/g, "");
-    value = value.replace(/(.{4})/g, "$1 ").trim();
-    e.target.value = value;
-
-    detectCardBrand(value.replace(/\s/g, ""));
-  }
-
-  // PERFECT EXPIRY AUTO-SLASH (MM/YY)
-  if (e.target.id === "card-exp") {
-    let v = e.target.value;
-
-    // Allow digits + slash only
-    v = v.replace(/[^\d/]/g, "");
-
-    // If user typed MMYY → auto convert to MM/YY
-    if (/^\d{3,4}$/.test(v.replace("/", ""))) {
-      let digits = v.replace(/\D/g, "");
-      v = digits.slice(0, 2) + "/" + digits.slice(2, 4);
-    }
-
-    // Prevent more than 5 chars
-    if (v.length > 5) {
-      v = v.slice(0, 5);
-    }
-
-    e.target.value = v;
-  }
-});
-
-function detectCardBrand(num) {
-  const brandImg = document.getElementById("card-brand");
-  if (!brandImg) return;
-
-  if (num.startsWith("4")) {
-    brandImg.src = "https://img.icons8.com/color/48/visa.png";
-  } else if (/^5[1-5]/.test(num)) {
-    brandImg.src = "https://img.icons8.com/color/48/mastercard.png";
-  } else if (/^3[47]/.test(num)) {
-    brandImg.src = "https://img.icons8.com/color/48/amex.png";
-  } else {
-    brandImg.src = "";
-  }
-}
-
-// Dummy payment engine (future Stripe/Square hook)
-async function processPayment(cardData) {
-  if (!cardData.name || !cardData.number || !cardData.exp || !cardData.cvv) {
-    alert("Please fill in all card details.");
-    return { success: false };
-  }
-
-  if (cardData.number.length < 13) {
-    alert("Invalid card number.");
-    return { success: false };
-  }
-
-  if (!/^\d{2}\/\d{2}$/.test(cardData.exp)) {
-    alert("Invalid expiry format. Use MM/YY.");
-    return { success: false };
-  }
-
-  if (cardData.cvv.length < 3) {
-    alert("Invalid CVV.");
-    return { success: false };
-  }
-
-  // Simulate gateway delay
-  await new Promise((res) => setTimeout(res, 1200));
-
-  return { success: true };
 }
 
 async function placeOrder() {
@@ -197,33 +97,7 @@ async function placeOrder() {
     return;
   }
 
-  // CARD PAYMENT FLOW
-  if (payment === "card") {
-    const cardData = {
-      name: document.getElementById("card-name").value.trim(),
-      number: document.getElementById("card-number").value.replace(/\s/g, ""),
-      exp: document.getElementById("card-exp").value.trim(),
-      cvv: document.getElementById("card-cvv").value.trim(),
-    };
-
-    const paymentResult = await processPayment(cardData);
-
-    if (!paymentResult.success) {
-      btn.disabled = false;
-      btn.innerText = "Place Order";
-      return;
-    }
-
-    // Smooth Apple-style success animation
-    await new Promise((res) => setTimeout(res, 300));
-    const successBox = document.getElementById("payment-success");
-    successBox.innerText = "Payment Successful";
-    successBox.style.display = "block";
-
-    await new Promise((res) => setTimeout(res, 1000));
-  }
-
-  // EMAIL + ORDER FLOW
+  // Build cart summary (for future use / logging if needed)
   const cart = new Cart();
   const items = cart.items;
 
@@ -232,51 +106,31 @@ async function placeOrder() {
     .join("\n");
 
   const subtotal = cart.getTotal();
-  const tax = 0;
-  const delivery = 0;
   const total = subtotal;
 
-  const formData = new FormData();
-  formData.append("access_key", "a617f05a-44d7-4412-a3b4-27c0733773f9");
-  formData.append("subject", "New Order Received");
-  formData.append("from_name", name);
-
-  formData.append(
-    "message",
-    `
-New Order Received:
-
-Name: ${name}
-Phone: ${phone}
-Address: ${address}
-Payment Method: ${payment}
-
-Items:
-${itemsText}
-
-Subtotal: $${subtotal.toFixed(2)}
-Tax: $${tax.toFixed(2)}
-Delivery: $${delivery.toFixed(2)}
-Total: $${total.toFixed(2)}
-`,
-  );
-
-  await fetch("https://api.web3forms.com/submit", {
-    method: "POST",
-    body: formData,
+  console.log("Order Summary:", {
+    name,
+    phone,
+    address,
+    payment,
+    itemsText,
+    subtotal: subtotal.toFixed(2),
+    total: total.toFixed(2),
   });
 
+  // Show success box briefly
+  await new Promise((res) => setTimeout(res, 300));
+  const successBox = document.getElementById("payment-success");
+  successBox.style.display = "block";
+
+  await new Promise((res) => setTimeout(res, 700));
+
+  // Clear cart
   cart.items = [];
   cart.save();
+  if (typeof updateCartCount === "function") updateCartCount();
 
-  if (typeof updateCartCount === "function") {
-    updateCartCount();
-  }
-
-  // Smooth redirect
-  btn.innerText = "Order Placed!";
-  await new Promise((res) => setTimeout(res, 800));
-
+  // Redirect to local confirmation page
   window.location.href = "./confirmation.html";
 }
 

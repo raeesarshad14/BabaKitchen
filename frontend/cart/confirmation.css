@@ -1,6 +1,8 @@
+/* GLOBAL FONT */
 * {
   font-family: "Inter", sans-serif !important;
 }
+
 /* FULL PAGE CENTERING */
 .confirmation-wrapper {
   display: flex;
@@ -8,48 +10,101 @@
   align-items: center;
   min-height: 70vh;
   padding: 20px;
+  background: #f7f7f7;
 }
 
-/* SMALLER, CLEANER CONFIRMATION CARD */
+/* CONFIRMATION CARD */
 .confirmation-box {
   background: #ffffff;
-  padding: 28px 36px; /* smaller padding */
-  border-radius: 14px;
-  max-width: 420px; /* smaller width */
+  padding: 32px 38px;
+  border-radius: 16px;
+  max-width: 420px;
   width: 100%;
   text-align: center;
 
-  border: 1px solid #e2e2e2; /* clean border */
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06); /* softer shadow */
+  border: 1px solid #e2e2e2;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* FADE-IN ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CHECKMARK CIRCLE */
+.checkmark-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #28c76f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 18px;
+
+  animation: pop 0.35s ease-out;
+  box-shadow: 0 0 18px rgba(40, 199, 111, 0.35);
+}
+
+/* POP ANIMATION */
+@keyframes pop {
+  0% {
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* CHECKMARK ICON */
+.checkmark {
+  font-size: 42px;
+  color: white;
 }
 
 /* TITLE */
 .confirmation-box h1 {
   font-size: 26px;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  color: #222;
 }
 
 /* MESSAGE */
 .confirmation-box p {
   font-size: 16px;
   color: #555;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
 /* BACK HOME BUTTON */
 .back-home-btn {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 12px 24px;
   background: #28a745;
-  color: #fff;
+  color: #fff !important;
   border-radius: 8px;
   font-size: 15px;
   font-weight: 600;
   text-decoration: none;
-  transition: 0.2s ease;
+  transition: 0.25s ease;
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.25);
 }
 
 .back-home-btn:hover {
   background: #1e7e34;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(40, 167, 69, 0.35);
 }
