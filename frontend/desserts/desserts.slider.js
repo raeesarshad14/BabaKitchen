@@ -1,6 +1,18 @@
 let dessertSlideIndex = 0;
 
-const dessertSlides = ["./assets/desserts.png", "./assets/desserts2.png"];
+const dessertSlides = [
+  "./assets/dessert1.jpeg",
+  "./assets/dessert2.jpg",
+  "./assets/dessert3.jpg",
+  "./assets/dessert4.jpg",
+  "./assets/dessert5.jpg",
+  "./assets/dessert6.jpg",
+  "./assets/dessert7.jpg",
+  "./assets/dessert8.jpg",
+  "./assets/dessert9.jpg",
+  "./assets/dessert10.jpg",
+  "./assets/dessert11.png",
+];
 
 function loadDessertSlider() {
   const slider = document.getElementById("dessertSlider");
@@ -28,10 +40,6 @@ function prevDessertSlide() {
   updateDessertSlider();
 }
 
-/* ⭐ AUTO SLIDE EVERY 7 SECONDS */
-setInterval(() => {
-  nextDessertSlide();
-}, 7000);
+setInterval(nextDessertSlide, 7000);
 
-/* Load slider on page load */
 document.addEventListener("DOMContentLoaded", loadDessertSlider);
