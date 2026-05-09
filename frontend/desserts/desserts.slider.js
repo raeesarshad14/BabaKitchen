@@ -13,6 +13,7 @@ const dessertSlides = [
   "./assets/dessert9.jpg",
   "./assets/dessert10.jpg",
   "./assets/dessert11.png",
+  "./assets/dessert12.png",
 ];
 
 function loadDessertSlider() {
