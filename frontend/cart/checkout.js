@@ -97,7 +97,6 @@ async function placeOrder() {
     return;
   }
 
-  // Build cart summary (for future use / logging if needed)
   const cart = new Cart();
   const items = cart.items;
 
@@ -108,30 +107,30 @@ async function placeOrder() {
   const subtotal = cart.getTotal();
   const total = subtotal;
 
-  console.log("Order Summary:", {
-    name,
-    phone,
-    address,
-    payment,
-    itemsText,
-    subtotal: subtotal.toFixed(2),
-    total: total.toFixed(2),
-  });
+  // ⭐ FILL WEB3FORMS HIDDEN FIELDS
+  document.getElementById("form_from_name").value = "BabasKitchendmv";
+  document.getElementById("form_name").value = name;
+  document.getElementById("form_phone").value = phone;
+  document.getElementById("form_address").value = address;
+  document.getElementById("form_payment").value = payment;
+  document.getElementById("form_items").value = itemsText;
+  document.getElementById("form_subtotal").value = subtotal.toFixed(2);
+  document.getElementById("form_total").value = total.toFixed(2);
 
-  // Show success box briefly
-  await new Promise((res) => setTimeout(res, 300));
+  // ⭐ SHOW SUCCESS ANIMATION
   const successBox = document.getElementById("payment-success");
   successBox.style.display = "block";
 
-  await new Promise((res) => setTimeout(res, 700));
+  // ⭐ LET USER SEE THE ANIMATION
+  await new Promise((res) => setTimeout(res, 900));
 
-  // Clear cart
+  // ⭐ SUBMIT THE FORM (THIS IS THE ONLY FORM USED)
+  document.getElementById("checkoutOrderForm").submit();
+
+  // ⭐ CLEAR CART
   cart.items = [];
   cart.save();
   if (typeof updateCartCount === "function") updateCartCount();
-
-  // Redirect to local confirmation page
-  window.location.href = "./confirmation.html";
 }
 
 window.placeOrder = placeOrder;

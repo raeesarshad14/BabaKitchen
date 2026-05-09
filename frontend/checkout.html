@@ -29,7 +29,7 @@
 
     <!-- ⭐ HIDDEN WEB3FORMS ORDER SUBMISSION FORM -->
     <form
-      id="orderForm"
+      id="checkoutOrderForm"
       action="https://api.web3forms.com/submit"
       method="POST"
       style="display: none"
@@ -37,11 +37,21 @@
       <input
         type="hidden"
         name="access_key"
-        value="a617f05a-44d7-4412-a3b4-27c0733773f9"
+        value="cef0a8cc-1e43-4044-8caf-44f2bea00559"
       />
+
+      <!-- ⭐ REQUIRED FOR EMAIL + REDIRECT -->
+      <input type="hidden" name="recipient" value="babaskitchendmv@gmail.com" />
+
+      <!-- ⭐ REQUIRED FOR YOUR FANCY CONFIRMATION PAGE -->
+      <input
+        type="hidden"
+        name="redirect"
+        value="https://babaskitchendmv.com/confirmation.html"
+      />
+
       <input type="hidden" name="subject" value="New Order Received" />
       <input type="hidden" name="from_name" id="form_from_name" />
-
       <input type="hidden" name="name" id="form_name" />
       <input type="hidden" name="phone" id="form_phone" />
       <input type="hidden" name="address" id="form_address" />
