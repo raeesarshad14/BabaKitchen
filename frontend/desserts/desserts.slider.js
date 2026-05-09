@@ -12,7 +12,7 @@ const dessertSlides = [
   "./assets/dessert8.jpg",
   "./assets/dessert9.jpg",
   "./assets/dessert10.jpg",
-  "./assets/dessert11.png",
+  "./assets/dessert11.jpg",
   "./assets/dessert12.png",
 ];
 
