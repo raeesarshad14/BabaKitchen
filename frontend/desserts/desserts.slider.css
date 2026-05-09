@@ -1,14 +1,15 @@
 * {
   font-family: "Inter", sans-serif !important;
 }
+
 /* SLIDER WRAPPER */
 .dessert-slider-wrapper {
   position: relative;
   width: 100%;
-  height: 380px; /* you can increase this if images are tall */
+  height: 600px; /* desktop size */
   overflow: hidden;
   margin-bottom: 40px;
-  background: #f8f9fa; /* ⭐ same as catering background */
+  background: #f8f9fa;
 }
 
 /* SLIDER TRACK */
@@ -22,9 +23,10 @@
 .dessert-slide-img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* ⭐ FIX: no cropping */
-  flex-shrink: 0; /* ⭐ FIX: prevents squeezing */
-  background: #f8f9fa; /* ⭐ match background behind image */
+  object-fit: contain;
+  object-position: center center; /* ⭐ correct centering */
+  flex-shrink: 0;
+  background: #f8f9fa;
 }
 
 /* ARROWS */
@@ -51,4 +53,17 @@
 
 .dessert-slide-btn:hover {
   background: rgba(0, 0, 0, 0.6);
+}
+
+/* ⭐ MOBILE FIX */
+@media (max-width: 768px) {
+  .dessert-slider-wrapper {
+    height: 350px; /* smaller for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .dessert-slider-wrapper {
+    height: 280px; /* even smaller for small phones */
+  }
 }
